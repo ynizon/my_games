@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CARTES>
+	<GAME>
+		<NOM>animal</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>8</MODE>
+		<MOT1></MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>sport</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>8</MODE>
+		<MOT1></MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>animal sauvage</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>8</MODE>
+		<MOT1></MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+</CARTES>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CARTES>
+	<GAME>
+		<NOM>Qui a volé la kryptonite ?</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>6</MODE>
+		<MOT1>super héro</MOT1>
+		<MOT2>pouvoir</MOT2>
+		<MOT3>capricieux</MOT3>
+		<MOT4>élastique</MOT4>
+		<MOT5>brume</MOT5>
+		<MOT6>hasardeux</MOT6>
+		<MOT7>super vilain</MOT7>
+		<MOT8>chrysalide</MOT8>
+		<MOT9>antenne</MOT9>
+		<MOT10>fantastique</MOT10>
+		<MOT11>fumée</MOT11>
+		<MOT12>parfum</MOT12>
+		<DESCRIPTION>La kryptonite peut être utilisé pour tuer superman. Quelqu'un s'est introduit dans le coffre fort de Batman, et s'en est emparé, mais qui ?</DESCRIPTION>
+		<PERSONS>Batman
+Superman
+Le Joker
+Flash
+Robin
+Spiderman</PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Qui a tué Pierre Bellemare ?</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>6</MODE>
+		<MOT1>vente</MOT1>
+		<MOT2>objet</MOT2>
+		<MOT3>bibelot</MOT3>
+		<MOT4>jalousie</MOT4>
+		<MOT5>capricieux</MOT5>
+		<MOT6>grande écoute</MOT6>
+		<MOT7>achat</MOT7>
+		<MOT8>saloperie</MOT8>
+		<MOT9>babiole</MOT9>
+		<MOT10>hypocrisie</MOT10>
+		<MOT11>histoires vraies</MOT11>
+		<MOT12>producteur</MOT12>
+		<DESCRIPTION>Pierre Bellamare a été retrouvé mort dans son garage, etouffé dans une cocotte minute.
+Qui a pu faire le coup ?</DESCRIPTION>
+		<PERSONS>Marie Ange Nardi (sa collègue à la télé)
+Christophe Dechavanne (son producteur)
+Pierre Dhostel - son rival sur M6 Boutique
+Martine - Une fan déçue
+Philippe Bouvard - son collègue de radio
+Edouard - Son psychologue</PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Qui a empoisonné Kurt Cobain ?</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>6</MODE>
+		<MOT1>promotion</MOT1>
+		<MOT2>tournée</MOT2>
+		<MOT3>abracadabrantesque</MOT3>
+		<MOT4>hémorragie</MOT4>
+		<MOT5>rupture</MOT5>
+		<MOT6>mépris</MOT6>
+		<MOT7>disque d'or</MOT7>
+		<MOT8>concert</MOT8>
+		<MOT9>squelette</MOT9>
+		<MOT10>palpitation</MOT10>
+		<MOT11>incarcéré</MOT11>
+		<MOT12>rocambolesque</MOT12>
+		<DESCRIPTION>Après analyse, la drogue retrouvé chez Kurt lors de son overdose avait été coupée avec des anphétamines. Qui a pu faire une telle chose ?</DESCRIPTION>
+		<PERSONS>Sa femme
+Son dealer
+Un fan
+Son guitariste
+Angus - le chanteur d'ACDC
+Son producteur</PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Qui a volé l'EPO d'Armstrong ?</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>6</MODE>
+		<MOT1>trophée</MOT1>
+		<MOT2>cocktail</MOT2>
+		<MOT3>médicament</MOT3>
+		<MOT4>insolence</MOT4>
+		<MOT5>jaloux</MOT5>
+		<MOT6>champion</MOT6>
+		<MOT7>coupe</MOT7>
+		<MOT8>amphétamine</MOT8>
+		<MOT9>somnifère</MOT9>
+		<MOT10>sponsor</MOT10>
+		<MOT11>mensonge</MOT11>
+		<MOT12>honteux</MOT12>
+		<DESCRIPTION>Pour la premère fois en 9 ans, Lens Armstrong a perdu une course. En cherchant bien, il se rend compte qu'on a remplacé son EPO par de l'eau. Qui est coupable ?</DESCRIPTION>
+		<PERSONS>Son médecin
+Son vétérinaire
+Son sponsor
+Son concurrent
+Sa masseuse
+Un paparasi</PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Qui a remplacé la Joconde ?</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>6</MODE>
+		<MOT1>gallerie</MOT1>
+		<MOT2>bouchon</MOT2>
+		<MOT3>capuchon</MOT3>
+		<MOT4>amabilité</MOT4>
+		<MOT5>raisonner</MOT5>
+		<MOT6>irracible</MOT6>
+		<MOT7>moquerie</MOT7>
+		<MOT8>musée</MOT8>
+		<MOT9>armer</MOT9>
+		<MOT10>reproduction</MOT10>
+		<MOT11>imagination</MOT11>
+		<MOT12>farce</MOT12>
+		<DESCRIPTION>A la suite d'une inspection au Louvre, on se rend compte que le tableau original de la Joconde a été remplacé. Qui a bien pu faire une chose pareille ?</DESCRIPTION>
+		<PERSONS>Denis la malice
+Picasso
+Un descendant de Léonard de Vinci
+Le directeur du louvre
+Un fan
+Un collectionneur</PERSONS>
+	</GAME>
+						
+</CARTES>

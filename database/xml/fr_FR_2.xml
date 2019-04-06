@@ -1,0 +1,2124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CARTES>
+	<GAME>
+		<NOM>10 Albums de Tintin</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Tintin au tibet</MOT1>
+		<MOT2>Chien mouillé</MOT2>
+		<MOT3>Le crabe au pinces d'or</MOT3>
+		<MOT4>Le trésor de Rackham le rouge</MOT4>
+		<MOT5>Les cigares du pharaon</MOT5>
+		<MOT6>L'oreille cassé</MOT6>
+		<MOT7>Tintin et les oranges bleues</MOT7>
+		<MOT8>Le sceptre d'Ottokar</MOT8>
+		<MOT9>Tintin et les picaros</MOT9>
+		<MOT10>Coke en stock</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 Films avec Gérard Depardieu</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Les fugitifs</MOT1>
+		<MOT2>Cyrano de Bergerac</MOT2>
+		<MOT3>Germinal</MOT3>
+		<MOT4>Les anges gardiens</MOT4>
+		<MOT5>Le hussard sur le toit</MOT5>
+		<MOT6>Astérix et Obélix contre César</MOT6>
+		<MOT7>La Môme</MOT7>
+		<MOT8>Vidocq</MOT8>
+		<MOT9>La chèvre</MOT9>
+		<MOT10>Inspecteur la Bavure</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Au square</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Balancoire</MOT1>
+		<MOT2>Sable</MOT2>
+		<MOT3>Toboggan</MOT3>
+		<MOT4>Tourniquet</MOT4>
+		<MOT5>Cage à poules</MOT5>
+		<MOT6>Gardien</MOT6>
+		<MOT7>Bancs</MOT7>
+		<MOT8>Marelle</MOT8>
+		<MOT9>Poussettes</MOT9>
+		<MOT10>Enfants</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Pilotes de grand prix</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Ayrton Senna</MOT1>
+		<MOT2>Jean Alesi</MOT2>
+		<MOT3>Michael Schumacher</MOT3>
+		<MOT4>Alain Prost</MOT4>
+		<MOT5>Mika Hakkinen</MOT5>
+		<MOT6>Nelson Piquet</MOT6>
+		<MOT7>Niki Lauda</MOT7>
+		<MOT8>Damon Hill</MOT8>
+		<MOT9>Jacques Villeneuve</MOT9>
+		<MOT10>Nigel Mansell</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Synonymes de "ivre"</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Saoul</MOT1>
+		<MOT2>Bourré</MOT2>
+		<MOT3>Torché</MOT3>
+		<MOT4>Fait</MOT4>
+		<MOT5>Plein</MOT5>
+		<MOT6>Beurré</MOT6>
+		<MOT7>Paf</MOT7>
+		<MOT8>Rond</MOT8>
+		<MOT9>Pompette</MOT9>
+		<MOT10>Raide</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Les grand lieux religieux</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Basilique St Pierre</MOT1>
+		<MOT2>Notre Dame de Paris</MOT2>
+		<MOT3>St Jacques de Compostelle</MOT3>
+		<MOT4>Mur des lamentations</MOT4>
+		<MOT5>La Mecque</MOT5>
+		<MOT6>Benarès</MOT6>
+		<MOT7>Jerusalem</MOT7>
+		<MOT8>Sanctuaire de Fatima</MOT8>
+		<MOT9>Grotte de Lourdes</MOT9>
+		<MOT10>Lhassa</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Films avec De Niro</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Casino</MOT1>
+		<MOT2>Des hommes d'influence</MOT2>
+		<MOT3>Le parrain</MOT3>
+		<MOT4>Taxi Driver</MOT4>
+		<MOT5>Mafia Blues</MOT5>
+		<MOT6>Heat</MOT6>
+		<MOT7>Voyage au bout de l'enfer</MOT7>
+		<MOT8>Il était une fois en Amérique</MOT8>
+		<MOT9>Les incorruptibles</MOT9>
+		<MOT10>Jackie Brown</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ce que l'on fait le matin</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Eteindre le réveil</MOT1>
+		<MOT2>Aller à la salle de bains</MOT2>
+		<MOT3>Prendre une douche</MOT3>
+		<MOT4>Se brosser les dents</MOT4>
+		<MOT5>S'habiller</MOT5>
+		<MOT6>Prendre son petit déjeuner</MOT6>
+		<MOT7>Lire le journal</MOT7>
+		<MOT8>Aller aux toilettes</MOT8>
+		<MOT9>Ouvrir les volets</MOT9>
+		<MOT10>Sortir le chien</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Magazines féminins</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Femme actuelle</MOT1>
+		<MOT2>Elle</MOT2>
+		<MOT3>Marie Claire</MOT3>
+		<MOT4>Prima</MOT4>
+		<MOT5>Biba</MOT5>
+		<MOT6>Modes et travaux</MOT6>
+		<MOT7>Cosmopolitan</MOT7>
+		<MOT8>Vogue</MOT8>
+		<MOT9>Avantages</MOT9>
+		<MOT10>Marie France</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Langues étrangeres</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Anglais</MOT1>
+		<MOT2>Espagnol</MOT2>
+		<MOT3>Italien</MOT3>
+		<MOT4>Allemand</MOT4>
+		<MOT5>Suédois</MOT5>
+		<MOT6>Serbo-croate</MOT6>
+		<MOT7>Flamand</MOT7>
+		<MOT8>Portuguais</MOT8>
+		<MOT9>Arabe</MOT9>
+		<MOT10>Hindi</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Types de films</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Documentaire</MOT1>
+		<MOT2>Science Fiction</MOT2>
+		<MOT3>Comédie</MOT3>
+		<MOT4>X</MOT4>
+		<MOT5>Fantastique</MOT5>
+		<MOT6>Thriller</MOT6>
+		<MOT7>Aventure</MOT7>
+		<MOT8>Horreur</MOT8>
+		<MOT9>Western</MOT9>
+		<MOT10>Comédie Musicale</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Gros chien</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Berger allemand</MOT1>
+		<MOT2>Colley</MOT2>
+		<MOT3>Labrador</MOT3>
+		<MOT4>St Bernard</MOT4>
+		<MOT5>Husky</MOT5>
+		<MOT6>Berger des Pyrénées</MOT6>
+		<MOT7>Setter Irlandais</MOT7>
+		<MOT8>Danois</MOT8>
+		<MOT9>Terre-neuve</MOT9>
+		<MOT10>Briard</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Poker</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Passe</MOT1>
+		<MOT2>Tapis</MOT2>
+		<MOT3>Suite</MOT3>
+		<MOT4>Bluff</MOT4>
+		<MOT5>Servi</MOT5>
+		<MOT6>Carré</MOT6>
+		<MOT7>Menteur</MOT7>
+		<MOT8>Strip</MOT8>
+		<MOT9>Quinte</MOT9>
+		<MOT10>Carré d'as</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Spécialités francaises</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Vin</MOT1>
+		<MOT2>Fromage</MOT2>
+		<MOT3>Baguette</MOT3>
+		<MOT4>Foie gras</MOT4>
+		<MOT5>Champagne</MOT5>
+		<MOT6>Croissant</MOT6>
+		<MOT7>Crêpes</MOT7>
+		<MOT8>Truffes</MOT8>
+		<MOT9>Cuisse de grenouilles</MOT9>
+		<MOT10>Escargots</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Rouge</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Ketchup</MOT1>
+		<MOT2>Coca Cola</MOT2>
+		<MOT3>Communisme</MOT3>
+		<MOT4>Sang</MOT4>
+		<MOT5>Vin</MOT5>
+		<MOT6>Lèvres</MOT6>
+		<MOT7>Croix</MOT7>
+		<MOT8>Bleu Blanc</MOT8>
+		<MOT9>Tomate</MOT9>
+		<MOT10>Vermillon</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Cheval</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Vapeur</MOT1>
+		<MOT2>Course</MOT2>
+		<MOT3>Trait</MOT3>
+		<MOT4>Troie</MOT4>
+		<MOT5>Labour</MOT5>
+		<MOT6>Arcons</MOT6>
+		<MOT7>Queue</MOT7>
+		<MOT8>Galop</MOT8>
+		<MOT9>Jument</MOT9>
+		<MOT10>Pur-sang</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Coton</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Blanc</MOT1>
+		<MOT2>Matière</MOT2>
+		<MOT3>Naturel</MOT3>
+		<MOT4>Tissu</MOT4>
+		<MOT5>Flocons</MOT5>
+		<MOT6>Ouate</MOT6>
+		<MOT7>100%</MOT7>
+		<MOT8>Champ</MOT8>
+		<MOT9>Boules</MOT9>
+		<MOT10>Tige</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>La où l'on met son argent</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Matelas</MOT1>
+		<MOT2>Poche</MOT2>
+		<MOT3>Chaussettes</MOT3>
+		<MOT4>Tirelire</MOT4>
+		<MOT5>Banque</MOT5>
+		<MOT6>Coffre-fort</MOT6>
+		<MOT7>Porte-monnaie</MOT7>
+		<MOT8>Porte-feuille</MOT8>
+		<MOT9>Poche</MOT9>
+		<MOT10>Banane</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Clown</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Gros nez</MOT1>
+		<MOT2>Maquillage</MOT2>
+		<MOT3>Drôle</MOT3>
+		<MOT4>Costume</MOT4>
+		<MOT5>Chaussures</MOT5>
+		<MOT6>Cirque</MOT6>
+		<MOT7>Bozo</MOT7>
+		<MOT8>Blanc</MOT8>
+		<MOT9>Gag</MOT9>
+		<MOT10>Gros nez</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Le vin</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Corps</MOT1>
+		<MOT2>Cuisse</MOT2>
+		<MOT3>Bouquet</MOT3>
+		<MOT4>Tache</MOT4>
+		<MOT5>Chaud</MOT5>
+		<MOT6>Cave</MOT6>
+		<MOT7>Sac</MOT7>
+		<MOT8>Bar</MOT8>
+		<MOT9>Carafe</MOT9>
+		<MOT10>Rouge</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chauve-souris</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Nocturne</MOT1>
+		<MOT2>Mammifère</MOT2>
+		<MOT3>Aveugle</MOT3>
+		<MOT4>Crottes</MOT4>
+		<MOT5>A l'envers</MOT5>
+		<MOT6>Batman</MOT6>
+		<MOT7>Vampire</MOT7>
+		<MOT8>Voler</MOT8>
+		<MOT9>Sonar</MOT9>
+		<MOT10>Nuit</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chez le coiffeur</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Miroir</MOT1>
+		<MOT2>Ciseaux</MOT2>
+		<MOT3>Rasoir</MOT3>
+		<MOT4>Sèche-cheveux</MOT4>
+		<MOT5>Fauteuil</MOT5>
+		<MOT6>Shampoing</MOT6>
+		<MOT7>Balai</MOT7>
+		<MOT8>Magazines</MOT8>
+		<MOT9>Peigne</MOT9>
+		<MOT10>Coiffeur</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Métiers qui rapportent beaucoup d'argent</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Acteur</MOT1>
+		<MOT2>Canteur</MOT2>
+		<MOT3>Footballeur</MOT3>
+		<MOT4>Avocat</MOT4>
+		<MOT5>Banquier</MOT5>
+		<MOT6>Top model</MOT6>
+		<MOT7>Pilote</MOT7>
+		<MOT8>Producteur</MOT8>
+		<MOT9>Homme d'affaires</MOT9>
+		<MOT10>Cambrioleur</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Pays insulaires</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Australie</MOT1>
+		<MOT2>Japon</MOT2>
+		<MOT3>Islande</MOT3>
+		<MOT4>Cuba</MOT4>
+		<MOT5>Madagascar</MOT5>
+		<MOT6>Nouvelle zélande</MOT6>
+		<MOT7>Chypre</MOT7>
+		<MOT8>Angleterre</MOT8>
+		<MOT9>Porto-Rico</MOT9>
+		<MOT10>Irlande</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ivoire</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Dents</MOT1>
+		<MOT2>Défenses</MOT2>
+		<MOT3>Blanc</MOT3>
+		<MOT4>Ebène</MOT4>
+		<MOT5>Elephant</MOT5>
+		<MOT6>Afrique</MOT6>
+		<MOT7>Côte</MOT7>
+		<MOT8>Trafic</MOT8>
+		<MOT9>Statuette</MOT9>
+		<MOT10>Hippopotame</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Sécurité</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Agent</MOT1>
+		<MOT2>Police</MOT2>
+		<MOT3>Alarme</MOT3>
+		<MOT4>Ceinture</MOT4>
+		<MOT5>Bordure</MOT5>
+		<MOT6>Airbag</MOT6>
+		<MOT7>Routière</MOT7>
+		<MOT8>Règles</MOT8>
+		<MOT9>Sociale</MOT9>
+		<MOT10>Distance</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Pomme</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Adam</MOT1>
+		<MOT2>Amour</MOT2>
+		<MOT3>Pin</MOT3>
+		<MOT4>Terre</MOT4>
+		<MOT5>Api</MOT5>
+		<MOT6>Reinette</MOT6>
+		<MOT7>Granny Smith</MOT7>
+		<MOT8>Arrosoir</MOT8>
+		<MOT9>Tarte tatin</MOT9>
+		<MOT10>(c) Apple</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Films à suite</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Rockey</MOT1>
+		<MOT2>Rambo</MOT2>
+		<MOT3>Indiana Jones</MOT3>
+		<MOT4>Star Trek</MOT4>
+		<MOT5>le parrain</MOT5>
+		<MOT6>Bernard et Bianca</MOT6>
+		<MOT7>Taxi</MOT7>
+		<MOT8>Les visiteurs</MOT8>
+		<MOT9>Terminator</MOT9>
+		<MOT10>Jurassic Park</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Personnes qui portent un uniforme</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Pilote</MOT1>
+		<MOT2>Astronaute</MOT2>
+		<MOT3>Marin</MOT3>
+		<MOT4>Chasseur</MOT4>
+		<MOT5>Groom</MOT5>
+		<MOT6>Garcon de café</MOT6>
+		<MOT7>Pompier</MOT7>
+		<MOT8>Policier</MOT8>
+		<MOT9>Infirmière</MOT9>
+		<MOT10>Cuisinier</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Double</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Agent</MOT1>
+		<MOT2>Jeu</MOT2>
+		<MOT3>Sens</MOT3>
+		<MOT4>Duplicata</MOT4>
+		<MOT5>Fenêtre</MOT5>
+		<MOT6>Emploi</MOT6>
+		<MOT7>Tennis</MOT7>
+		<MOT8>Vitrage</MOT8>
+		<MOT9>Mixte</MOT9>
+		<MOT10>Photocopie</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Bouteille de...</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Lait</MOT1>
+		<MOT2>Eau</MOT2>
+		<MOT3>Soda</MOT3>
+		<MOT4>Vin</MOT4>
+		<MOT5>Ketchup</MOT5>
+		<MOT6>Sauce salade</MOT6>
+		<MOT7>Parfum</MOT7>
+		<MOT8>Bière</MOT8>
+		<MOT9>Sirop</MOT9>
+		<MOT10>Rhum</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Bombe</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Glacée</MOT1>
+		<MOT2>Sexuelle</MOT2>
+		<MOT3>Neutron</MOT3>
+		<MOT4>Terroriste</MOT4>
+		<MOT5>Atomique</MOT5>
+		<MOT6>Hiroshima</MOT6>
+		<MOT7>Retardement</MOT7>
+		<MOT8>Attentat</MOT8>
+		<MOT9>Equitation</MOT9>
+		<MOT10>H</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Tennis</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Simple</MOT1>
+		<MOT2>Chaussures</MOT2>
+		<MOT3>Double</MOT3>
+		<MOT4>Out</MOT4>
+		<MOT5>Filet</MOT5>
+		<MOT6>Match</MOT6>
+		<MOT7>Balle</MOT7>
+		<MOT8>Raquette</MOT8>
+		<MOT9>Roland-Garros</MOT9>
+		<MOT10>Service</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ce qu'un dentiste met dans votre bouche</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Fraise</MOT1>
+		<MOT2>Coton</MOT2>
+		<MOT3>Miroir</MOT3>
+		<MOT4>Roulette</MOT4>
+		<MOT5>Plombage</MOT5>
+		<MOT6>Aspirateur</MOT6>
+		<MOT7>Fil dentaire</MOT7>
+		<MOT8>Seringue</MOT8>
+		<MOT9>Eau</MOT9>
+		<MOT10>Couronne</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>La banque</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Argent</MOT1>
+		<MOT2>Disitributeur</MOT2>
+		<MOT3>Compte</MOT3>
+		<MOT4>Dépôt</MOT4>
+		<MOT5>Chéquier</MOT5>
+		<MOT6>Découvert</MOT6>
+		<MOT7>Relevé</MOT7>
+		<MOT8>Carte de crédit</MOT8>
+		<MOT9>Banquier</MOT9>
+		<MOT10>Guichet</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ballon</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Gonfler</MOT1>
+		<MOT2>Hydrogène</MOT2>
+		<MOT3>Baudruche</MOT3>
+		<MOT4>Football</MOT4>
+		<MOT5>Montgolfière</MOT5>
+		<MOT6>Hélium</MOT6>
+		<MOT7>Souffler</MOT7>
+		<MOT8>Basket</MOT8>
+		<MOT9>Eau chaude</MOT9>
+		<MOT10>Volley ball</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ce qu'on remplit</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Une enveloppe</MOT1>
+		<MOT2>Une page</MOT2>
+		<MOT3>Un formulaire</MOT3>
+		<MOT4>Une condition</MOT4>
+		<MOT5>Un soutien-gorge</MOT5>
+		<MOT6>Son assiette</MOT6>
+		<MOT7>Une mission</MOT7>
+		<MOT8>Un blanc</MOT8>
+		<MOT9>Un chèque</MOT9>
+		<MOT10>Une piscine</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ours</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Brun</MOT1>
+		<MOT2>Noir</MOT2>
+		<MOT3>Blanc</MOT3>
+		<MOT4>Polaire</MOT4>
+		<MOT5>Grizzly</MOT5>
+		<MOT6>Teddy</MOT6>
+		<MOT7>Panda</MOT7>
+		<MOT8>Boucle d'or</MOT8>
+		<MOT9>Mal léché</MOT9>
+		<MOT10>Nounours</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Les films de Walt Disney</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Peter Pan</MOT1>
+		<MOT2>Fantasia</MOT2>
+		<MOT3>Pocahontas</MOT3>
+		<MOT4>Robin des bois</MOT4>
+		<MOT5>Toy Story</MOT5>
+		<MOT6>Pinocchio</MOT6>
+		<MOT7>Blanche neige et les 7 nains</MOT7>
+		<MOT8>Bambi</MOT8>
+		<MOT9>La belle et le clochard</MOT9>
+		<MOT10>Dumbo</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Personnages de Blanche-Neige</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Dormeur</MOT1>
+		<MOT2>Grincheux</MOT2>
+		<MOT3>Blanche-neige</MOT3>
+		<MOT4>Simplet</MOT4>
+		<MOT5>Prof</MOT5>
+		<MOT6>Joyeux</MOT6>
+		<MOT7>Timide</MOT7>
+		<MOT8>Atchoum</MOT8>
+		<MOT9>La sorcière</MOT9>
+		<MOT10>Le prince</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Animaux femelles</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Jument</MOT1>
+		<MOT2>Poule</MOT2>
+		<MOT3>Vache</MOT3>
+		<MOT4>Chèvre</MOT4>
+		<MOT5>Oie</MOT5>
+		<MOT6>Cane</MOT6>
+		<MOT7>Génisse</MOT7>
+		<MOT8>Truie</MOT8>
+		<MOT9>Brebis</MOT9>
+		<MOT10>Laie</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Papier</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Journal</MOT1>
+		<MOT2>Cadeau</MOT2>
+		<MOT3>Cocotte</MOT3>
+		<MOT4>Identité</MOT4>
+		<MOT5>Crépon</MOT5>
+		<MOT6>Carbone</MOT6>
+		<MOT7>Arménie</MOT7>
+		<MOT8>Toilette</MOT8>
+		<MOT9>Recyclé</MOT9>
+		<MOT10>Glacé</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Halloween</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Costumes</MOT1>
+		<MOT2>Bonbons</MOT2>
+		<MOT3>Masques</MOT3>
+		<MOT4>Chauve-souris</MOT4>
+		<MOT5>Chats noirs</MOT5>
+		<MOT6>Sorcières</MOT6>
+		<MOT7>31 octobre</MOT7>
+		<MOT8>Fantômes</MOT8>
+		<MOT9>Citrouilles</MOT9>
+		<MOT10>Jack o Lantern</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>On fournit une photo d'identité pour</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Un permis de conduire</MOT1>
+		<MOT2>Un passeport</MOT2>
+		<MOT3>Une carte orange</MOT3>
+		<MOT4>Un forfait de ski</MOT4>
+		<MOT5>Un badge</MOT5>
+		<MOT6>Une lettre de candidature</MOT6>
+		<MOT7>Une carte d'identité</MOT7>
+		<MOT8>Une inscription scolaire</MOT8>
+		<MOT9>Une carte de bus</MOT9>
+		<MOT10>Une carte d'étudiant</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Contenu d'un sac à main</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Crayon</MOT1>
+		<MOT2>Paquet de mouchoirs</MOT2>
+		<MOT3>Trousseau de clés</MOT3>
+		<MOT4>Agenda</MOT4>
+		<MOT5>Chéquier</MOT5>
+		<MOT6>Porte-monnaie</MOT6>
+		<MOT7>Lunettes</MOT7>
+		<MOT8>Téléphone portable</MOT8>
+		<MOT9>Poudrier</MOT9>
+		<MOT10>Calepin</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Arc-en-ciel</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Ciel</MOT1>
+		<MOT2>Soleil</MOT2>
+		<MOT3>Pluie</MOT3>
+		<MOT4>Couleurs</MOT4>
+		<MOT5>Souhait</MOT5>
+		<MOT6>Spectre</MOT6>
+		<MOT7>Maillot</MOT7>
+		<MOT8>Prisme</MOT8>
+		<MOT9>Trésor</MOT9>
+		<MOT10>Lumière</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Lampe</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Pétrole</MOT1>
+		<MOT2>Huile</MOT2>
+		<MOT3>Gaz</MOT3>
+		<MOT4>Tempête</MOT4>
+		<MOT5>Halogène</MOT5>
+		<MOT6>Aladdin</MOT6>
+		<MOT7>UV</MOT7>
+		<MOT8>Chevet</MOT8>
+		<MOT9>Torche</MOT9>
+		<MOT10>Solaire</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Princes et princesses</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Caroline</MOT1>
+		<MOT2>Charles</MOT2>
+		<MOT3>Albert</MOT3>
+		<MOT4>Andrew</MOT4>
+		<MOT5>Rainier</MOT5>
+		<MOT6>Vaillant</MOT6>
+		<MOT7>Léïa</MOT7>
+		<MOT8>Charmant</MOT8>
+		<MOT9>Grace</MOT9>
+		<MOT10>Monaco</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Echecs</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Roi</MOT1>
+		<MOT2>Reine</MOT2>
+		<MOT3>Fou</MOT3>
+		<MOT4>Cavalier</MOT4>
+		<MOT5>Pion</MOT5>
+		<MOT6>Plateau</MOT6>
+		<MOT7>Kasparov</MOT7>
+		<MOT8>Mat</MOT8>
+		<MOT9>Pat</MOT9>
+		<MOT10>Tour</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>X-Files</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Vérité</MOT1>
+		<MOT2>Cigarette</MOT2>
+		<MOT3>Paranormal</MOT3>
+		<MOT4>FBI</MOT4>
+		<MOT5>Gillian Anderson</MOT5>
+		<MOT6>Skinner</MOT6>
+		<MOT7>Affaires non classées</MOT7>
+		<MOT8>Complot</MOT8>
+		<MOT9>David Duchovny</MOT9>
+		<MOT10>Dana Scully</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Souvent en laine</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Ponpon</MOT1>
+		<MOT2>Bonnet</MOT2>
+		<MOT3>Gants</MOT3>
+		<MOT4>Mouton</MOT4>
+		<MOT5>Pull</MOT5>
+		<MOT6>Echarpe</MOT6>
+		<MOT7>Châle</MOT7>
+		<MOT8>Layette</MOT8>
+		<MOT9>Mitaines</MOT9>
+		<MOT10>Gilet</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Eau</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Chaude</MOT1>
+		<MOT2>Froidre</MOT2>
+		<MOT3>Salée</MOT3>
+		<MOT4>Glacée</MOT4>
+		<MOT5>Bénite</MOT5>
+		<MOT6>Gazeuse</MOT6>
+		<MOT7>Filtrée</MOT7>
+		<MOT8>Cologne</MOT8>
+		<MOT9>Parfum</MOT9>
+		<MOT10>Toilette</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Drogues</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Héroïne</MOT1>
+		<MOT2>Cocaïne</MOT2>
+		<MOT3>Colle</MOT3>
+		<MOT4>Haschisch</MOT4>
+		<MOT5>LSD</MOT5>
+		<MOT6>Morphine</MOT6>
+		<MOT7>Ecstasy</MOT7>
+		<MOT8>Opium</MOT8>
+		<MOT9>Champignons hallucinogènes</MOT9>
+		<MOT10>CHanvdre indien</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Capitales européennes</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Rome</MOT1>
+		<MOT2>Stockholm</MOT2>
+		<MOT3>Berlin</MOT3>
+		<MOT4>Berne</MOT4>
+		<MOT5>Londres</MOT5>
+		<MOT6>Madrid</MOT6>
+		<MOT7>Dublin</MOT7>
+		<MOT8>Athènes</MOT8>
+		<MOT9>Prague</MOT9>
+		<MOT10>Lisbonne</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Spécialités italiennes</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Spaghetti</MOT1>
+		<MOT2>Pizza</MOT2>
+		<MOT3>Canelonni</MOT3>
+		<MOT4>Minestrone</MOT4>
+		<MOT5>Mozarella</MOT5>
+		<MOT6>Osso bucco</MOT6>
+		<MOT7>Lasagne</MOT7>
+		<MOT8>Escalope Milanaise</MOT8>
+		<MOT9>Gnocchi</MOT9>
+		<MOT10>Carpaccio</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Instruments à cordes</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Violoncelle</MOT1>
+		<MOT2>Violon</MOT2>
+		<MOT3>Piano</MOT3>
+		<MOT4>Lyre</MOT4>
+		<MOT5>Guitare</MOT5>
+		<MOT6>Harpe</MOT6>
+		<MOT7>Mandoline</MOT7>
+		<MOT8>Banjo</MOT8>
+		<MOT9>Clavecin</MOT9>
+		<MOT10>Epinette</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chaines de montagne</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Alpes</MOT1>
+		<MOT2>Andes</MOT2>
+		<MOT3>Dolomites</MOT3>
+		<MOT4>Pyrénées</MOT4>
+		<MOT5>Appalaches</MOT5>
+		<MOT6>Himalaya</MOT6>
+		<MOT7>Atlas</MOT7>
+		<MOT8>Les rocheuses</MOT8>
+		<MOT9>Jura</MOT9>
+		<MOT10>Caucase</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Grand évenements sportifs</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Le tour de France</MOT1>
+		<MOT2>Paris Dakar</MOT2>
+		<MOT3>Les JO</MOT3>
+		<MOT4>Wimbledon</MOT4>
+		<MOT5>Super Bowl</MOT5>
+		<MOT6>Vendée Globe</MOT6>
+		<MOT7>Tournoi des 6 nations</MOT7>
+		<MOT8>Coupe du monde de football</MOT8>
+		<MOT9>Grand prix de Monaco</MOT9>
+		<MOT10>Roland-Carros</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Moyens de contraception</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Abstinence</MOT1>
+		<MOT2>Coïtus interruptus</MOT2>
+		<MOT3>Pilule</MOT3>
+		<MOT4>Préservatif</MOT4>
+		<MOT5>Diaphragme</MOT5>
+		<MOT6>Vasectomie</MOT6>
+		<MOT7>Homosexualité</MOT7>
+		<MOT8>Méthode ogino</MOT8>
+		<MOT9>Stérilet</MOT9>
+		<MOT10>Ligature des trompes</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Spécialités mexicaines</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Quesadillas</MOT1>
+		<MOT2>Enchiladas</MOT2>
+		<MOT3>Tortillas</MOT3>
+		<MOT4>Tacos</MOT4>
+		<MOT5>Chili con carne</MOT5>
+		<MOT6>Mezcal</MOT6>
+		<MOT7>Guacamole</MOT7>
+		<MOT8>Nachos</MOT8>
+		<MOT9>Burritos</MOT9>
+		<MOT10>Tequila</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Fruits exotiques</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Papaye</MOT1>
+		<MOT2>Goyave</MOT2>
+		<MOT3>Litchi</MOT3>
+		<MOT4>Datte</MOT4>
+		<MOT5>Mangue</MOT5>
+		<MOT6>Fruit de la passion</MOT6>
+		<MOT7>Noix de coco</MOT7>
+		<MOT8>Grenade</MOT8>
+		<MOT9>Ananas</MOT9>
+		<MOT10>Carambole</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Les Schtroumpfs</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Peyo</MOT1>
+		<MOT2>Le grand schtroumpf</MOT2>
+		<MOT3>Schtroumpf à lunettes</MOT3>
+		<MOT4>La schtroumpfette</MOT4>
+		<MOT5>Schtroumpf costaud</MOT5>
+		<MOT6>Gargamel</MOT6>
+		<MOT7>Azraël</MOT7>
+		<MOT8>Grosse bouffe</MOT8>
+		<MOT9>La salsepareille</MOT9>
+		<MOT10>Le Cracoucass</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 tubes de Johnny Hallyday</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>L'idole des jeunes</MOT1>
+		<MOT2>Allumer le feu</MOT2>
+		<MOT3>Gabrielle</MOT3>
+		<MOT4>Que je t'aime</MOT4>
+		<MOT5>Ma gueule</MOT5>
+		<MOT6>Le pénitencier</MOT6>
+		<MOT7>Diego libre dans sa tête</MOT7>
+		<MOT8>J'ai oublié de vivre</MOT8>
+		<MOT9>La musique que j'aime</MOT9>
+		<MOT10>L'envie</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Films de James Bond</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>James Bond 007 contre Dr. No</MOT1>
+		<MOT2>Bons baisers de Russie</MOT2>
+		<MOT3>Opération Tonnerre</MOT3>
+		<MOT4>Moonraker</MOT4>
+		<MOT5>Octopussy</MOT5>
+		<MOT6>Tuer n'est pas jouer</MOT6>
+		<MOT7>Permis de tuer</MOT7>
+		<MOT8>GoldenEye</MOT8>
+		<MOT9>Meurs un autre jour</MOT9>
+		<MOT10>Skyfall</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 Super héros</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Superman</MOT1>
+		<MOT2>Spiderman</MOT2>
+		<MOT3>Flash</MOT3>
+		<MOT4>Batman</MOT4>
+		<MOT5>Ironman</MOT5>
+		<MOT6>Cyclope</MOT6>
+		<MOT7>Professeur Xavier</MOT7>
+		<MOT8>Wolverine (Serval)</MOT8>
+		<MOT9>Tornade</MOT9>
+		<MOT10>Wonder woman</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Patisserie française</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Le gateau basque</MOT1>
+		<MOT2>Eclair au chocolat</MOT2>
+		<MOT3>Le Kouign amann</MOT3>
+		<MOT4>Le Kouglof</MOT4>
+		<MOT5>Pain au chocolat</MOT5>
+		<MOT6>Les macarons</MOT6>
+		<MOT7>Les crêpes</MOT7>
+		<MOT8>La tarte aux pommes</MOT8>
+		<MOT9>Le Paris-Brest</MOT9>
+		<MOT10>L'opéra</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chef d'état français</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Charlemagne</MOT1>
+		<MOT2>Napoléon</MOT2>
+		<MOT3>Louis XIV</MOT3>
+		<MOT4>François Mitterand</MOT4>
+		<MOT5>Chirac</MOT5>
+		<MOT6>Charles de Gaulle</MOT6>
+		<MOT7>Hugues Capet</MOT7>
+		<MOT8>François 1er</MOT8>
+		<MOT9>Henri IV</MOT9>
+		<MOT10>Pépin le Bref</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 Volcans célèbres</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>L’Eyjafjöll, Islande</MOT1>
+		<MOT2>Les volcans d’Auvergne, France</MOT2>
+		<MOT3>Le Vésuve, Italie</MOT3>
+		<MOT4>Le Mont Fuji, Japon</MOT4>
+		<MOT5>Le Kilimandjaro, Tanzanie</MOT5>
+		<MOT6>Irazu, Costa Rica</MOT6>
+		<MOT7>Le Piton de la Fournaise, La Réunion</MOT7>
+		<MOT8>Nevado Ojos del Salado, Argentine/Chili</MOT8>
+		<MOT9>La Montagne Pelée, Martinique</MOT9>
+		<MOT10>Le Stromboli, Italie</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Fêtes religieuses</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Épiphanie</MOT1>
+		<MOT2>Chandeleur</MOT2>
+		<MOT3>Pâques</MOT3>
+		<MOT4>Pentecôte</MOT4>
+		<MOT5>Noël</MOT5>
+		<MOT6>Hanouka</MOT6>
+		<MOT7>Aïd el-Fitr</MOT7>
+		<MOT8>Carême</MOT8>
+		<MOT9>Ascension</MOT9>
+		<MOT10>Toussaint</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Constructeurs automobiles</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Renault</MOT1>
+		<MOT2>Peugeot</MOT2>
+		<MOT3>Volkswagen</MOT3>
+		<MOT4>Alfa Roméo</MOT4>
+		<MOT5>Ford</MOT5>
+		<MOT6>Toyota</MOT6>
+		<MOT7>General Motors</MOT7>
+		<MOT8>Jaguar</MOT8>
+		<MOT9>Rolls-Royce</MOT9>
+		<MOT10>Nissan</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Moyens de transport</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Bus</MOT1>
+		<MOT2>Sous-marin</MOT2>
+		<MOT3>Voiture</MOT3>
+		<MOT4>Vélo</MOT4>
+		<MOT5>Cheval</MOT5>
+		<MOT6>Avion</MOT6>
+		<MOT7>Bateau</MOT7>
+		<MOT8>Montgolfière</MOT8>
+		<MOT9>Dirigeable</MOT9>
+		<MOT10>Side-car</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Organes du corps humain</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Coeur</MOT1>
+		<MOT2>Cerveau</MOT2>
+		<MOT3>Estomac</MOT3>
+		<MOT4>Rein</MOT4>
+		<MOT5>Intestin</MOT5>
+		<MOT6>Poumon</MOT6>
+		<MOT7>Pancréas</MOT7>
+		<MOT8>L'anus</MOT8>
+		<MOT9>L'oesophage</MOT9>
+		<MOT10>Le coccyx</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Maladies</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Sida</MOT1>
+		<MOT2>Rhume</MOT2>
+		<MOT3>Calculs rénaux</MOT3>
+		<MOT4>Phlébite</MOT4>
+		<MOT5>Bronchite</MOT5>
+		<MOT6>Cancer</MOT6>
+		<MOT7>Anémie</MOT7>
+		<MOT8>Ebola</MOT8>
+		<MOT9>Lupus</MOT9>
+		<MOT10>Leucémie</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Sport collectifs</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Football</MOT1>
+		<MOT2>Basket</MOT2>
+		<MOT3>Hockey sur glace</MOT3>
+		<MOT4>Handball</MOT4>
+		<MOT5>Baseball</MOT5>
+		<MOT6>Kayak-polo</MOT6>
+		<MOT7>Ultimate (Frisbee)</MOT7>
+		<MOT8>Rugby</MOT8>
+		<MOT9>Volley-ball</MOT9>
+		<MOT10>Water-polo</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Les genres musicaux</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Electro</MOT1>
+		<MOT2>Jazz</MOT2>
+		<MOT3>Rock</MOT3>
+		<MOT4>Gospel</MOT4>
+		<MOT5>Classique</MOT5>
+		<MOT6>Blues</MOT6>
+		<MOT7>Techno</MOT7>
+		<MOT8>Rap</MOT8>
+		<MOT9>Slam</MOT9>
+		<MOT10>Métal</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Apéritifs</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Pastis</MOT1>
+		<MOT2>Martini</MOT2>
+		<MOT3>Porto</MOT3>
+		<MOT4>Gentiane</MOT4>
+		<MOT5>Pineau</MOT5>
+		<MOT6>Sangria</MOT6>
+		<MOT7>Whisky</MOT7>
+		<MOT8>Punch</MOT8>
+		<MOT9>Gin fizz</MOT9>
+		<MOT10>Absinthe</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Vocabulaire autour du Christianisme</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Baptême</MOT1>
+		<MOT2>Mariage</MOT2>
+		<MOT3>Basilique</MOT3>
+		<MOT4>Messe</MOT4>
+		<MOT5>Carême</MOT5>
+		<MOT6>Jugement dernier</MOT6>
+		<MOT7>Le pape</MOT7>
+		<MOT8>La Vierge</MOT8>
+		<MOT9>Miséricorde</MOT9>
+		<MOT10>Eau bénite</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 Merveilles du monde actuel (sites)</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Machu Picchu (Pérou)</MOT1>
+		<MOT2>Pyramides de Gizeh (Egypte)</MOT2>
+		<MOT3>Grande barrière de corail (Australie)</MOT3>
+		<MOT4>Petra (Jordanie)</MOT4>
+		<MOT5>Grande Muraille (Chine)</MOT5>
+		<MOT6>Taj Mahal (Inde)</MOT6>
+		<MOT7>Grand Canyon (Etats-Unis)</MOT7>
+		<MOT8>Chichen Itza (Mexique)</MOT8>
+		<MOT9>Stonehenge (Angleterre)</MOT9>
+		<MOT10>Moaï de l'île de Pâques (Polynésie)</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Capitales européennes</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Paris</MOT1>
+		<MOT2>Londres</MOT2>
+		<MOT3>Helsinki</MOT3>
+		<MOT4>Bruxelles</MOT4>
+		<MOT5>Luxembourg</MOT5>
+		<MOT6>Belgrade</MOT6>
+		<MOT7>Stockholm</MOT7>
+		<MOT8>Berne</MOT8>
+		<MOT9>Kiev</MOT9>
+		<MOT10>Zagreb</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Pays d'Afrique</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Algérie</MOT1>
+		<MOT2>Gambie</MOT2>
+		<MOT3>Cameroun</MOT3>
+		<MOT4>Côte d'Ivoire</MOT4>
+		<MOT5>Egypte</MOT5>
+		<MOT6>Madagascar</MOT6>
+		<MOT7>Gabon</MOT7>
+		<MOT8>Somalie</MOT8>
+		<MOT9>Togo</MOT9>
+		<MOT10>Zimbabwe</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ecrivains français</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Emile Zola</MOT1>
+		<MOT2>Victor Hugo</MOT2>
+		<MOT3>Marcel Proust</MOT3>
+		<MOT4>Honoré de Balzac</MOT4>
+		<MOT5>Gustave Flaubert</MOT5>
+		<MOT6>Voltaire</MOT6>
+		<MOT7>Charles Baudelaire</MOT7>
+		<MOT8>Molière</MOT8>
+		<MOT9>Henri Stendhal</MOT9>
+		<MOT10>Jean de la Fontaine</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Peintres célèbres</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Claude Monet</MOT1>
+		<MOT2>Paul Cézanne</MOT2>
+		<MOT3>Pablo Picasso</MOT3>
+		<MOT4>Vincent Van Gogh</MOT4>
+		<MOT5>Le caravage</MOT5>
+		<MOT6>Edgar Degas</MOT6>
+		<MOT7>Auguste Renoir</MOT7>
+		<MOT8>Sandro Botticelli</MOT8>
+		<MOT9>Salvador Dali</MOT9>
+		<MOT10>Léonard de Vinci</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Systèmes d'exploitation</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Microsoft Windows</MOT1>
+		<MOT2>GNU/Linux</MOT2>
+		<MOT3>Android</MOT3>
+		<MOT4>MacOS</MOT4>
+		<MOT5>BSD</MOT5>
+		<MOT6>Unix</MOT6>
+		<MOT7>OS/2</MOT7>
+		<MOT8>VMS</MOT8>
+		<MOT9>OS/400</MOT9>
+		<MOT10>GCOS</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Légumes verts</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Concombre</MOT1>
+		<MOT2>Chicorée</MOT2>
+		<MOT3>Chou-fleur</MOT3>
+		<MOT4>Artichaut</MOT4>
+		<MOT5>Céleri</MOT5>
+		<MOT6>Coeur de palmier</MOT6>
+		<MOT7>Endive</MOT7>
+		<MOT8>Epinard</MOT8>
+		<MOT9>Poireau</MOT9>
+		<MOT10>Haricot vert</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Légumes verts</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Haricots verts</MOT1>
+		<MOT2>Epinard</MOT2>
+		<MOT3>Chou-fleur</MOT3>
+		<MOT4>Concombre</MOT4>
+		<MOT5>Courgette</MOT5>
+		<MOT6>Artichaut</MOT6>
+		<MOT7>Céleri</MOT7>
+		<MOT8>Cerfeuil</MOT8>
+		<MOT9>Laitue</MOT9>
+		<MOT10>Endive</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Serial killer français</NOM>
+		<DIFFICULTE>3</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Patrice Alègre</MOT1>
+		<MOT2>Francis Heaulme</MOT2>
+		<MOT3>Yvan Keller</MOT3>
+		<MOT4>Marcel Petiot</MOT4>
+		<MOT5>Guy Georges</MOT5>
+		<MOT6>Michel Fourniret</MOT6>
+		<MOT7>Henri Désiré Landru</MOT7>
+		<MOT8>Emile Louis</MOT8>
+		<MOT9>Mohammed Merah</MOT9>
+		<MOT10>Gilles de Rais</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 films avec Brad Pitt</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Fight Club</MOT1>
+		<MOT2>Seven</MOT2>
+		<MOT3>Troie</MOT3>
+		<MOT4>Inglourious Basterds</MOT4>
+		<MOT5>Snatch</MOT5>
+		<MOT6>Légendes d'automne</MOT6>
+		<MOT7>L'armée des 12 singes</MOT7>
+		<MOT8>Babel</MOT8>
+		<MOT9>Ocean's eleven</MOT9>
+		<MOT10>L'étrange histoire de Benjamin Button</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 films avec Julia Roberts</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Pretty woman</MOT1>
+		<MOT2>Coup de foudre à Nothing Hill</MOT2>
+		<MOT3>Erin Brokovitch</MOT3>
+		<MOT4>Ocean's Eleven</MOT4>
+		<MOT5>Ma meillere ennemie</MOT5>
+		<MOT6>Complots</MOT6>
+		<MOT7>L'experience interdite</MOT7>
+		<MOT8>Tout le monde dit i love you</MOT8>
+		<MOT9>L'affaire Pélican</MOT9>
+		<MOT10>Le mariage de mon meilleur ami</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 films avec Louis de Funès</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>La grande vadrouille</MOT1>
+		<MOT2>Fantômas</MOT2>
+		<MOT3>Hibernatus</MOT3>
+		<MOT4>Les aventures de Rabbi Jacob</MOT4>
+		<MOT5>Le corniaud</MOT5>
+		<MOT6>L'aile ou la cuisse</MOT6>
+		<MOT7>Le gendarme de Saint-Tropez</MOT7>
+		<MOT8>La folie des grandeurs</MOT8>
+		<MOT9>La soupe aux choux</MOT9>
+		<MOT10>Le petit baigneur</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>10 films avec Pierre Richard</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>On aura tout vu</MOT1>
+		<MOT2>La chèvre</MOT2>
+		<MOT3>Le grand blond avec une chaussure noire</MOT3>
+		<MOT4>Les fugitifs</MOT4>
+		<MOT5>Les compères</MOT5>
+		<MOT6>Je suis timide mais je me soigne</MOT6>
+		<MOT7>Le jumeau</MOT7>
+		<MOT8>Robinson Crusoé</MOT8>
+		<MOT9>Le jouet</MOT9>
+		<MOT10>C'est pas moi, c'est lui</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Films de Luc Besson</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Nikita</MOT1>
+		<MOT2>Subway</MOT2>
+		<MOT3>Léon</MOT3>
+		<MOT4>Atlantis</MOT4>
+		<MOT5>Le 5e élément</MOT5>
+		<MOT6>Jeanne d'Arc</MOT6>
+		<MOT7>Arthur et les Minimoys</MOT7>
+		<MOT8>Angel-A</MOT8>
+		<MOT9>Lucy</MOT9>
+		<MOT10>Le Grand Bleu</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chansons de Serge Gainsbourg</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Le poinçonneur des Lilas</MOT1>
+		<MOT2>La javanaise</MOT2>
+		<MOT3>Couleur café</MOT3>
+		<MOT4>Comic Strip</MOT4>
+		<MOT5>Requiem pour un con</MOT5>
+		<MOT6>Bonnie and Clyde</MOT6>
+		<MOT7>Les sucettes</MOT7>
+		<MOT8>Dieu fumeur de Havanes</MOT8>
+		<MOT9>Mon légionnaire</MOT9>
+		<MOT10>Sea sex and sun</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chansons de Jean-Jacques Goldman</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Il suffira d'un signe</MOT1>
+		<MOT2>Quand la musique est bonne</MOT2>
+		<MOT3>Comme toi</MOT3>
+		<MOT4>Au bout de mes rêves</MOT4>
+		<MOT5>Envole moi</MOT5>
+		<MOT6>Encore un matin</MOT6>
+		<MOT7>Je te donne</MOT7>
+		<MOT8>La vie par procuration</MOT8>
+		<MOT9>Je marche seul</MOT9>
+		<MOT10>Là-bas</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chansons de Mylène Farmer</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Libertine</MOT1>
+		<MOT2>Sans contrefaçon</MOT2>
+		<MOT3>Ainsi sois-je</MOT3>
+		<MOT4>Pourvu qu'elles soient douces</MOT4>
+		<MOT5>Désenchantée</MOT5>
+		<MOT6>Je t'aime Mélancolie</MOT6>
+		<MOT7>California</MOT7>
+		<MOT8>L'instant X</MOT8>
+		<MOT9>Comme j'ai mal</MOT9>
+		<MOT10>C'est une belle journée</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Choses que l'on trouve sur un voilier</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>bout</MOT1>
+		<MOT2>carte</MOT2>
+		<MOT3>winch</MOT3>
+		<MOT4>mât</MOT4>
+		<MOT5>voile</MOT5>
+		<MOT6>moteur</MOT6>
+		<MOT7>ancre</MOT7>
+		<MOT8>hublot</MOT8>
+		<MOT9>vhs</MOT9>
+		<MOT10>gache</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Cases du Monopoly</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Gare du Nord</MOT1>
+		<MOT2>Rue de la Paix</MOT2>
+		<MOT3>Boulevard Saint-Lazare</MOT3>
+		<MOT4>Caisse de communauté</MOT4>
+		<MOT5>Rue de Courcelles</MOT5>
+		<MOT6>Avenue Mozart</MOT6>
+		<MOT7>Boulevard de la Villette</MOT7>
+		<MOT8>Avenue Henri Martin</MOT8>
+		<MOT9>Boulevard des Capucines</MOT9>
+		<MOT10>Place de la Bourse</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Jeux d'enfants</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Jeu de l'Oie</MOT1>
+		<MOT2>Petits cheveaux</MOT2>
+		<MOT3>1000 bornes</MOT3>
+		<MOT4>Elastique</MOT4>
+		<MOT5>Billes</MOT5>
+		<MOT6>Balançoire</MOT6>
+		<MOT7>Tape-cul</MOT7>
+		<MOT8>Bac à sable</MOT8>
+		<MOT9>Ballon</MOT9>
+		<MOT10>Dame</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Liste des états des Etats-Unis</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Californie</MOT1>
+		<MOT2>Texas</MOT2>
+		<MOT3>Virginie</MOT3>
+		<MOT4>Alaska</MOT4>
+		<MOT5>Vermont</MOT5>
+		<MOT6>Nevada</MOT6>
+		<MOT7>Floride</MOT7>
+		<MOT8>New Jersey</MOT8>
+		<MOT9>Géorgie</MOT9>
+		<MOT10>Utah</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Magicien</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Close'up</MOT1>
+		<MOT2>Baguette magique</MOT2>
+		<MOT3>Lévitation</MOT3>
+		<MOT4>Femme découpée</MOT4>
+		<MOT5>Tour de cartes</MOT5>
+		<MOT6>Prestidigitation</MOT6>
+		<MOT7>Mentalisme</MOT7>
+		<MOT8>Boule de cristal</MOT8>
+		<MOT9>Secret</MOT9>
+		<MOT10>Chapeau</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Jeux de cartes</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Poker</MOT1>
+		<MOT2>Tarot</MOT2>
+		<MOT3>Blackjack</MOT3>
+		<MOT4>Belote</MOT4>
+		<MOT5>Quem's</MOT5>
+		<MOT6>Bataille</MOT6>
+		<MOT7>Huit Américain</MOT7>
+		<MOT8>Dame de pique</MOT8>
+		<MOT9>Bridge</MOT9>
+		<MOT10>Crapette</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Dictateurs</NOM>
+		<DIFFICULTE>1</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>2</MODE>
+		<MOT1>Fidel Castro</MOT1>
+		<MOT2>Kim Il Sung</MOT2>
+		<MOT3>Adolf Hitler</MOT3>
+		<MOT4>Fransisco Franco</MOT4>
+		<MOT5>Joseph Staline</MOT5>
+		<MOT6>Mao Zédong</MOT6>
+		<MOT7>Augusto Pinochet</MOT7>
+		<MOT8>Bénito Mussolini</MOT8>
+		<MOT9>Saddam Hussein</MOT9>
+		<MOT10>Mobutu Sese Seko</MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+</CARTES>

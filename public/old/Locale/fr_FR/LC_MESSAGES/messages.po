@@ -1,0 +1,703 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Role Scoper 1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-27 12:51-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ynizon <ynizon@free.fr>\n"
+"Language-Team: ynizon <ynizon@free.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: E:\\www\\xxxx\\wp-content\\plugins\\xxxxx\\\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext;_n;scoper_po_trigger;_x\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.5.5\n"
+
+msgid "Welcome"
+msgstr ""
+"Bienvenue.<br/>\v<br/>\vCe site vous propose de jouer à des jeux de société "
+"connus tels que le Time's up, le Taboo, ou encore le Brainstorm. <br/>\vPlus "
+"besoin d'emmener vos jeux de cartes avec vous, un simple téléphone suffit. "
+"<br/>\vSoit vous le faites tourner, soit vous partager le code de votre "
+"partie à vos amis qui pourront ainsi vous rejoindre. <br/>\v<br/>\vAmusez-"
+"vous bien !<br/>"
+
+msgid "For connecting"
+msgstr "Pour vous connecter"
+
+msgid "Register your email"
+msgstr "S'enregistrer"
+
+msgid "Forgot your password"
+msgstr "Vous avez oublié votre mot de passe"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Ip Blacklist"
+msgstr "Votre ip a été bannie, merci de contacter l'administrateur."
+
+msgid "Email or password incorrect"
+msgstr "Email ou mot de passe invalide"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "A new password was sent by email"
+msgstr "Un nouveau mot de passe a été envoyé par email"
+
+msgid "Your new password is"
+msgstr "Votre nouveau mot de passe est"
+
+msgid "Please change it in your settings"
+msgstr "Merci de le changer dans votre compte"
+
+msgid "Account update"
+msgstr "Compte modifié"
+
+msgid "Your password is"
+msgstr "Votre mot de passe est"
+
+msgid "This email was already registered."
+msgstr "Cet email est déjà inscrit."
+
+msgid "Your password was sent by email"
+msgstr "Votre mot de passe a été envoyé par email"
+
+msgid "Database successfully created"
+msgstr "Base de données créé avec succès"
+
+msgid "Game"
+msgstr "Jeu"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Word"
+msgstr "Mot"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Difficulty"
+msgstr "Difficulté"
+
+msgid "Category"
+msgstr "Categorie"
+
+msgid "Created"
+msgstr "Créé"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Accepted"
+msgstr "Accepté"
+
+msgid "Moderate"
+msgstr "Moderé"
+
+msgid "Rejected"
+msgstr "Rejecté"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "New card"
+msgstr "Nouvelle carte"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Rounds"
+msgstr "Tours"
+
+msgid "Round"
+msgstr "Tour"
+
+msgid "Mode"
+msgstr "Mode"
+
+msgid "Picture"
+msgstr "Image"
+
+msgid "New game"
+msgstr "Nouveau jeu"
+
+msgid "Settings"
+msgstr "Compte"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Logout"
+msgstr "Déconnexion"
+
+msgid "Player"
+msgstr "Joueur"
+
+msgid "Players"
+msgstr "Joueurs"
+
+msgid "Teams"
+msgstr "Equipes"
+
+msgid "Team"
+msgstr "Equipe"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "You need to remove 2 cards"
+msgstr "Vous devez supprimer 2 cartes"
+
+msgid "Deck"
+msgstr "Pioche"
+
+msgid "TS_1"
+msgstr ""
+"Vous devez supprimer 2 cartes du paquet. Essayez de mémoriser les autres."
+
+msgid "TS_2"
+msgstr ""
+"Vous devez faire trouver la personne inscrite sur la carte. Attention le "
+"prénom est obligatoire sauf s'il y a des parenthèses. <br/>Vous ne pouvez "
+"pas passer."
+
+msgid "TS_3"
+msgstr ""
+"Vous devez faire trouver la carte en utilisant un seul mot. <br/>Vous pouvez "
+"passer."
+
+msgid "TS_4"
+msgstr ""
+"Vous devez faire trouver la personne en la mimant (bruitage autorisé).<br/"
+">Vous pouvez passer."
+
+msgid "TS_5"
+msgstr ""
+"Vous devez faire trouver la personne en prenant une pose (aucun bruit "
+"autorisé).<br/>Vous pouvez passer."
+
+msgid "TB"
+msgstr "Vous devez faire deviner le premier mot sans dire les autres."
+
+msgid "PICTIONARY"
+msgstr "Vous devez faire deviner le mot en le dessinant."
+
+msgid "BRAINSTORM"
+msgstr "Vous devez trouver le plus possibles des mots du thème."
+
+msgid "LOUPGAROU"
+msgstr ""
+"Vous devez trouver les loups garous le plus vite possible pour sauver votre "
+"village."
+
+msgid "ANIMAL"
+msgstr "Vous devez trouver les animaux en les mimant."
+
+msgid "PETITMEURTRE"
+msgstr ""
+"Vous devez plaider votre défense à l'aide des mots qui vous seront indiqués."
+
+msgid "PETITMEURTRE_SEC"
+msgstr "Vous avez @ secondes."
+
+msgid "No access game"
+msgstr "Vous ne pouvez accéder à cette partie."
+
+msgid "Send a new password by email"
+msgstr "Envoyer un nouveau mot de passe par email"
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "My parts"
+msgstr "Reprendre une partie"
+
+msgid "Start a game"
+msgstr "Démarrer un jeu"
+
+msgid "Are you sure"
+msgstr "Etes vous sure"
+
+msgid "Users"
+msgstr "Utilisateurs"
+
+msgid "Cards"
+msgstr "Cartes"
+
+msgid "Parts"
+msgstr "Parties"
+
+msgid "Games"
+msgstr "Jeux"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Roles"
+msgstr "Roles"
+
+msgid "Sound"
+msgstr "Son"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "No"
+msgstr "Non"
+
+msgid "user"
+msgstr "Utilisateur"
+
+msgid "admin"
+msgstr "Administrateur"
+
+msgid "Shared"
+msgstr "Partagé"
+
+msgid "you will remove 2 cards"
+msgstr "Vous devrez supprimer 2 cartes"
+
+msgid "Create"
+msgstr "Créér"
+
+msgid "Score"
+msgstr "Score"
+
+msgid "The game"
+msgstr "La partie"
+
+msgid "Ready player"
+msgstr "Etes vous prêt joueur"
+
+msgid "Ready team"
+msgstr "Etes vous prête équipe"
+
+msgid "You need to remove 2 cards from your deck. Memorize the others."
+msgstr "Vous devez supprimer 2 cartes. Mémoriser les autres."
+
+msgid "Give the phone to your opponent."
+msgstr "Donnez le téléphone à votre adversaire."
+
+msgid "Join your friends"
+msgstr "Rejoignez vos amis"
+
+msgid "Enter the code to join your friends"
+msgstr "Entrer le code pour rejoindre vos amis"
+
+msgid "Incorrect code"
+msgstr "Code incorrect"
+
+msgid "You are now disconnected."
+msgstr "Vous êtes maintenant déconnecté."
+
+msgid "New user"
+msgstr "Nouvel utilisateur"
+
+msgid "Forbidden access"
+msgstr "Accès interdit"
+
+msgid "Time is up"
+msgstr "Le temps est écoulé"
+
+msgid "Give this code to your friends"
+msgstr "Donnez ce code à vos amis"
+
+msgid "Share"
+msgstr "Partager"
+
+msgid "Learn them"
+msgstr "Mais au fait, qui sont-ils ?"
+
+msgid "Removed"
+msgstr "Mis de coté"
+
+msgid "Round ended"
+msgstr "Fin de manche"
+
+msgid "Game ended"
+msgstr "Fin de partie"
+
+msgid "Your name"
+msgstr "Votre nom"
+
+msgid "Your message"
+msgstr "Votre message"
+
+msgid "Your email"
+msgstr "Votre email"
+
+msgid "Your message has been sent."
+msgstr "Votre message a bien été envoyé."
+
+msgid "New message"
+msgstr "Nouveau message"
+
+msgid "Email empty"
+msgstr "Email vide"
+
+msgid "Password empty"
+msgstr "Mot de passe vide"
+
+msgid "Account updated"
+msgstr "Compte mis à jour"
+
+msgid "Rules"
+msgstr "Règles"
+
+msgid "rule_1"
+msgstr ""
+"Vous devez faire découvrir un maximum de personnages célèbres en un temps "
+"limité. <br/>Au tout début, vous devrez supprimer des cartes afin de "
+"sélectionner les personnages que vous connaissez le mieux. <br/>Ensuite, Le "
+"jeu se déroule en 3 manches: <br/>- lors de la première, les joueurs "
+"découvrent et devinent les personnages en parlant librement; <br/>- dans la "
+"deuxième, il faut retrouver les mêmes personnages à partir d'un seul mot; "
+"<br/>-dans la troisième, il faut encore les retrouver en mimant."
+
+msgid "rule_2"
+msgstr ""
+"Vous devez faire découvrir un maximum de personnages célèbres en un temps "
+"limité. <br/>Au tout début, vous devrez supprimer des cartes afin de "
+"sélectionner les personnages que vous connaissez le mieux. <br/>Ensuite, Le "
+"jeu se déroule en 4 manches: <br/>- lors de la première, les joueurs "
+"découvrent et devinent les personnages en parlant librement; <br/>- dans la "
+"deuxième, il faut retrouver les mêmes personnages à partir d'un seul mot; "
+"<br/>-dans la troisième, il faut encore les retrouver en mimant;  <br/>-dans "
+"la quatrième, il faut les retrouver en prenant juste une pose."
+
+msgid "rule_3"
+msgstr ""
+"Vous devez faire découvrir un maximum de mots en un temps limité. <br/>Pour "
+"cela, vous devez faire trouver le mot en gras sans utiliser les mots (ou "
+"leurs déclinaisons) qui sont en dessous. <br/>L'équipe qui marque le plus de "
+"points à la fin des 3 manches gagne la partie."
+
+msgid "rule_4"
+msgstr ""
+"Vous devez trouver un maximum de mots liés au thème indiqué dans un temps "
+"limité. <br/>L'équipe qui marque le plus de points à la fin des 3 manches "
+"gagne la partie."
+
+msgid "rule_5"
+msgstr ""
+"Chaque nuit, les loups-garous se réveillent et dévorent un villageois. Le "
+"jour suivant, le village débat pour tenter de trouver et éliminer les loups"
+
+msgid "rule_6"
+msgstr ""
+"Un joueur est l'inspecteur et doit désigner le coupable. <br/>Les autres "
+"joueurs doivent tout faire pour le tromper.<br/> Pour cela, chaque personne "
+"est tour à tour interrogé, et doit construire sa plaidoirie avec les mots "
+"indiqués. Les mots ne sont pas les mêmes pour le coupable et pour les "
+"innocents.<br/> A l'issue du premier tour de table, un second est réalisé "
+"avec d'autres mots (l'ordre des inculpés est alors différent). Ensuite, "
+"l'inspecteur doit se prononcer sur le coupable. Les autres personnes doivent "
+"également parier si l'inspecteur va ou non réussir à inculper la bonne "
+"personne."
+
+msgid "rule_7"
+msgstr ""
+"Vous devez faire découvrir un maximum de mots en un temps limité en les "
+"dessinant. "
+
+msgid "rule_8"
+msgstr ""
+"Vous devez faire découvrir un maximum d'animaux en un temps limité en les "
+"mimant. "
+
+msgid "Select your game"
+msgstr "Choisissez votre jeu"
+
+msgid "Moderate cards"
+msgstr "Modérer les cartes"
+
+msgid "Cards already in database"
+msgstr "Cartes déjà en base"
+
+msgid "Moderation"
+msgstr "Moderation"
+
+msgid "The card was successfully created"
+msgstr "La carte a été créé avec succès"
+
+msgid "Special cards"
+msgstr "Cartes spéciales"
+
+msgid "Villageois"
+msgstr "Villageois"
+
+msgid "DESC_Villageois"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Il ne dispose d'aucun "
+"pouvoir particulier : uniquement sa perspicacité et sa force de persuasion."
+
+msgid "Loup Garou"
+msgstr "Loup Garou"
+
+msgid "DESC_Loup Garou"
+msgstr ""
+"Son objectif est d'éliminer tous les innocents (ceux qui ne sont pas Loups-"
+"Garous).<br/>Chaque nuit, il se réunit avec ses compères Loups pour décider "
+"d'une victime à éliminer..."
+
+msgid "Voyante"
+msgstr "Voyante"
+
+msgid "DESC_Voyante"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Chaque nuit, elle "
+"peut espionner un joueur et découvrir sa véritable identité..."
+
+msgid "Sorciere"
+msgstr "Sorciere"
+
+msgid "DESC_Sorciere"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Elle dispose d'une "
+"potion de vie pour sauver la victime des Loups.<br/>Elle dispose aussi d'une "
+"potion de mort pour tuer quelqu'un la nuit."
+
+msgid "Cupidon"
+msgstr "Cupidon"
+
+msgid "DESC_Cupidon"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Dès le début de la "
+"partie, il doit former un couple de deux joueurs.<br/>Leur objectif sera de "
+"survivre ensemble, car si l'un d'eux meurt, l'autre se suicidera.<br/>Dans "
+"le cas où les deux amoureux ne font pas partie du même camp (et uniquement "
+"dans ce cas), ils doivent alors tuer tous les autres joueurs de la partie "
+"pour gagner."
+
+msgid "Voleur"
+msgstr "Voleur"
+
+msgid "DESC_Voleur"
+msgstr "Son objectif n'est pas fixe.<br/"
+
+msgid "Petite fille"
+msgstr "Petite fille"
+
+msgid "DESC_Petite fille"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Chaque nuit, elle "
+"peut espionner les Loups-Garous."
+
+msgid "Chasseur"
+msgstr "Chasseur"
+
+msgid "DESC_Chasseur"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Il emporte un joueur "
+"avec lui lorsque vient l'heure de sa mort..."
+
+msgid "Ancien"
+msgstr "Ancien"
+
+msgid "DESC_Ancien"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Il peut résister à la "
+"première attaque des loups.<br/>Mais si il est tué lors du vote du village, "
+"par la sorcière ou le chasseur : tous les innocents perdront leurs pouvoirs."
+
+msgid "Salvateur"
+msgstr "Salvateur"
+
+msgid "DESC_Salvateur"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Chaque nuit, il peut "
+"protéger quelqu'un de l'attaque des Loups-Garous...<br/>Attention ! Sa "
+"protection est sans effet sur la petite fille !"
+
+msgid "Idiot du village"
+msgstr "Idiot du village"
+
+msgid "DESC_Idiot du village"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Si le village décide "
+"de l'éliminer, il ne meurt pas, les villageois l'épargnant au dernier moment."
+"<br/>Mais il perd dès lors son droit de vote journalier."
+
+msgid "Bouc emissaire"
+msgstr "Bouc emissaire"
+
+msgid "DESC_Bouc emissaire"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Mais attention ! En "
+"cas de doute sur la personne à éliminer, le village décidera de le tuer par "
+"défaut."
+
+msgid "Joueur de flute"
+msgstr "Joueur de flute"
+
+msgid "DESC_Joueur de flute"
+msgstr ""
+"Son objectif est de gagner SEUL.<br/>Il doit enchanter tous les joueurs "
+"vivants, à raison de deux par nuit."
+
+msgid "Chaman"
+msgstr "Chaman"
+
+msgid "DESC_Chaman"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Chaque nuit, il "
+"dispose d'un court moment pour écouter les esprits."
+
+msgid "Loup Garou Blanc"
+msgstr "Loup Garou Blanc"
+
+msgid "DESC_Loup Garou Blanc"
+msgstr ""
+"Son objectif est de terminer SEUL la partie.<br/>Les autres Loups-Garous "
+"croient qu'il est un loup normal...<br/>Mais une nuit sur deux il peut "
+"assassiner un loup de son choix..."
+
+msgid "Corbeau"
+msgstr "Corbeau"
+
+msgid "DESC_Corbeau"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Chaque nuit, il peut "
+"désigner un joueur, qui se retrouvera le lendemain avec deux voix contre lui "
+"au vote."
+
+msgid "Enfant Sauvage"
+msgstr "Enfant Sauvage"
+
+msgid "DESC_Enfant Sauvage"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Il choisit un modèle "
+"au début du jeu, si ce dernier meurt, il devient Loup-Garou et joue dans "
+"leur camp."
+
+msgid "Ange"
+msgstr "Ange"
+
+msgid "DESC_Ange"
+msgstr ""
+"Son objectif est d'être éliminé par le village lors du premier vote de jour."
+"<br/>S'il y parvient, il gagne la partie. Sinon, il devient un Simple "
+"Villageois."
+
+msgid "Infect pere des loups"
+msgstr "Infect pere des loups"
+
+msgid "DESC_Infect pere des loups"
+msgstr ""
+"Son objectif est d'éliminer tous les innocents (ceux qui ne sont pas Loups-"
+"Garous).<br/>Chaque nuit, il se réunit avec ses compères Loups pour décider "
+"d'une victime à éliminer...<br/>Une fois dans la partie, il peut transformer "
+"la victime des loups en Loup-Garou. L'infecté garde ses pouvoirs d'innocent."
+
+msgid "Grand mechant loup"
+msgstr "Grand mechant loup"
+
+msgid "DESC_Grand mechant loup"
+msgstr ""
+"Son objectif est d'éliminer tous les innocents (ceux qui ne sont pas Loups-"
+"Garous).<br/>Chaque nuit, il se réunit avec ses compères Loups pour décider "
+"d'une victime à éliminer...<br/>Tant qu'aucun autre loup n'est mort, il "
+"peut, chaque nuit, dévorer une victime supplémentaire."
+
+msgid "Soeur"
+msgstr "Soeur"
+
+msgid "DESC_Soeur"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Elle connaît "
+"l'identité de son autre soeur, et peut donc avoir confiance en ses paroles."
+
+msgid "Montreur d ours"
+msgstr "Montreur d ours"
+
+msgid "DESC_Montreur d ours"
+msgstr ""
+"Son objectif est d'éliminer tous les Loups-Garous.<br/>Au lever du jour, "
+"l'ours grognera si un loup-garou vivant est au-dessus ou en-dessous de lui "
+"dans la liste de joueurs à droite."
+
+msgid "Remember it"
+msgstr "Rappelez-vous"
+
+msgid "Viewing player"
+msgstr "Voir le joueur"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Persons to investigate"
+msgstr "Personnages à interroger"
+
+msgid "Persons"
+msgstr "Persons"
+
+msgid "You are guilty."
+msgstr "You are guilty."
+
+msgid "You are innocent."
+msgstr "You are innocent."
+
+msgid "Choose the guilty"
+msgstr "Désignez le coupable"
+
+msgid "Guilty"
+msgstr "Coupable"
+
+msgid "Number of teams incorrect"
+msgstr "Nombre d'équipes incorrect"
+
+msgid "Score star"
+msgstr "Score en étoile"
+
+msgid "Screenshots"
+msgstr "Voir les captures d'écrans"
+
+msgid "Export successfull"
+msgstr "Export créé avec succès"
+
+msgid "The story"
+msgstr "L'histoire"
+
+msgid "Summary"
+msgstr "Récapitulatif"
+
+msgid "Congratulations players"
+msgstr "Félicitations joueurs"
+
+msgid "Congratulations player"
+msgstr "Félicitations joueur"
+
+msgid "Congratulations teams"
+msgstr "Félicitations équipes"
+
+msgid "Congratulations team"
+msgstr "Félicitations équipe"
+
+msgid "The game will start"
+msgstr "Le jeu va commencer"
+
+msgid "You will reset the game"
+msgstr "Vous allez recommencer une partie"
+
+msgid "No more stories"
+msgstr "Plus d'histoires en stock"
+
+msgid "Easy"
+msgstr "Facile"
+
+msgid "Medium"
+msgstr "Moyen"
+
+msgid "Hard"
+msgstr "Difficile"

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CARTES>
+	<GAME>
+		<NOM>Villageois</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Loup Garou</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Voyante</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Sorciere</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Cupidon</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Voleur</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Petite fille</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chasseur</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Standard</MOT1>
+		<MOT2>Le chasseur, s’il se fait égorger par les Loups-Garous ou lyncher par les joueurs, a le pouvoir de répliquer en tuant immédiatement n’importe quel autre joueur.</MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ancien</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Nouvelle Lune</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Salvateur</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Nouvelle Lune</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Idiot du village</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Nouvelle Lune</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Bouc emissaire</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Nouvelle Lune</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Joueur de flute</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Nouvelle Lune</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Chaman</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Site</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Loup Garou Blanc</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Le Village</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Corbeau</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Le Village</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Enfant Sauvage</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Ange</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Infect pere des loups</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Grand mechant loup</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Frères et Soeurs</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+	<GAME>
+		<NOM>Montreur d'ours</NOM>
+		<DIFFICULTE>2</DIFFICULTE>
+		<LANGUE>fr_FR</LANGUE>
+		<MODE>4</MODE>
+		<MOT1>Extension Personnages</MOT1>
+		<MOT2></MOT2>
+		<MOT3></MOT3>
+		<MOT4></MOT4>
+		<MOT5></MOT5>
+		<MOT6></MOT6>
+		<MOT7></MOT7>
+		<MOT8></MOT8>
+		<MOT9></MOT9>
+		<MOT10></MOT10>
+		<MOT11></MOT11>
+		<MOT12></MOT12>
+		<DESCRIPTION></DESCRIPTION>
+		<PERSONS></PERSONS>
+	</GAME>
+						
+</CARTES>
