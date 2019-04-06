@@ -20,7 +20,8 @@ Chaque membre peut ajouter des cartes, cela permet de lever les limites des jeux
 ## Installation
 
 Creer un site avec le repertoire public comme root.
-Creer une base de données mysql "mygames", 
+Définissez vos constantes dans le répertoire config/app.php et config/database.php
+Creer une base de données mysql ("mygames" par défaut), 
 puis faites les commandes: 
 
 ```html
