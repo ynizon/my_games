@@ -29,7 +29,7 @@ composer update
 php artisan migrate
 ```
 
-#Connexion
+## Connexion
 
-admin@admin.com / admin 
-manager@manager.com / manager
+- admin@admin.com / admin
+- manager@manager.com / manager
