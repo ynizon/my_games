@@ -12,35 +12,42 @@
 						<thead>
 							<tr>
 								<th>Statut</th>
-								<th>Nom</th>								
+								<th>Nom</th>
 								<th>Rôle</th>
 								<th>Action</th>
 							</tr>
 						</thead>
-						
+
 						<tbody>
 							@foreach ($users as $user)
 							<tr>
 								<td><?php if ($user->status==0){echo "<i class='fa fa-ban'></i>";}else{{echo "<i class='fa fa-check'></i>";}}?></td>
-								<td><a href='/sites/<?php echo $user->id;?>'>{!! $user->name !!}</a></td>
+								<td><a href='/sites/{{$user->id}}'>{!! $user->name !!}</a></td>
 								<td>
 								<?php
 								$json= json_decode($user->roles->first());
 								if ($json != null){
 									echo $json->display_name;
 								}
-								
+
 								//On enleve la suppression
 								//<a href='/users/{!! $user->id !!}/destroy'><i class="fa fa-trash"></i></a>
 								?>
 								</td>
-								<td><a href='/users/{!! $user->id !!}/edit'><i class="fa fa-pencil"></i></a></td>
+								<td><a href='/users/{!! $user->id !!}/edit'><i class="fa fa-pencil"></i></a>
+                                    &nbsp;&nbsp;
+                                    <form class="trashform" action="{{route('users.destroy', $user->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="trash"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </td>
 							</tr>
 							@endforeach
 						</tbody>
 					</table>
-					
-					<script> 
+
+					<script>
 						//Ajoute le bloc de recherche sur le table
 						$(document).ready(function() {
 							$(".table").DataTable({
@@ -55,11 +62,11 @@
 								}],
 								"initComplete": function(settings, json) {
 									//On pose le focus sur la barre de recherche
-									$("input[type='search']").focus();	
+									$("input[type='search']").focus();
 								}
 							});
 						});
-					</script> 
+					</script>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ Plusieurs jeux ont étés ajoutés avec plus ou moins de cartes. Certains d'entr
 - Petits meurtres et faits divers
 - Loups garoux de Thiercelieux
 
-Pour tester cette application, rendez vous sur 
+Pour tester cette application, rendez vous sur
 https://games.gameandme.fr
 
 Chaque membre peut ajouter des cartes, cela permet de lever les limites des jeux de cartes papiers.
@@ -21,8 +21,8 @@ Chaque membre peut ajouter des cartes, cela permet de lever les limites des jeux
 
 Creer un site avec le repertoire public comme root.
 Définissez vos constantes dans le répertoire config/app.php et config/database.php
-Creer une base de données mysql ("mygames" par défaut), 
-puis faites les commandes: 
+Creer une base de données mysql ("mygames" par défaut),
+puis faites les commandes:
 
 ```html
 composer update

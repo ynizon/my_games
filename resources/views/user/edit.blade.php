@@ -7,7 +7,7 @@
             <div class="panel panel-default globalpanel">
                 <div class="panel-heading">Modification</div>
                 <div class="panel-body">
-				    
+
 					{!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put','files'=>true,'class' => 'form-horizontal panel']) !!}
                         {{ csrf_field() }}
 
@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                         </div>
-						
+
 						<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
@@ -38,9 +38,9 @@
                                 @endif
                             </div>
                         </div>
-						
+
 						<?php
-						if (auth::user()->hasRole("Admin") or auth::user()->hasRole("User") or auth::user()->hasRole("Manager")){
+						if (Auth::user()->hasRole("Admin") or Auth::user()->hasRole("User") or Auth::user()->hasRole("Manager")){
 						?>
 							<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 								<label for="password" class="col-md-4 control-label">Password</label>
@@ -58,7 +58,7 @@
 						<?php
 						}
 						?>
-						
+
 						<div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
                             <label for="role" class="col-md-4 control-label">Rôle du compte</label>
 
@@ -76,7 +76,7 @@
                                 {!! Form::select('role', $roles,$role , ['class' => 'form-control']) !!}
                             </div>
                         </div>
-						
+
 						<div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                             <label for="status" class="col-md-4 control-label">Statut</label>
 
@@ -84,7 +84,7 @@
                                 {!! Form::select('status', array("1"=>"Actif","0"=>"Inactif"),$user->status , ['onchange'=>'refreshAffectation()','id'=>"status", 'class' => 'form-control']) !!}
                             </div>
                         </div>
-						
+
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -92,9 +92,9 @@
                                 </button>
 
                             </div>
-                        </div>                    
+                        </div>
 					{!! Form::close() !!}
-					
+
 					<script>
 						//Affiche la case uniquement si status = 0
 						function refreshAffectation(){

@@ -24,20 +24,20 @@ class CreateUsersTable extends Migration
 			$table->date('logged_date')->default('1970-01-01');
             $table->rememberToken();
             $table->timestamps();
-        });		
-		
+        });
+
 		// Insert 1 admin
 		DB::table('gam_users')->insert(
 			array(
-				'email' => 'admin@admin.com',
-				'name' => 'Admin',
+                'email' => 'admin@admin.com',
+                'name' => 'Admin',
 				'lang' => 'fr',
 				'nickname' => 'AD',
 				'password'=>bcrypt("admin"),
 				'status'=>1,
 			)
 		);
-		
+
 		// Insert 1 admin
 		DB::table('gam_users')->insert(
 			array(

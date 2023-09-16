@@ -8,7 +8,7 @@
                 <div class="panel-heading"><?php echo __("messages.Teams");?></div>
 
                 <div class="panel-body">
-					<form method="get" action="/pictionary" style="margin:auto;text-align:center;max-width:300px;">
+					<form id="formgame" method="get" action="/pictionary" style="margin:auto;text-align:center;max-width:300px;">
 						<select class="form-control" name="nbteams">
 							<?php
 							for ($i=2;$i<=4;$i++){
@@ -30,8 +30,12 @@
 							}
 							?>
 						</select>
-						<br/>
-						<input type="submit" value="<?php echo __("messages.Play");?> !" class="arrondiplay btn btn-primary	"/>
+                        <br/>
+                        <div id="arrondiplay" >
+                            <div class="btn">
+                                <i class="fa fa-play"  ></i>
+                            </div>
+                        </div>
 					</form>
                 </div>
 			</div>

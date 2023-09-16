@@ -40,6 +40,7 @@ return [
 	"Cards to find"=>"Cards to find",
 	"HelpMe"=>"If you want to help me to register some cards, or adding games, please contact me :",
 	"ErrorGetCard"=>"Error when fetching cards",
+    "TooSpecialCards"=>"Too many special cards",
 	"GameRules"=>"Rules of Games",
 	"play_disconnected"=>"Play offline",
 	"play_disconnected_explain"=>"This website has been created with the last web technologies. You can launch it with your mobile the first time, then disconnect your Internet. All cards and games will continue to work without Internet.",
@@ -69,7 +70,7 @@ return [
 	"Loup Infect pere des loups"=>"C'est un loup-garou qui se réunit avec ses amis loups-garous et une fois dans la partie, il peut choisir d'infecter la victime des loups-garous et la transformer en loup mais l'infecté garde les pouvoirs de sa carte initiale et conserve son rôle initial. L'infecté pourra être détecté seulement par le montreur d'ours, le flair du renard ou la petite fille. Il garde sa carte de base donc la voyante ne pourra jamais savoir que c'est un loup-garou. En créant un loup-garou en cours de partie, l'infect père des loups vient semer la confusion chez les villageois et apporte un stimulant au jeu.si le joueur de flute est infecté, son but est maintenant de gagner avec les loups garous et non charmer tout le monde ;si l'ancien est infecté la première fois, l'infection ne marche pas ;si le montreur d'ours est infecté, il grognera tous les tours.",
 	"Loup Grand mechant loup"=>"Le grand méchant loup mange dans un premier temps avec les loups-garous, puis il mange une deuxième fois seul un villageois mais il ne peut manger une deuxième victime que si aucun loup-garou n'est mort avant lui(chien/loup et enfant sauvage compris). Son rôle est plus apprécié dans les parties avec beaucoup de joueurs. En effet, avec peu de joueurs, la partie risque de rapidement se terminer avec deux victimes en une nuit. Dans les parties avec beaucoup de joueurs et donc de nombreux loups-garous, il pourra aussi jouer le rôle de chef de meute en cas de désaccord entre loups-garous sur la victime. Dans ce cas, il a des pouvoirs analogues au capitaine du village dans la décision des loups-garous la nuit: son vote compte double et en cas d'égalité c'est à lui de trancher.",
 	"Loup Frères et Soeurs"=>"Les 3 frères / 2 sœurs durant toutes les nuits, après les loups garous, se réveillent ensemble et décident ce qu'ils vont faire pendant le jour, donc pour qui ils vont voter. Ce sont, sinon, de simples villageois. Ces cartes sont utiles dans les grands groupes de joueurs, puisque cela crée des sous-groupes de villageois qui se connaissent. Certains meneurs de jeu autorisent les 3 frères/2 sœurs à communiquer avec des mots, mais c'est moins sûr.",
-	"Loup Montreur d'ours"=>"Le matin, si le montreur d'ours se trouve à côté d'un loup garou, l'ours (le meneur de jeu) grogne indiquant au montreur d'ours qu'à sa droite ou sa gauche se trouve un loup garou. Si le montreur d'ours a lui-même été infecté par l'infect père des loups, alors l'ours grognera à tous les tours.",
+	"Loup Montreur d ours"=>"Le matin, si le montreur d'ours se trouve à côté d'un loup garou, l'ours (le meneur de jeu) grogne indiquant au montreur d'ours qu'à sa droite ou sa gauche se trouve un loup garou. Si le montreur d'ours a lui-même été infecté par l'infect père des loups, alors l'ours grognera à tous les tours.",
 	"The captain is"=>"Le capitaine est le joueur",
 	"This is the night"=>"C'est la nuit",
 	"Master Take Control"=>"The master take the control.",
@@ -80,5 +81,5 @@ return [
 	"There is"=>"There is",
 	"Wolfs"=>"Wolfs",
 	"CardSelect"=>"Thoses cards has been selected",
-	"Home"=>"HOme",
+	"Home"=>"Home",
 ];

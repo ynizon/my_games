@@ -1,18 +1,19 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
-
-Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/info', 'HomeController@info');
 Route::get('/cards/getall', 'CardController@getall');
@@ -28,27 +29,27 @@ Route::get('taboo/settings', 'TabooController@settings');
 Route::get('taboo', 'TabooController@index');
 
 //On filtre par permission
-Route::group(['middleware' => ['auth','permission:user-edit']], function () {	
-	Route::resource('users', 'UserController');
+Route::group(['middleware' => ['auth','permission:user-edit']], function () {
+    Route::resource('users', 'UserController');
 });
 
-Route::group(['middleware' => ['auth','permission:card-edit']], function () {	
-	Route::resource('cards', 'CardController');	
+Route::group(['middleware' => ['auth','permission:card-edit']], function () {
+    Route::resource('cards', 'CardController');
 });
 
-Route::group(['middleware' => ['auth','permission:game-edit']], function () {	
-	Route::resource('games', 'GameController');
+Route::group(['middleware' => ['auth','permission:game-edit']], function () {
+    Route::resource('games', 'GameController');
 });
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('cards/checkdouble', 'CardController@checkdouble');
+    Route::get('profile', 'UserController@profile');
 
-//Pour tous les connectes
-Route::group(['middleware' => ['auth']], function () {	
-	try{		
-		Route::get('cron', 'CronController@index');
-		Route::get('cards/checkdouble', 'CardController@checkdouble');		
-		Route::get('profile', 'UserController@profile');
-	}catch(Exception $e){
-		header("location: /");
-	}
+    /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    */
 });
+
+require __DIR__.'/auth.php';

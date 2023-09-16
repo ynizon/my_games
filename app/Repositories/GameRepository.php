@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Game;
+use App\Models\Game;
 use Mail;
 use App;
 use Auth;
-use App\Providers\HelperServiceProvider;
-use App\Repositories\UserRepository;
 use DB;
 
 class GameRepository implements ResourceRepositoryInterface
@@ -23,21 +21,21 @@ class GameRepository implements ResourceRepositoryInterface
 	}
 
 	private function save(Game $Game, Array $inputs)
-	{	
+	{
 		if (isset($inputs['name'])){
 			$Game->name = $inputs['name'];
 		}
-			
+
 		if (isset($inputs['description'])){
 			$Game->description = $inputs['description'];
 		}
-		
+
 		if (isset($inputs['status'])){
 			$Game->status = $inputs['status'];
 		}
-		
-		$Game->save();	
-		
+
+		$Game->save();
+
 	}
 
 	public function getPaginate($n)
@@ -48,7 +46,7 @@ class GameRepository implements ResourceRepositoryInterface
 	public function store(Array $inputs)
 	{
 		$Game = new $this->model;
-		
+
 		$this->save($Game, $inputs);
 
 		return $Game;
@@ -73,10 +71,10 @@ class GameRepository implements ResourceRepositoryInterface
 	{
 		return $this->model->orderBy("name","desc")->get();
 	}
-	
+
 	public function getActive()
 	{
 		return $this->model->where("status","=","1")->orderBy("name","desc")->get();
 	}
-	
+
 }

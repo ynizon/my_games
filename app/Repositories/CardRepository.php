@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Card;
+use App\Models\Card;
 use Mail;
 use App;
 use Auth;
-use App\Providers\HelperServiceProvider;
-use App\Repositories\UserRepository;
 use DB;
 
 class CardRepository implements ResourceRepositoryInterface
@@ -23,29 +21,29 @@ class CardRepository implements ResourceRepositoryInterface
 	}
 
 	private function save(Card $Card, Array $inputs)
-	{	
+	{
 		if (isset($inputs['name'])){
 			$Card->name = $inputs['name'];
 		}
-		
+
 		if (isset($inputs['country'])){
 			$Card->country = $inputs['country'];
 		}
-		
+
 		if (isset($inputs['lang'])){
 			$Card->lang = $inputs['lang'];
 		}
-		
+
 		if (isset($inputs['description'])){
 			$Card->description = $inputs['description'];
 		}
-		
+
 		if (isset($inputs['game_id'])){
 			$Card->game_id = $inputs['game_id'];
-		}		
-		
-		$Card->save();	
-		
+		}
+
+		$Card->save();
+
 	}
 
 	public function getPaginate($n)
@@ -56,7 +54,7 @@ class CardRepository implements ResourceRepositoryInterface
 	public function store(Array $inputs)
 	{
 		$Card = new $this->model;
-		
+
 		$this->save($Card, $inputs);
 
 		return $Card;
@@ -81,12 +79,12 @@ class CardRepository implements ResourceRepositoryInterface
 	{
 		return $this->model->orderBy("name","desc")->get();
 	}
-	
+
 	public function getByGameId($id)
 	{
 		return $this->model->where("game_id","=",$id)->orderBy("name","desc")->get();
 	}
-	
+
 	public function getForLangAndGame($lang,$game_id = 0){
 		$o = $this->model->where("lang","=",$lang);
 		if ($game_id!=0){
@@ -95,15 +93,15 @@ class CardRepository implements ResourceRepositoryInterface
 		$o = $o->orderBy("name","desc")->get();
 		return $o;
 	}
-	
-	
+
+
 	public function getByCardId($sCard)
 	{
 		$o = $this->model->where("card_id","=",$sCard);
 		$o = $o->get()->first();
 		return $o;
 	}
-	
+
 	public function checkDouble($lang,$game_id,$name){
 		return $this->model->where("lang","=",$lang)->where("game_id","=",$game_id)->where('name', 'like', '%'.$name.'%')->orderBy("name","desc")->get();
 	}

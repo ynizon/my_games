@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Repositories\CardRepository;
-use App\Http\Requests\UserCreateRequest;
-use App\Http\Requests\UserUpdateRequest;
 use App\Repositories\UserRepository;
 use Session;
 use Illuminate\Http\Request;
 use Auth;
-use App\User;
 use Mail;
 use DB;
 

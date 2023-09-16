@@ -12,24 +12,31 @@
 						<thead>
 							<tr>
 								<th>Jeux</th>
-								<th>Statut</th>								
+								<th>Statut</th>
 								<th>Action</th>
 							</tr>
 						</thead>
-						
+
 						<tbody>
 							@foreach ($games as $game)
 							<tr>
 								<td><?php echo $game->name;?></td>
 								<td><?php if ($game->status==0){echo "<i class='fa fa-ban'></i>";}else{echo "<i class='fa fa-check'></i>";}?></td>
-								
-								<td><a href='/games/{!! $game->id !!}/edit'><i class="fa fa-pencil"></i></a></td>
+
+								<td><a href='/games/{!! $game->id !!}/edit'><i class="fa fa-pencil"></i></a>
+                                    &nbsp;&nbsp;
+                                    <form class="trashform" action="{{route('games.destroy', $game->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="trash"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </td>
 							</tr>
 							@endforeach
 						</tbody>
 					</table>
-					
-					<script> 
+
+					<script>
 						//Ajoute le bloc de recherche sur le table
 						$(document).ready(function() {
 							$(".table").DataTable({
@@ -44,11 +51,11 @@
 								}],
 								"initComplete": function(settings, json) {
 									//On pose le focus sur la barre de recherche
-									$("input[type='search']").focus();	
+									$("input[type='search']").focus();
 								}
 							});
 						});
-					</script> 
+					</script>
                 </div>
             </div>
         </div>

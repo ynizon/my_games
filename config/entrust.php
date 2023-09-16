@@ -1,92 +1,153 @@
 <?php
 
 /**
- * This file is part of Entrust,
- * a role & permission management solution for Laravel.
+ * This file is part of Laravel Entrust,
+ * Handle Role-based Permissions for Laravel.
  *
- * @license MIT
- * @package Zizaco\Entrust
  */
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Migration Suffix
+    |--------------------------------------------------------------------------
+    |
+    | This is the array that contains the information of the user models.
+    | This information is used in the add-trait command, and for the roles and
+    | permissions relationships with the possible user models.
+    |
+    | The key in the array is the name of the relationship inside the roles and permissions.
+    |
+    */
+    'migrationSuffix' => 'laravel_entrust_setup_tables',
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust Role Model
+    | Laravel Entrust User Model
     |--------------------------------------------------------------------------
     |
-    | This is the Role model used by Entrust to create correct relations.  Update
-    | the role if it is in a different namespace.
+    | This is the users Model used by the application to handle ACL.
+    | If you want the Laravel Entrust User Model to be in a different namespace or
+    | to have a different name, you can do it here.
     |
     */
-    'role' => 'App\Role',
+    'user_model' => 'App\Models\User',
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust Roles Table
+    | Laravel Entrust User Table
     |--------------------------------------------------------------------------
     |
-    | This is the roles table used by Entrust to save roles to the database.
+    | This is the users table used by the application to save users to the database.
+    | If you want the Laravel Entrust User Table to be in a different namespace or
+    | to have a different name, you can do it here.
     |
     */
-    'roles_table' => 'gam_roles',
+    'user_table' => 'gam_users',
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust Permission Model
+    | Laravel Entrust Models
     |--------------------------------------------------------------------------
     |
-    | This is the Permission model used by Entrust to create correct relations.
-    | Update the permission if it is in a different namespace.
+    | These are the models used by Laravel Entrust to define the roles and permissions.
+    | If you want the Laravel Entrust models to be in a different namespace or
+    | to have a different name, you can do it here.
     |
     */
-    'permission' => 'App\Permission',
+    'models' => [
+        'role'          => 'App\Models\Role',
+        'permission'    => 'App\Models\Permission',
+    ],
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust Permissions Table
+    | Laravel Entrust Default Configurations
     |--------------------------------------------------------------------------
     |
-    | This is the permissions table used by Entrust to save permissions to the
-    | database.
+    | These Configurations are used by Laravel Entrust to define the defaults
+    | If you want the Laravel Entrust to be in a different guards you can do it here.
     |
     */
-    'permissions_table' => 'gam_permissions',
+    'defaults' => [
+        'guard'          => 'web',
+    ],
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust permission_role Table
+    | Laravel Entrust Tables
     |--------------------------------------------------------------------------
     |
-    | This is the permission_role table used by Entrust to save relationship
-    | between permissions and roles to the database.
+    | These are the tables used by Laravel Entrust to store all the authorization data.
     |
     */
-    'permission_role_table' => 'gam_permission_role',
+    'tables' => [
+        'roles'             => 'gam_roles',
+        'permissions'       => 'gam_permissions',
+        'role_user'         => 'gam_role_user',
+        'permission_role'   => 'gam_permission_role',
+    ],
 
     /*
     |--------------------------------------------------------------------------
-    | Entrust role_user Table
+    | Laratrust Foreign Keys
     |--------------------------------------------------------------------------
     |
-    | This is the role_user table used by Entrust to save assigned roles to the
-    | database.
+    | These are the foreign keys used by laratrust in the intermediate tables.
     |
     */
-    'role_user_table' => 'gam_role_user',
+    'foreign_keys' => [
+        'user' => 'user_id',
+        'role' => 'role_id',
+        'permission' => 'permission_id',
+    ],
 
     /*
     |--------------------------------------------------------------------------
-    | User Foreign key on Entrust's role_user Table (Pivot)
+    | Laravel Entrust Middleware
     |--------------------------------------------------------------------------
+    |
+    | This configuration helps to customize the Laravel Entrust middleware behavior.
+    |
     */
-    'user_foreign_key' => 'user_id',
+    'middleware' => [
+        /**
+         * Define if the laratrust middleware are registered automatically in the service provider
+         */
+        'register' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Role Foreign key on Entrust's role_user Table (Pivot)
-    |--------------------------------------------------------------------------
-    */
-    'role_foreign_key' => 'role_id',
+        /**
+         * Method to be called in the middleware return case.
+         * Available: abort|redirect
+         */
+        'handling' => 'abort',
 
+        /**
+         * Handlers for the unauthorized method in the middlewares.
+         * The name of the handler must be the same as the handling.
+         */
+        'handlers' => [
+            /**
+             * Aborts the execution with a 403 code and allows you to provide the response text
+             */
+            'abort' => [
+                'code' => 403,
+                'message' => 'You don\'t Have a permission to Access this page.'
+            ],
+
+            /**
+             * Redirects the user to the given url.
+             * If you want to flash a key to the session,
+             * you can do it by setting the key and the content of the message
+             * If the message content is empty it won't be added to the redirection.
+             */
+            'redirect' => [
+                'url' => '/',
+                'message' => [
+                    'key' => 'error',
+                    'content' => 'You don\'t Have a permission to Access this page'
+                ]
+            ],
+        ],
+    ],
 ];

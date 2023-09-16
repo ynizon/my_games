@@ -3,32 +3,22 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
+     * Register any application services.
      */
-    public function boot()
+    public function register(): void
     {
         //
-		Schema::defaultStringLength(191);
     }
 
     /**
-     * Register any application services.
-     *
-     * @return void
+     * Bootstrap any application services.
      */
-    public function register()
+    public function boot(): void
     {
         //
-		//Dusk qui est lequivalent du browser pour les tests, ne doit pas etre accessible en prod
-		if ($this->app->environment('local', 'testing')) {
-	
-		}
     }
 }

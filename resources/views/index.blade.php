@@ -6,9 +6,9 @@ $user = Auth::user();
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin:auto;">
             <div class="panel panel-default">
-				
+
 				<div class="panel-heading" style="display:block">
 					<div style="float:left">
 						<a href='/' ><img src="/images/favicon/favicon-32x32.png" /></a>&nbsp;&nbsp;
@@ -32,11 +32,11 @@ $user = Auth::user();
 							?>
 						</select>
 					</div>
-					
+
 					<br style="clear:both"/>
-				</div>				
-				
-				
+				</div>
+
+
                 <div class="panel-body">
 					<div id="loader" >
 						Loading...
@@ -52,53 +52,49 @@ $user = Auth::user();
 							}
 						}
 						?>
-						</ul>					
+						</ul>
 					</div>
-					
+
 					<p>
 					<?php echo __("messages.HelpMe");?> ynizon@gmail.com.<br/>
 					<?php echo __("messages.Info");?>.<br/>
-					<?php
-					if (!Auth::user()){
-					?>
+					<br/>
+                    @guest
 						<a href='/login'><?php echo __("messages.Connection");?></a>
-					<?php
-					}
-					?>
-					
+					@endguest
+
 						<ul class="share-buttons">
 						  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F<?php echo config("app.url");?>&t=<?php echo config("app.name");?>" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="images/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
 						  <li><a href="https://twitter.com/intent/tweet?source=<?php echo config("app.url");?>&text=<?php echo config("app.name");?>:%20<?php echo config("app.url");?>&via=enpix" target="_blank" title="Tweet"><img alt="Tweet" src="images/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
-						  <li><a href="https://plus.google.com/share?url=http%3A%2F%2F<?php echo config("app.url");?>" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="images/social_flat_rounded_rects_svg/Google+.svg" /></a></li>
 						  <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2FURL&media=<?php echo config("app.url");?>/images/screenshot.png&description=<?php echo config("app.description");?>" target="_blank" title="Pin it"><img alt="Pin it" src="images/social_flat_rounded_rects_svg/Pinterest.svg" /></a></li>
 						  <li><a href="mailto:?subject=<?php echo config("app.name");?>&body=DESC:%20http%3A%2F%2F<?php echo config("app.url");?>" target="_blank" title="Send email"><img alt="Send email" src="images/social_flat_rounded_rects_svg/Email.svg" /></a></li>
 						</ul>
 					</p>
-					
+
 					<script>
-						// This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
+						// This works on all devices/browsers, and uses IndexedDBShim as a final fallback
 						var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
 
 						//Get cards for country in indexedDB
 						var i=0;
 						var arrAllCards = [];
-						<?php 
+						<?php
 						//For the moment, there is only one language
-						//echo $lang;						
+						//echo $lang;
 						?>
-						
+
 						//Permet de ne pas recharger sans cesse
 						if (getCookie("getcard") == null){
 							$.getJSON("/cards/getall?lang="+$("#mylang").val()+"&game_id=0", function (data) {
 								arrAllCards = data;
-							
+
 								//Delete old database
 								var DBDeleteRequest = window.indexedDB.deleteDatabase("MyGames");
 
 								DBDeleteRequest.onerror = function(event) {
 								  console.log("Error deleting database");
 								};
-								 
+
 								DBDeleteRequest.onsuccess = function(event) {
 								  console.log("Deleting database success");
 								};
@@ -117,7 +113,7 @@ $user = Auth::user();
 										<?php
 									}
 									?>
-									
+
 								};
 
 								open.onsuccess = function() {
@@ -128,13 +124,13 @@ $user = Auth::user();
 									foreach ($games as $game){
 										$sDB = strtolower(str_replace(" ","",str_replace("'","",$game->name)));
 									?>
-										
+
 										var store<?php echo $game->id;?> = tx.objectStore("<?php echo $sDB;?>");
 									<?php
 									}
 									?>
 									putNext();
-									
+
 									function putNext() {
 										if (i<arrAllCards.length) {
 											switch (parseInt(arrAllCards[i].game_id)){
@@ -142,7 +138,7 @@ $user = Auth::user();
 												foreach ($games as $game){
 													?>
 													case <?php echo $game->id;?>:
-														var res = store<?php echo $game->id;?>.put(arrAllCards[i]).onsuccess = putNext;													
+														var res = store<?php echo $game->id;?>.put(arrAllCards[i]).onsuccess = putNext;
 														res.onsuccess = function(event) {
 															// report the success of our request
 															console.log("update ok!!");
@@ -155,20 +151,20 @@ $user = Auth::user();
 												}
 												?>
 											}
-											
+
 											++i;
 										} else {   // complete
 											console.log('Done. All cards are in indexedDb.');
 											setCookie("getcard","ok",90);
 										}
-									}   
-									
-								
+									}
+
+
 									// Close the db when the transaction is done
 									tx.oncomplete = function() {
 										db.close();
 									};
-									
+
 								}
 								$("#allgames").show();
 								$("#loader").hide();
@@ -179,9 +175,9 @@ $user = Auth::user();
 						}
 					</script>
                 </div>
-            </div>			
+            </div>
         </div>
     </div>
 </div>
 
-@endsection 
+@endsection

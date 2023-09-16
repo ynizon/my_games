@@ -5,55 +5,88 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default globalpanel" style="text-align:center">
-                <div class="panel-heading">				
-					Brainstorm - <?php echo __("messages.Set");?> <span class="step">1</span>&nbsp;&nbsp;&nbsp;<span id="spanpause" class="inv" ><i onclick="pause()" id="btn_pause" class="fa fa-pause pointer" ></i></span>
+                <div class="panel-heading">
+					Brainstorm - {{ __("messages.Set")}} <span class="step">1</span>
 				</div>
 
                 <div class="panel-body" >
 					<div id="intro" class="intro slider">
-						<h1><?php echo __("messages.Lookfor");?> <span class="step">1</span>/<?php echo $nbcards;?></h1>
-						<p><?php echo __("messages.goal_brainstorm");?>.						
+						<h1>{{ __("messages.Lookfor")}} <span class="step">1</span>/{{$nbcards}}</h1>
+						<p>{{ __("messages.goal_brainstorm")}}.
 						</p>
 						<br/>
-						<input onclick="startSet()" type="button" value="<?php echo __("messages.Team 1 Start");?>" class="btnstep btn btn-primary" />
+						<input onclick="startSet()" type="button" value="{{ __("messages.Team 1 Start")}}" class="btnstep btn btn-primary" />
 					</div>
-	
+
 					<div id="game" class="brainstorm inv">
-						<input type="hidden" id="progress" value="" />
-						<div id="chrono" >0</div>
-						<div id="cardname">-</div>
-						<div style="margin:10px;">
-							<ul id="cardwords" class="form-check">
-							</ul>
-						</div>
-						<div style="margin:auto;width:100px;">
-							<i class="fa fa-check pointer btnplay arrondivalidate" id="validate" onclick="nextCard(true)"></i>							
-						</div>
+
+                        <div class="slide-container">
+                            <div class="wrapper">
+                                <div class="clash-card barbarian">
+                                    <div class="clash-card__noimage">
+                                        <input type="hidden" id="progress" value="" />
+                                        <div id="chrono" >0</div>
+                                    </div>
+                                    <div class="clash-card__level clash-card__level--barbarian">{{ __("messages.Remaining cards")}} : <span id="nbcards" >0</span></div>
+                                    <div class="clash-card__unit-name">
+                                        <span id="cardname">-</span>
+                                    </div>
+                                    <div class="clash-card__unit-description">
+                                        <div style="margin:10px;">
+                                            <ul id="cardwords" class="form-check">
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+                                        <div class="one-third">
+                                            <i id="button3rd" class="fa-solid fa-trophy" ></i>
+
+                                            <div id="nbcheck" class="stat-value"></div>
+                                        </div>
+
+                                        <div class="one-third">
+                                            <span id="spanpause" class="inv" ><i onclick="pause()" id="btn_pause" class="fa fa-pause pointer" ></i></span>
+
+                                            <div class="stat-value">{{__("messages.PAUSE")}}</div>
+                                        </div>
+
+                                        <div class="one-third no-border">
+                                            <i class="fa fa-check pointer btnplay arrondivalidate" id="validate" onclick="nextCard(true)"></i>
+
+                                            <div class="stat-value">{{ __("messages.OK")}}</div>
+                                        </div>
+
+                                    </div>
+
+                                </div> <!-- end clash-card barbarian-->
+                            </div> <!-- end wrapper -->
+                        </div> <!-- end container -->
 					</div>
-					
+
 					<div id="endinggame" class="inv brainstorm">
 						<div>
-							<h1><?php echo __("messages.Set");?> <span class="step"></span></h1>
-							<h2><?php echo __("messages.Lookfor");?> !</h2>
-							<p><span id="score">0</span> <?php echo __("messages.sentences_found");?><br/>
+							<h1>{{ __("messages.Set")}} <span class="step"></span></h1>
+							<h2>{{ __("messages.Lookfor")}} !</h2>
+							<p><span id="score">0</span> {{ __("messages.sentences_found")}}<br/>
 								<ul id="list" class="list-group">
-									
+
 								</ul>
 							</p>
-							
+
 						</div>
-						
+
 						<input onclick="initGame()" type="button" value="Equipe suivante" class="btnstep btnstepend btn btn-primary" />
 					</div>
-					
+
 					<div id="endingset" class="inv brainstorm">
 						<div>
-							<h1><?php echo __("messages.Set");?> <span class="step"></span></h1>
-							<h2 id="finishset"><?php echo __("messages.Endset");?></h2>
+							<h1>{{ __("messages.Set")}} <span class="step"></span></h1>
+							<h2 id="finishset">{{ __("messages.Endset")}}</h2>
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<td><b><?php echo __("messages.Teams");?></b></td>
+										<td><b>{{ __("messages.Teams")}}</b></td>
 										<td><b>1</b></td>
 										<td><b>2</b></td>
 										<td class="player3"><b>3</b></td>
@@ -73,19 +106,19 @@
 						</div>
 
 						<div id="finish">
-							<input onclick="nextSet()" type="button" value="<?php echo __("messages.Next Set");?>" class="btnstep btn btn-primary" />
+							<input onclick="nextSet()" type="button" value="{{ __("messages.Next Set")}}" class="btnstep btn btn-primary" />
 						</div>
-						
+
 					</div>
-					
+
 					<script>
 						var arrCardsTeam = [];
 						var step = 0;
-						var nbTeam = <?php echo $nbteams;?>;
-						var nbCards = <?php echo $nbcards;?>;
+						var nbTeam = {{ $nbteams}};
+						var nbCards = {{ $nbcards}};
 						var iTeam= 1;
 						var iCard = 0;
-						$(".btnstep").val("<?php echo __("messages.Team");?> "+iTeam+", <?php echo __("messages.go");?> !");
+						$(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
 						var score1 = 0;
 						var score2 = 0;
 						var score3 = 0;
@@ -96,28 +129,30 @@
 						var arrCardsForThisMatch = [];
 						var arrCardsForThisMatchId = [];
 						var iScore = 0;
-						
-						var iCardDeck =<?php echo $nbcards;?>;
+
+						var iCardDeck ={{ $nbcards}};
 						var iTimeLimit = 30;
 						var bPause = false;
-						function progress() {							
+                        document.getElementById('nbcheck').innerText = '0';
+
+						function progress() {
 							var val = 1;
 							if (bPause){
 								val = 0;
 							}
 							var ava = document.getElementById("progress");
-							
+
 							if ($('#progress').val()<=iTimeLimit && $('#progress').val()>=1) {
 								$('#progress').val($('#progress').val()-val);
 								$("#chrono").html($('#progress').val());
 								setTimeout(function(){ progress(); }, 1000);
 							}else{
 								if ($('#progress').val()!=-99){
-									endGame();	
+									endGame();
 								}
 							}
 						}
-							
+
 						function pause(){
 							$("#btn_pause").toggleClass("fa-play");
 							$("#btn_pause").toggleClass("fa-pause");
@@ -129,13 +164,13 @@
 							var audio = new Audio('/sounds/pause.mp3');
 							audio.play();
 						}
-						
-						// This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
+
+						// This works on all devices/browsers, and uses IndexedDBShim as a final fallback
 						var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
 
 						//Get cards for country in indexedDB
 						var arrAllCards = [];
-						
+
 						// Open (or create) the database
 						var open = indexedDB.open("MyGames", 1);
 
@@ -145,7 +180,7 @@
 							var db = open.result;
 							var tx = db.transaction("brainstorm");
 							var store = tx.objectStore("brainstorm");
-							
+
 							//Get the cards for this game
 							store.openCursor().onsuccess = function(event) {
 								var cursor = event.target.result;
@@ -154,22 +189,22 @@
 									cursor.continue();
 								}else{
 									if (arrAllCards.length == 0) {
-										alert("<?php echo __("messages.ErrorGetCard");?>");
+										alert("{{ __("messages.ErrorGetCard")}}");
 										window.location.href="/";
 									}else{
 										getCards();
 									}
 							  }
 							};
-							
-							
+
+
 							// Close the db when the transaction is done
 							tx.oncomplete = function() {
 								db.close();
 							};
 						}
-						
-						
+
+
 						function updateCard(oItem){
 							var db = open.result;
 							var objectStore = db.transaction(["brainstorm"], "readwrite").objectStore("brainstorm");
@@ -180,8 +215,8 @@
 							request.onsuccess = function(event) {
 								// On récupère l'ancienne valeur que nous souhaitons mettre à jour
 								var data = request.result;
-							  
-								// On met à jour ce(s) valeur(s) dans l'objet								
+
+								// On met à jour ce(s) valeur(s) dans l'objet
 								data.created = sToday;
 
 								// Et on remet cet objet à jour dans la base
@@ -194,14 +229,14 @@
 								};
 							};
 						}
-						
+
 						//Get cards for this game
 						function getCards(){
 							arrCardsForThisMatch = [];
 							arrCardsForThisMatchId = [];
 							var iTry = 0;
 							if (arrAllCards.length <nbTeam*iCardDeck){
-								alert("<?php echo __("messages.ErrorGetCard");?>.");
+								alert("{{ __("messages.ErrorGetCard")}}.");
 							}else{
 								while (arrCardsForThisMatch.length<nbTeam*iCardDeck){
 									var item = arrAllCards[Math.floor(Math.random()*arrAllCards.length)];
@@ -210,39 +245,39 @@
 										//It they have not enough card, we take...
 										if (item.created == sToday && iTry < 4){
 											iTry++;
-										}else{					
-											updateCard(item);									
+										}else{
+											updateCard(item);
 											arrCardsForThisMatch.push(item);
 											arrCardsForThisMatchId.push(item.id);
 										}
 									}
 								}
-								
+
 								startMatch();
 							}
 						}
-						
+
 						function shuffleCards(){
 							shuffle(arrCardsForThisMatch);
 						}
-						
+
 						function nextCard(bValidate){
 							if (bClickOk){
 								bClickOk = false;
-								
+                                document.getElementById('nbcheck').innerText = '0';
 								$("#cardname").fadeOut("fast", function() {
 									$("#cardname").html("");
 									$("#cardwords").html();
 								});
 								arrCardsForThisGame.shift();
-								
+
 								arrCardsTeam.push({name:$("#cardname").html(),find:bValidate});
-									
+
 								if (bValidate){
 									var audio = new Audio('/sounds/ok.mp3');
 									audio.play();
 									iScore = $(".form-check-input:checked").length;
-									
+
 									switch(iTeam){
 										case 1:
 											score1 = score1+iScore;
@@ -253,14 +288,14 @@
 										case 3:
 											score3 = score3+iScore;
 											break;
-										case 4:	
+										case 4:
 											score4 = score4+iScore;
 											break;
 									}
 									iCard++;
-									
+
 									$("#total-"+iTeam).html(parseInt($("#total-"+iTeam).html())+iScore);
-									
+
 									var indexCard = -1;
 									var k = 0;
 									while (indexCard == -1 && k < arrCardsForThisSet.length){
@@ -275,52 +310,56 @@
 									var audio = new Audio('/sounds/error.mp3');
 									audio.play();
 								}
-																
-								endGame();									
+
+								endGame();
 							}
 						}
-						
+
 						function showCard(){
 							if (arrCardsForThisGame.length>0){
-								$("#nbcards").html(arrCardsForThisGame.length);								
-								
+								$("#nbcards").html(arrCardsForThisGame.length);
+
 								$("#cardname").fadeIn("fast", function() {
 									$("#cardname").html(arrCardsForThisGame[0].name);
 									var sList = "";
 									var item = JSON.parse(arrCardsForThisGame[0].description);
 									for (var k=1; k<= 10;k++){
-										sList = sList+"<li><label class='form-check-label' for='item"+k+"'><input id='item"+k+"' type='checkbox' class='form-check-input' value='1'/>&nbsp;&nbsp;"+eval("item.word"+k)+"</label></li>";										
+										sList = sList+"<li><label class='form-check-label' for='item"+k+"'><input id='item"+k+"' type='checkbox' class='form-check-input' value='1'/>&nbsp;&nbsp;"+eval("item.word"+k)+"</label></li>";
 									}
-									
+
 									$("#cardwords").html(sList);
 									bClickOk = true;
+                                    $('.form-check-input').change(function() {
+                                        let nbCheck = $(".form-check-input:checked").length
+                                        document.getElementById('nbcheck').innerText = nbCheck;
+                                    });
 								});
 							}
 						}
-						
-						
-						function startSet(){							
+
+
+						function startSet(){
 							nextSet();
 							initGame();
 						}
-						
+
 						function initSet(){
 							shuffleCards();
 							arrCardsForThisSet = arrCardsForThisMatch.slice();
 							$(".step").html(step);
 						}
-							
+
 						function endSet(){
 							iCard = 0;
 							$("#spanpause").hide();
 							$("#endinggame" ).slideUp( "slow" );
 							$("#endingset").show();
-							
+
 							step++;
 							if ((step-1)==nbCards){
-								//Who has win ?								
 								//Who has win ?
-								var score = score1;								
+								//Who has win ?
+								var score = score1;
 								if (score2>score){
 									score=score2;
 								}
@@ -330,7 +369,7 @@
 								if (score4>score){
 									score=score4;
 								}
-								
+
 								var bDraw = false;
 								var sWin = "";
 								if (score == score1){
@@ -338,55 +377,55 @@
 								}
 								if (score == score2){
 									if (sWin != ""){
-										sWin = sWin + ",";	
+										sWin = sWin + ",";
 										bDraw = true;
 									}
 									sWin = sWin + "2";
 								}
 								if (score == score3 && nbTeam>2){
 									if (sWin != ""){
-										sWin = sWin + ",";	
+										sWin = sWin + ",";
 										bDraw = true;
 									}
 									sWin = sWin + "3";
 								}
 								if (score == score4 && nbTeam>3){
 									if (sWin != ""){
-										sWin = sWin + ",";	
+										sWin = sWin + ",";
 										bDraw = true;
 									}
 									sWin = sWin + "4";
 								}
-								
+
 								if (bDraw){
-									sWin = "<?php echo __("messages.Draw game");?> "+sWin;
+									sWin = "{{ __("messages.Draw game")}} "+sWin;
 								}else{
-									sWin = "<?php echo __("messages.Congratulations Team");?> "+sWin;
+									sWin = "{{ __("messages.Congratulations Team")}} "+sWin;
 								}
 								$("#finishset").html(sWin);
-								$("#finish").html("<a class='btn btn-primary' href='#' onclick='window.location.reload();'><?php echo __("messages.Play again");?></a>&nbsp;&nbsp;&nbsp;<a class='btn btn-primary' href='/'><?php echo __("messages.Home");?></a>");
+								$("#finish").html("<a class='btn btn-primary' href='#' onclick='window.location.reload();'>{{ __("messages.Play again")}}</a>&nbsp;&nbsp;&nbsp;<a class='btn btn-primary' href='/'>{{ __("messages.Home")}}</a>");
 								var audio = new Audio('/sounds/finish.mp3');
 								audio.play();
 							}
 						}
-						
+
 						function nextSet(){
 							initSet();
 							$("#intro").show();
 							$("#endingset").hide();
-							
+
 						}
-						
+
 						function initGame(){
 							arrCardsForThisGame = arrCardsForThisSet.slice();
-							
+
 							if (iCard == nbTeam){
 								endSet();
 							}else{
 								nextGame();
 							}
 						}
-						
+
 						function endGame(){
 							$('#progress').val(-99);
 							$("#game" ).slideUp( "slow" );
@@ -405,28 +444,28 @@
 
 							var audio = new Audio('/sounds/beep.mp3');
 							audio.play();
-							
+
 							iTeam++;
-							$(".btnstep").val("<?php echo __("messages.Team");?> "+iTeam+", <?php echo __("messages.go");?> !");
-							if (iTeam > <?php echo $nbteams;?>){
+							$(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
+							if (iTeam > {{ $nbteams}}){
 								iTeam = 1;
-								$(".btnstep").val("<?php echo __("messages.Team");?> "+iTeam+", <?php echo __("messages.go");?> !");
-								$(".btnstepend").val("<?php echo __("messages.Endset");?>");
-								
+								$(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
+								$(".btnstepend").val("{{ __("messages.Endset")}}");
+
 							}
-							
+
 						}
-						
+
 						function nextGame(){
 							shuffle(arrCardsForThisSet);
 							arrCardsOK = [];
 							arrCardsTeam = [];
 							iScore = 0;
-							
-							$( ".intro" ).slideUp( "slow" );							
+
+							$( ".intro" ).slideUp( "slow" );
 							$("#endingset").hide();
 							$("#endinggame").hide();
-							
+
 							if (arrCardsForThisSet.length==0){
 								endSet();
 							}else{
@@ -438,38 +477,38 @@
 								progress();
 							}
 						}
-						
+
 						function startMatch(){
-							if (<?php echo $nbteams;?><3){
+							if ({{$nbteams}}<3){
 								$(".player3").hide();
 							}
-							if (<?php echo $nbteams;?><4){
+							if ({{$nbteams}}<4){
 								$(".player4").hide();
 							}
-							
+
 							step=1;
 							iTeam= 1;
-							$(".btnstep").val("<?php echo __("messages.Team");?> "+iTeam+", <?php echo __("messages.go");?> !");
+							$(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
 							score1 = 0;
 							score2 = 0;
 							score3 = 0;
 							score4 = 0;
 							iCard = 0;
 							for (var k=1;k<=4;k++){
-								$("#total-"+k).html(0);								
+								$("#total-"+k).html(0);
 							}
 							initSet();
-							
+
 						}
-						
+
 					</script>
-					
-					
-                </div>				
+
+
+                </div>
             </div>
-			
+
 			<div id="footer">
-				<a onclick="if (window.confirm('<?php echo str_replace("'","\'",__("messages.back_to_homepage"));?> ?')){window.location.href='/';}" ><?php echo __("messages.back_to_homepage");?></a>
+				<a onclick="if (window.confirm('{{ str_replace("'","\'",__("messages.back_to_homepage"))}} ?')){window.location.href='/';}" >{{ __("messages.back_to_homepage")}}</a>
 			</div>
         </div>
     </div>
