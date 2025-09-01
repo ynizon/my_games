@@ -131,7 +131,7 @@
 						var iScore = 0;
 
 						var iCardDeck ={{ $nbcards}};
-						var iTimeLimit = 30;
+						var iTimeLimit = 60;
 						var bPause = false;
                         document.getElementById('nbcheck').innerText = '0';
 
