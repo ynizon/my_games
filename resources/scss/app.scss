@@ -2,6 +2,7 @@
 
 $border-radius-size: 14px;
 $orange: #EC9B3B;
+$pink: #D81B60;
 $red: #d03636;
 $green: #0e9e0e;
 $greenlight: #dff0d8;
@@ -9,10 +10,17 @@ $blue: #4FACFF;
 $grey: #4c4f4f;
 $white: #ffffff;
 
+.bgcustom{background-image: url('/images/bg/bg-space.jpg');}
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
 
+select.form-control, select.form-control:focus{
+    padding-left:10px;
+    border: 1px solid #ccc;
+    color:#7b809a;
+}
 body{
     background:$white;
     color:$grey;
@@ -24,9 +32,7 @@ body{
 .panel-body{
     padding-top:0;
 }
-.container{
-    max-width:600px;
-}
+
 .wrapper {
     padding-top: 0px !important;
     padding-bottom: 40px;
@@ -92,7 +98,7 @@ img {
 }
 
 .clash-card__level--barbarian {
-    color: $orange;
+    color: $pink;
 }
 
 .clash-card__unit-name {
@@ -112,9 +118,9 @@ img {
 .clash-card__unit-stats--barbarian {
     background: $orange;
 
-.one-third {
-    border-right: 1px solid #BD7C2F;
-}
+    .one-third {
+        border-right: 1px solid #BD7C2F;
+    }
 }
 
 .clash-card__unit-stats {
@@ -173,44 +179,86 @@ sup {
     z-index: 999;
 }
 
+#cardwords{list-style:none;text-align:left;max-width:300px;margin:auto;}
 
-#arrondiplay{
-    display:grid;
-    place-items:center;
-
-    .btn{
-        display:grid;
-        place-items:center;
-        cursor:pointer;
-        padding:4rem;
-        background:#efeeee;
-        border-radius:50%;
-        transition:all 0.3s ease-in;
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.1),
-        -10px -10px 10px rgba(255,255,255,0.6);
-    }
-    .btn .fa{
-        display:grid;
-        place-items:center;
-        font-size:4rem;
-        color:$grey;
-    }
-    .btn:active{
-        box-shadow: inset 10px 10px 10px rgba(0,0,0,0.1),
-        inset -10px -10px 10px rgba(255,255,255,0.6);
-    }
-    .btn:active .fa, .btn:hover .fa{
-        color:$blue;
-    }
-}
 
 .btn-primary{
-    color:$grey;
-    background-color: $orange;
-    border-color: $orange;
+    color:#fff;
+    background-color: $pink;
+    border-color: $pink;
 }
 
+#score{
+    padding: 10px;
+    height: 20px;
+}
+.steph3{float:right;}
+.pointer {cursor:pointer;}
+.table.tablewolf td{
+    white-space: inherit;
+}
+#cardname{font-weight:bold;}
+
+#chrono,#chrono2 {font-size:40px;display:block;width:100%;fill:#fff;}
 .timer{top:35px;}
+.timer {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+.timer .rotate {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+.timer .rotate #timeloader {
+    fill: #4c4f4f;
+}
+.timer .rotate #timeloader.hurryup{fill:#d03636;}
+.timer .dots {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    border: 2px solid #fff;
+    border-radius: 75px;
+}
+.timer .dots .time {
+    height: 100%;
+    width: 6%;
+    display: block;
+    background-image: -moz-linear-gradient(#BD7C2F, #BD7C2F 16%, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 84%, #BD7C2F 84%, #BD7C2F);
+    background-image: -webkit-linear-gradient(#BD7C2F, #BD7C2F 16%, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 84%, #BD7C2F 84%, #BD7C2F);
+    background-image: linear-gradient(#BD7C2F, #BD7C2F 16%, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 84%, #BD7C2F 84%, #BD7C2F);
+    margin-left: -3%;
+    left: 50%;
+    position: absolute;
+}
+.timer .dots .time.deg45 {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.timer .dots .time.deg90 {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.timer .dots .time.deg135 {
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
 #nbcards{border:0;margin:0;padding:0;width: initial;height:initial;}
 #cancel {margin:auto;font-size:30px;display:block;padding:8px;height:50px;max-width:50px;width:50px;border-radius:120px;border:0px;color:$red;}
 #cancel:hover{color:$red;background:#fff;}
@@ -227,7 +275,7 @@ sup {
 #footer{
     margin-top:0px;
     color:#fff;
-    background:$orange;
+    background:$pink;
     /*position:fixed;*/
     bottom:0px;
     margin-right: auto;
@@ -236,9 +284,11 @@ sup {
     padding-top:15px;
     width:100%;
     text-align:center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #footer a{
-    color:$grey;
+    color:#fff;
     cursor:pointer;
 }

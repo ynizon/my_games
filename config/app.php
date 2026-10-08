@@ -4,15 +4,17 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-	/* Countries */
-	'langs' =>array('fr'=>"Français",'en'=>"English"),
+    'version' => '1.0',
 
-	'countries'=>array("-"=>"International","fr"=>"France","uk"=>"United Kingdom","us"=>"United States"),
+    /* Countries */
+    'langs' =>array('fr'=>"Français"),//'en'=>"English"
 
-	/* Liste des roles */
-	'users_roles' =>array('User'=>"Utilisateur",'Admin'=>"Administrateur","Manager"=>"Manager"),
+    'countries'=>array("-"=>"International","fr"=>"France","uk"=>"United Kingdom","us"=>"United States"),
 
-	'google_analytics'=>'UA-63792649-1',
+    /* Liste des roles */
+    'users_roles' =>array('User'=>"Utilisateur",'Admin'=>"Administrateur","Manager"=>"Manager"),
+
+    'google_analytics'=>'UA-63792649-1',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,7 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-		Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider::class,
+        Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -193,7 +195,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-		'LaravelEntrust'   => Shanmuga\LaravelEntrust\Facades\LaravelEntrustFacade::class,
+        'LaravelEntrust'   => Shanmuga\LaravelEntrust\Facades\LaravelEntrustFacade::class,
         'Helper'=> App\Helpers\Helper::class,
     ])->toArray(),
 

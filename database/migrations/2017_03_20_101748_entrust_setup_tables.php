@@ -54,103 +54,109 @@ class EntrustSetupTables extends Migration
 
             $table->primary(['permission_id', 'role_id']);
         });
-		
-		/* Roles */
-		DB::table('gam_roles')->insert(
-			array(
-				'name' => 'Admin',
-				'display_name'=>'Administrator',				
-				'description'=>"Tous les droits",
-			)
-		);
-		DB::table('gam_roles')->insert(
-			array(
-				'name' => 'Manager',
-				'display_name'=>'Manager',				
-				'description'=>"Edit cards",
-			)
-		);	
-		DB::table('gam_roles')->insert(
-			array(
-				'name' => 'User',
-				'display_name'=>'User',				
-				'description'=>"User",
-			)
-		);
-		
-		//Permissions
-		DB::table('gam_permissions')->insert(
-			array(
-				'name' => 'user-edit',
-				'display_name'=>'user-edit',
-				'description'=>"Gestion des utilisateurs",
-			)
-		);
-		
-		//Permissions
-		DB::table('gam_permissions')->insert(
-			array(
-				'name' => 'card-edit',
-				'display_name'=>'card-edit',
-				'description'=>"Gestion des cartes",
-			)
-		);
-		
-		//Permissions
-		DB::table('gam_permissions')->insert(
-			array(
-				'name' => 'game-edit',
-				'display_name'=>'game-edit',
-				'description'=>"Gestion des jeux",
-			)
-		);
-		
-		//Pour les admins
-		DB::table('gam_permission_role')->insert(
-			array(
-				'permission_id' => 1,
-				'role_id'=>1
-			)
-		);
-		
-		DB::table('gam_permission_role')->insert(
-			array(
-				'permission_id' => 2,
-				'role_id'=>1
-			)
-		);
-		
-		DB::table('gam_permission_role')->insert(
-			array(
-				'permission_id' =>3,
-				'role_id'=>1
-			)
-		);
-		
-		//Manager
-		DB::table('gam_permission_role')->insert(
-			array(
-				'permission_id' =>2,
-				'role_id'=>2
-			)
-		);
-		
-		//Personne ADMIN
-		DB::table('gam_role_user')->insert(
-				array(
-					'user_id' => 1,
-					'role_id'=>1
-				)
-			);
-			
-		//Personne Manager
-		DB::table('gam_role_user')->insert(
-				array(
-					'user_id' => 2,
-					'role_id'=>2
-				)
-			);
-		
+
+        /* Roles */
+        DB::table('gam_roles')->insert(
+            array(
+                'name' => 'Admin',
+                'display_name'=>'Administrator',
+                'description'=>"Tous les droits",
+            )
+        );
+        DB::table('gam_roles')->insert(
+            array(
+                'name' => 'Manager',
+                'display_name'=>'Manager',
+                'description'=>"Edit cards",
+            )
+        );
+        DB::table('gam_roles')->insert(
+            array(
+                'name' => 'User',
+                'display_name'=>'User',
+                'description'=>"User",
+            )
+        );
+
+        //Permissions
+        DB::table('gam_permissions')->insert(
+            array(
+                'name' => 'user-edit',
+                'display_name'=>'user-edit',
+                'description'=>"Gestion des utilisateurs",
+            )
+        );
+
+        DB::table('gam_permissions')->insert(
+            array(
+                'name' => 'card-edit',
+                'display_name'=>'card-edit',
+                'description'=>"Gestion des cartes",
+            )
+        );
+
+        DB::table('gam_permissions')->insert(
+            array(
+                'name' => 'game-edit',
+                'display_name'=>'game-edit',
+                'description'=>"Gestion des jeux",
+            )
+        );
+
+        //Pour les admins
+        DB::table('gam_permission_role')->insert(
+            array(
+                'permission_id' => 1,
+                'role_id'=>1
+            )
+        );
+
+        DB::table('gam_permission_role')->insert(
+            array(
+                'permission_id' => 2,
+                'role_id'=>1
+            )
+        );
+
+        DB::table('gam_permission_role')->insert(
+            array(
+                'permission_id' =>3,
+                'role_id'=>1
+            )
+        );
+
+        //Manager
+        DB::table('gam_permission_role')->insert(
+            array(
+                'permission_id' =>2,
+                'role_id'=>2
+            )
+        );
+
+        //User
+        DB::table('gam_permission_role')->insert(
+            array(
+                'permission_id' =>2,
+                'role_id'=>3
+            )
+        );
+
+        //Personne ADMIN
+        DB::table('gam_role_user')->insert(
+            array(
+                    'user_id' => 1,
+                    'role_id'=>1
+                )
+        );
+
+        //Personne Manager
+        DB::table('gam_role_user')->insert(
+            array(
+                    'user_id' => 2,
+                    'role_id'=>2
+                )
+        );
+
     }
 
     /**

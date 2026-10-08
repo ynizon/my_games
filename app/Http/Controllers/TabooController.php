@@ -17,23 +17,23 @@ class TabooController extends Controller
 
     public function __construct(UserRepository $userRepository)
     {
-		$this->userRepository = $userRepository;
-	}
+        $this->userRepository = $userRepository;
+    }
 
-	public function index(Request $request)
+    public function index(Request $request)
     {
-		if (!isset($_COOKIE["locale"])){
-			setcookie('locale', config("app.locale"));
-			return redirect("/taboo/settings");
-		}
-		$nbsets = (int) $request->input("nbsets");
-     	$nbteams = (int) $request->input("nbteams");
-		return view('taboo/index',compact('nbteams','nbsets'));
-	}
+        if (!isset($_COOKIE["locale"])) {
+            setcookie('locale', config("app.locale"));
+            return redirect("/taboo/settings");
+        }
+        $nbsets = (int) $request->input("nbsets");
+        $nbteams = (int) $request->input("nbteams");
+        return view('taboo/index', compact('nbteams', 'nbsets'));
+    }
 
-	public function settings(Request $request)
+    public function settings(Request $request)
     {
-		return view('taboo/settings');
-	}
+        return view('taboo/settings');
+    }
 
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Repositories\CardRepository;
 use App\Repositories\UserRepository;
 use Session;
@@ -13,31 +14,31 @@ class LoupGarouController extends Controller
 {
 
     protected $userRepository;
-	protected $cardRepository;
+    protected $cardRepository;
 
-    public function __construct(UserRepository $userRepository,CardRepository $cardRepository)
+    public function __construct(UserRepository $userRepository, CardRepository $cardRepository)
     {
-		$this->userRepository = $userRepository;
-		$this->cardRepository = $cardRepository;
-	}
+        $this->userRepository = $userRepository;
+        $this->cardRepository = $cardRepository;
+    }
 
-	public function index(Request $request)
+    public function index(Request $request)
     {
-		if (!isset($_COOKIE["locale"])){
-			setcookie('locale', config("app.locale"));
-			return redirect("/loupgarou/settings");
-		}
-     	$nbplayers = (int) $request->input("nbplayers");
-		$nbwolfs = (int) $request->input("nbwolfs");
-		$cardsid = $request->input("cards");
-		$cards = $this->cardRepository->getByGameId(4);
-		return view('loupgarou/index',compact('cards','nbwolfs','nbplayers','cardsid'));
-	}
+        if (!isset($_COOKIE["locale"])) {
+            setcookie('locale', config("app.locale"));
+            return redirect("/loupgarou/settings");
+        }
+        $nbplayers = (int) $request->input("nbplayers");
+        $nbwolfs = (int) $request->input("nbwolfs");
+        $cardsid = $request->input("cards");
+        $cards = $this->cardRepository->getByGameId(4);
+        return view('loupgarou/index', compact('cards', 'nbwolfs', 'nbplayers', 'cardsid'));
+    }
 
-	public function settings(Request $request)
+    public function settings(Request $request)
     {
-		$cards = $this->cardRepository->getByGameId(4);
-		return view('loupgarou/settings', compact("cards"));
-	}
+        $cards = $this->cardRepository->getByGameId(4);
+        return view('loupgarou/settings', compact("cards"));
+    }
 
 }

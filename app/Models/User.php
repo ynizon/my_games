@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Contracts\Auth\CanResetPassword;
+use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
 
 class User extends Authenticatable
 {
@@ -19,18 +20,22 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var string[]
      */
     protected $fillable = [
         'name',
         'email',
         'password',
+        'location',
+        'phone',
+        'about',
+        'password_confirmation'
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
         'password',
@@ -40,20 +45,9 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
-
-	public function affectations()
-    {
-        return $this->hasMany('App\Affectation');
-    }
-
-	public function sites()
-    {
-        return $this->hasMany('App\Site');
-    }
 }

@@ -16,23 +16,23 @@ class BrainstormController extends Controller
 
     public function __construct(UserRepository $userRepository)
     {
-		$this->userRepository = $userRepository;
-	}
+        $this->userRepository = $userRepository;
+    }
 
-	public function index(Request $request)
+    public function index(Request $request)
     {
-		if (!isset($_COOKIE["locale"])){
-			setcookie('locale', config("app.locale"));
-			return redirect("/brainstorm/settings");
-		}
-     	$nbteams = (int) $request->input("nbteams");
-		$nbcards = (int) $request->input("nbcards");
-		return view('brainstorm/index',compact('nbteams','nbcards'));
-	}
+        if (!isset($_COOKIE["locale"])) {
+            setcookie('locale', config("app.locale"));
+            return redirect("/brainstorm/settings");
+        }
+        $nbteams = (int) $request->input("nbteams");
+        $nbcards = (int) $request->input("nbcards");
+        return view('brainstorm/index', compact('nbteams', 'nbcards'));
+    }
 
-	public function settings(Request $request)
+    public function settings(Request $request)
     {
-		return view('brainstorm/settings');
-	}
+        return view('brainstorm/settings');
+    }
 
 }

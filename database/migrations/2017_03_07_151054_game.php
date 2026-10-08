@@ -17,6 +17,7 @@ class Game extends Migration
 			$table->increments('id');
 			$table->string('name')->default("");
 			$table->integer('status')->default(1);
+            $table->integer('nb')->default(0);
 			$table->text('description');
 			$table->timestamps();
 			$table->string('created_by')->default("");
@@ -24,62 +25,69 @@ class Game extends Migration
 			$table->string('deleted_by')->default("");
 		});
 
-		
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Time's up",
 				'description' => "",
-				'status'=>1
+				'status'=>1,
+                'nb' =>0
 			)
-		);  
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Brainstorm",
 				'description' => "",
-				'status'=>1
+				'status'=>1,
+                'nb' =>0
 			)
-		);  
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Taboo",
 				'description' => "",
-				'status'=>1
+				'status'=>1,
+                'nb' =>0
 			)
-		);  
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Loup Garou de Thiercelieux",
 				'description' => "",
-				'status'=>1
+				'status'=>1,
+                'nb' =>0
 			)
-		);  
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Test",
 				'description' => "",
-				'status'=>0
+				'status'=>0,
+                'nb' =>0
 			)
-		); 
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Petits meurtres et faits divers",
 				'description' => "",
-				'status'=>0
+				'status'=>0,
+                'nb' =>0
 			)
-		); 
-		
+		);
+
 		DB::table('gam_games')->insert(
 			array(
 				'name' => "Pictionary",
 				'description' => "",
-				'status'=>1
+				'status'=>1,
+                'nb' =>0
 			)
-		); 
+		);
     }
 
     /**
@@ -89,7 +97,7 @@ class Game extends Migration
      */
     public function down()
     {
-        //		
-		Schema::drop('gam_games'); 
+        //
+		Schema::drop('gam_games');
     }
-} 
+}

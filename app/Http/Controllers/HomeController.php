@@ -45,6 +45,10 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        if ($request->input("error") == "getcard" && isset($_COOKIE["getcard"])) {
+            unset($_COOKIE["getcard"]);
+        }
+
 		//Auth
 		$user = Auth::user();
         $lang = config("app.locale");

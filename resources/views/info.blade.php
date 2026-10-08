@@ -1,75 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-<?php
-$user = Auth::user();
-?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
+    <main class="main-content  mt-0">
+        <div class="page-header align-items-start min-vh-100 bgcustom">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container my-auto">
+                <div class="row">
+                    <div class="col-lg-4 col-md-8 col-12 mx-auto">
+                        <div class="card z-index-0 fadeIn3 fadeInBottom">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                                    <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Informations</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class=" my-3">
+                                    <h3>{{ __("messages.SupportMe")}}</h3>
+                                    <p>{!! __("messages.SupportMe_explain")!!}</p>
 
-				<div class="panel-heading" style="display:block">
-					<div style="float:left">
-						<a href='/' ><img src="/images/favicon/favicon-32x32.png" /></a>&nbsp;&nbsp;Informations
-					</div>
+                                    <h3>{{ __("messages.play_disconnected")}}</h3>
+                                    <p>{{ __("messages.play_disconnected_explain")}}</p>
 
-					<br style="clear:both"/>
-				</div>
+                                    <h3>{{ __("messages.Copyright")}}</h3>
+                                    <p>
+                                       {!!  __("messages.Copyright_explain")!!}
+                                        <a href='https://github.com/ynizon/my_games'>https://github.com/ynizon/my_games</a>.
+                                    </p>
 
+                                    <h3><?php echo __("messages.GameRules");?></h3>
+                                    <div  class="panel panel-group" >
+                                        @foreach ($games as $game)
+                                            @if ($game->status == 1)
+                                                <h4>{{$game->name}}</h4>
+                                                <p>
+                                                    {{ __("messages.description_".strtolower($game->name))}}
+                                                </p>
+                                            @endif
+                                        @endforeach
+                                    </div>
 
-                <div class="panel-body">
-					<h2><?php echo __("messages.GameRules");?></h2>
-					<div  class="panel panel-group" id="accordion" >
-						<?php
-						foreach ($games as $game){
-							if ($game->status == 1){
-							?>
-								 <div class="panel panel-default">
-									<div class="panel-heading" style="background:#3097d1;">
-									  <h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $game->id;?>" style="color:#fff;">
-										  <?php echo $game->name;?>
-										</a>
-									  </h4>
-									</div>
-
-									<div id="collapse<?php echo $game->id;?>"  class="panel-collapse collapse "><!-- add class in for opening-->
-									  <div class="panel-body">
-										<?php echo __("messages.description_".strtolower($game->name));?>
-									  </div>
-									</div>
-								  </div>
-							<?php
-							}
-						}
-						?>
-					</div>
-
-					<h2><?php echo __("messages.play_disconnected");?></h2>
-					<p><?php echo __("messages.play_disconnected_explain");?>
-
-					</p>
-
-					<h2><?php echo __("messages.SupportMe");?></h2>
-					<p><?php echo __("messages.SupportMe_explain");?>
-						<br/>
-						<ul class="share-buttons">
-						  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F<?php echo config("app.url");?>&t=<?php echo config("app.name");?>" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="images/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
-						  <li><a href="https://twitter.com/intent/tweet?source=<?php echo config("app.url");?>&text=<?php echo config("app.name");?>:%20<?php echo config("app.url");?>&via=enpix" target="_blank" title="Tweet"><img alt="Tweet" src="images/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
-						  <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2FURL&media=<?php echo config("app.url");?>/images/screenshot.png&description=<?php echo config("app.description");?>" target="_blank" title="Pin it"><img alt="Pin it" src="images/social_flat_rounded_rects_svg/Pinterest.svg" /></a></li>
-						  <li><a href="mailto:?subject=<?php echo config("app.name");?>&body=DESC:%20http%3A%2F%2F<?php echo config("app.url");?>" target="_blank" title="Send email"><img alt="Send email" src="images/social_flat_rounded_rects_svg/Email.svg" /></a></li>
-						</ul>
-					</p>
-
-					<h2><?php echo __("messages.Copyright");?></h2>
-					<p>
-						<?php echo __("messages.Copyright_explain");?>
-					</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <x-footers.guest></x-footers.guest>
         </div>
-    </div>
-</div>
-
+    </main>
 @endsection

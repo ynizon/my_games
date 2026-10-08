@@ -12,97 +12,110 @@ class CardRepository implements ResourceRepositoryInterface
 {
 
     protected $model;
-	protected $userRepository;
+    protected $userRepository;
 
     public function __construct(Card $Card, UserRepository $userRepository)
-	{
-		$this->model = $Card;
-		$this->userRepository = $userRepository;
-	}
+    {
+        $this->model = $Card;
+        $this->userRepository = $userRepository;
+    }
 
-	private function save(Card $Card, Array $inputs)
-	{
-		if (isset($inputs['name'])){
-			$Card->name = $inputs['name'];
-		}
+    private function save(Card $Card, array $inputs)
+    {
+        if (isset($inputs['name'])) {
+            $Card->name = $inputs['name'];
+        }
 
-		if (isset($inputs['country'])){
-			$Card->country = $inputs['country'];
-		}
+        if (isset($inputs['country'])) {
+            $Card->country = $inputs['country'];
+        }
 
-		if (isset($inputs['lang'])){
-			$Card->lang = $inputs['lang'];
-		}
+        if (isset($inputs['lang'])) {
+            $Card->lang = $inputs['lang'];
+        }
 
-		if (isset($inputs['description'])){
-			$Card->description = $inputs['description'];
-		}
+        if (isset($inputs['description'])) {
+            $Card->description = $inputs['description'];
+        }
 
-		if (isset($inputs['game_id'])){
-			$Card->game_id = $inputs['game_id'];
-		}
+        if (isset($inputs['game_id'])) {
+            $Card->game_id = $inputs['game_id'];
+        }
 
-		$Card->save();
+        $Card->save();
 
-	}
+    }
 
-	public function getPaginate($n)
-	{
-		return $this->model->paginate($n);
-	}
+    public function getPaginate($n)
+    {
+        return $this->model->paginate($n);
+    }
 
-	public function store(Array $inputs)
-	{
-		$Card = new $this->model;
+    public function store(array $inputs)
+    {
+        $Card = new $this->model;
 
-		$this->save($Card, $inputs);
+        $this->save($Card, $inputs);
 
-		return $Card;
-	}
+        return $Card;
+    }
 
-	public function getById($id)
-	{
-		return $this->model->findOrFail($id);
-	}
+    public function getById($id)
+    {
+        return $this->model->findOrFail($id);
+    }
 
-	public function update($id, Array $inputs)
-	{
-		$this->save($this->getById($id), $inputs);
-	}
+    public function update($id, array $inputs)
+    {
+        $this->save($this->getById($id), $inputs);
+    }
 
-	public function destroy($id)
-	{
-		$this->getById($id)->delete();
-	}
+    public function destroy($id)
+    {
+        $this->getById($id)->delete();
+    }
 
-	public function get()
-	{
-		return $this->model->orderBy("name","desc")->get();
-	}
+    public function get()
+    {
+        return $this->model->orderBy("name", "desc")->get();
+    }
 
-	public function getByGameId($id)
-	{
-		return $this->model->where("game_id","=",$id)->orderBy("name","desc")->get();
-	}
+    public function getMyCards()
+    {
+        $user = Auth::user();
+        if ($user->can("card-edit")) {
+            $cards = $this->model->orderBy("name", "desc")->get();
+        } else {
+            $cards = $this->model->orderBy("name", "desc")->where("created_by", "=", $user->name)->get();
+        }
+        return $cards;
+    }
 
-	public function getForLangAndGame($lang,$game_id = 0){
-		$o = $this->model->where("lang","=",$lang);
-		if ($game_id!=0){
-			$o = $o->where("game_id","=",$game_id);
-		}
-		$o = $o->orderBy("name","desc")->get();
-		return $o;
-	}
+    public function getByGameId($id)
+    {
+        return $this->model->where("game_id", "=", $id)->orderBy("name", "desc")->get();
+    }
 
+    public function getForLangAndGame($lang, $game_id = 0)
+    {
+        $o = $this->model->where("lang", "=", $lang)->where("status", "=", 1);
+        if ($game_id!=0) {
+            $o = $o->where("game_id", "=", $game_id);
+        }
+        $o = $o->orderBy("name", "desc")->get();
+        return $o;
+    }
 
-	public function getByCardId($sCard)
-	{
-		$o = $this->model->where("card_id","=",$sCard);
-		$o = $o->get()->first();
-		return $o;
-	}
+    public function getByCardId($sCard)
+    {
+        $o = $this->model->where("card_id", "=", $sCard);
+        $o = $o->get()->first();
+        return $o;
+    }
 
-	public function checkDouble($lang,$game_id,$name){
-		return $this->model->where("lang","=",$lang)->where("game_id","=",$game_id)->where('name', 'like', '%'.$name.'%')->orderBy("name","desc")->get();
-	}
+    public function checkDouble($lang, $game_id, $name)
+    {
+        return $this->model->where("lang", "=", $lang)->where("game_id", "=", $game_id)
+            ->where('name', 'like', '%'.$name.'%')->orderBy("name", "desc")->get();
+    }
 }

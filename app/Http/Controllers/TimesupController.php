@@ -16,23 +16,23 @@ class TimesupController extends Controller
 
     public function __construct(UserRepository $userRepository)
     {
-		$this->userRepository = $userRepository;
-	}
+        $this->userRepository = $userRepository;
+    }
 
-	public function index(Request $request)
+    public function index(Request $request)
     {
-		if (!isset($_COOKIE["locale"])){
-			setcookie('locale', config("app.locale"));
-			return redirect("/timesup/settings");
-		}
+        if (!isset($_COOKIE["locale"])) {
+            setcookie('locale', config("app.locale"));
+            return redirect("/timesup/settings");
+        }
 
-     	$nbteams = (int) $request->input("nbteams");
-		return view('timesup/index',compact('nbteams'));
-	}
+        $nbteams = (int) $request->input("nbteams");
+        return view('timesup/index', compact('nbteams'));
+    }
 
-	public function settings(Request $request)
+    public function settings(Request $request)
     {
-		return view('timesup/settings');
-	}
+        return view('timesup/settings');
+    }
 
 }

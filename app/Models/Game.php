@@ -17,5 +17,8 @@ class Game extends MyModel
     protected $table = 'gam_games';
 	public $timestamps = true;
 
-
+    public function cards()
+    {
+        return $this->hasMany('App\Models\Card');
+    }
 }

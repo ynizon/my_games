@@ -17,5 +17,8 @@ class Card extends MyModel
     protected $table = 'gam_cards';
 	public $timestamps = true;
 
-
+    public function game()
+    {
+        return $this->belongsTo('App\Models\Game');
+    }
 }

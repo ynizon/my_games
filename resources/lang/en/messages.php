@@ -82,4 +82,9 @@ return [
 	"Wolfs"=>"Wolfs",
 	"CardSelect"=>"Thoses cards has been selected",
 	"Home"=>"Home",
+    "NbTeams"=>"Number of teams",
+    "Remember-me"=>"Remember me",
+    "Forgot-password"=>"Forgot your password? Reset your password",
+    "select-game"=>"Select your game",
+    "CreateAccount"=>"Create an account",
 ];

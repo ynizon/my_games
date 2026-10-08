@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CARTES>
+    <GAME>
+        <NOM>Voyage autour du monde</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Exploration</MOT1>
+        <MOT2>Aventure</MOT2>
+        <MOT3>Découverte</MOT3>
+        <MOT4>Culture</MOT4>
+        <MOT5>Destinations</MOT5>
+        <MOT6>Paysages</MOT6>
+        <MOT7>Gastronomie</MOT7>
+        <MOT8>Ambiance</MOT8>
+        <MOT9>Rencontres</MOT9>
+        <MOT10>Souvenirs</MOT10>
+        <MOT11></MOT11>
+        <MOT12></MOT12>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Le Monde de la Médecine</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Anatomie</MOT1>
+        <MOT2>Médecins</MOT2>
+        <MOT3>Maladies</MOT3>
+        <MOT4>Chirurgie</MOT4>
+        <MOT5>Diagnostic</MOT5>
+        <MOT6>Médicaments</MOT6>
+        <MOT7>Recherche</MOT7>
+        <MOT8>Prévention</MOT8>
+        <MOT9>Soins de santé</MOT9>
+        <MOT10>Innovation</MOT10>
+        <MOT11></MOT11>
+        <MOT12></MOT12>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Combat contre les Maladies</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Santé</MOT1>
+        <MOT2>Diagnostic</MOT2>
+        <MOT3>Prévention</MOT3>
+        <MOT4>Guérison</MOT4>
+        <MOT5>Patients</MOT5>
+        <MOT6>Symptômes</MOT6>
+        <MOT7>Traitement</MOT7>
+        <MOT8>Épidémies</MOT8>
+        <MOT9>Médecins</MOT9>
+        <MOT10>Soutien</MOT10>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>l'Autoroute</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Etapes</MOT1>
+        <MOT2>Voyage</MOT2>
+        <MOT3>Conduite</MOT3>
+        <MOT4>Exploration</MOT4>
+        <MOT5>Véhicules</MOT5>
+        <MOT6>Arrêts</MOT6>
+        <MOT7>Péages</MOT7>
+        <MOT8>Vinci</MOT8>
+        <MOT9>Aires</MOT9>
+        <MOT10>Camions</MOT10>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Informatique</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Programmation</MOT1>
+        <MOT2>Réseaux</MOT2>
+        <MOT3>Blockchain</MOT3>
+        <MOT4>Hardware</MOT4>
+        <MOT5>Logiciels</MOT5>
+        <MOT6>Big Data</MOT6>
+        <MOT7>Intelligence Artificielle</MOT7>
+        <MOT8>Jeux vidéo</MOT8>
+        <MOT9>Web development</MOT9>
+        <MOT10>Cloud computing</MOT10>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Musique</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Musiciens</MOT1>
+        <MOT2>Genres</MOT2>
+        <MOT3>Concerts</MOT3>
+        <MOT4>Instruments</MOT4>
+        <MOT5>Chansons</MOT5>
+        <MOT6>Composition</MOT6>
+        <MOT7>Historique</MOT7>
+        <MOT8>Enregistrement</MOT8>
+        <MOT9>Performance</MOT9>
+        <MOT10>Artiste</MOT10>
+        <DESCRIPTION></DESCRIPTION>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Les Races de Chiens</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Caniche</MOT1>
+        <MOT2>Labrador</MOT2>
+        <MOT3>Golden Retriever</MOT3>
+        <MOT4>Chihuahua</MOT4>
+        <MOT5>Bulldog</MOT5>
+        <MOT6>Teckel</MOT6>
+        <MOT7>Rottweiler</MOT7>
+        <MOT8>Boxer</MOT8>
+        <MOT9>Dalmatien</MOT9>
+        <MOT10>Husky Sibérien</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Univers de Harry Potter</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Harry Potter</MOT1>
+        <MOT2>Hermione Granger</MOT2>
+        <MOT3>Ron Weasley</MOT3>
+        <MOT4>Albus Dumbledore</MOT4>
+        <MOT5>Severus Rogue</MOT5>
+        <MOT6>Voldemort</MOT6>
+        <MOT7>Rubeus Hagrid</MOT7>
+        <MOT8>Dobby</MOT8>
+        <MOT9>Luna Lovegood</MOT9>
+        <MOT10>Drago Malefoy</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Les Os du Corps Humain</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Crâne</MOT1>
+        <MOT2>Clavicule</MOT2>
+        <MOT3>Humerus</MOT3>
+        <MOT4>Radius</MOT4>
+        <MOT5>Ulna</MOT5>
+        <MOT6>Fémur</MOT6>
+        <MOT7>Tibia</MOT7>
+        <MOT8>Fibula</MOT8>
+        <MOT9>Vertèbre</MOT9>
+        <MOT10>Humérus</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>L'Univers des Chaussures</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Baskets</MOT1>
+        <MOT2>Talons hauts</MOT2>
+        <MOT3>Chaussures de sport</MOT3>
+        <MOT4>Bottes</MOT4>
+        <MOT5>Sandales</MOT5>
+        <MOT6>Chaussures de course</MOT6>
+        <MOT7>Chaussures de randonnée</MOT7>
+        <MOT8>Chaussures de soirée</MOT8>
+        <MOT9>Chaussures en cuir</MOT9>
+        <MOT10>Chaussures de travail</MOT10>
+        <MOT11>Chaussons</MOT11>
+        <MOT12>Chaussures de danse</MOT12>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Le Monde du Sport</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Compétition</MOT1>
+        <MOT2>Basketball</MOT2>
+        <MOT3>Tennis</MOT3>
+        <MOT4>Natation</MOT4>
+        <MOT5>Jeux olympique</MOT5>
+        <MOT6>Cyclisme</MOT6>
+        <MOT7>Golf</MOT7>
+        <MOT8>Boxe</MOT8>
+        <MOT9>Ski</MOT9>
+        <MOT10>Haltérophilie</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Le Monde du Football</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Gardien de but</MOT1>
+        <MOT2>Attaquant</MOT2>
+        <MOT3>Championnat</MOT3>
+        <MOT4>But</MOT4>
+        <MOT5>Équipe</MOT5>
+        <MOT6>Entraîneur</MOT6>
+        <MOT7>Arbitre</MOT7>
+        <MOT8>Coupe du Monde</MOT8>
+        <MOT9>Faute</MOT9>
+        <MOT10>Pénalty</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Exploration des Matériaux</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Métal</MOT1>
+        <MOT2>Bois</MOT2>
+        <MOT3>Plastique</MOT3>
+        <MOT4>Aluminium</MOT4>
+        <MOT5>Verre</MOT5>
+        <MOT6>Caoutchouc</MOT6>
+        <MOT7>Fibres naturelles</MOT7>
+        <MOT8>Composites</MOT8>
+        <MOT9>Pierre</MOT9>
+        <MOT10>Textiles</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Animaux de la Savane</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Lion</MOT1>
+        <MOT2>Suricate</MOT2>
+        <MOT3>Girafe</MOT3>
+        <MOT4>Zèbre</MOT4>
+        <MOT5>Rhinocéros</MOT5>
+        <MOT6>Guépard</MOT6>
+        <MOT7>Hippopotame</MOT7>
+        <MOT8>Hyène</MOT8>
+        <MOT9>Autruche</MOT9>
+        <MOT10>Antilope</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Univers de Picsou</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Oncle Picsou</MOT1>
+        <MOT2>Donald Duck</MOT2>
+        <MOT3>Les Rapetou</MOT3>
+        <MOT4>Riri, Fifi , Loulou</MOT4>
+        <MOT5>Gontran Bonheur</MOT5>
+        <MOT6>Géo Trouvetou</MOT6>
+        <MOT7>Grand-Mère Donald</MOT7>
+        <MOT8>Balthazar Picsou</MOT8>
+        <MOT9>Miss Tick</MOT9>
+        <MOT10>Archibald Gripsou</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Pays d'Afrique</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Maroc</MOT1>
+        <MOT2>Kenya</MOT2>
+        <MOT3>Nigeria</MOT3>
+        <MOT4>Afrique du Sud</MOT4>
+        <MOT5>Égypte</MOT5>
+        <MOT6>Sénégal</MOT6>
+        <MOT7>Tunisie</MOT7>
+        <MOT8>Ghana</MOT8>
+        <MOT9>Cameroun</MOT9>
+        <MOT10>Madagascar</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Exploration de l'Espace</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Astronaute</MOT1>
+        <MOT2>Étoiles</MOT2>
+        <MOT3>Planètes</MOT3>
+        <MOT4>Lune</MOT4>
+        <MOT5>Soleil</MOT5>
+        <MOT6>Télescope</MOT6>
+        <MOT7>Vaisseau spatial</MOT7>
+        <MOT8>Astéroïdes</MOT8>
+        <MOT9>Constellations</MOT9>
+        <MOT10>NASA</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Le Monde des Vêtements</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Chemise</MOT1>
+        <MOT2>Pantalon</MOT2>
+        <MOT3>Robe</MOT3>
+        <MOT4>Chaussures</MOT4>
+        <MOT5>Manteau</MOT5>
+        <MOT6>Chapeau</MOT6>
+        <MOT7>Écharpe</MOT7>
+        <MOT8>Gants</MOT8>
+        <MOT9>Short</MOT9>
+        <MOT10>Maillot de bain</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Objets pour Couper</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Couteau</MOT1>
+        <MOT2>Scie</MOT2>
+        <MOT3>Ciseaux</MOT3>
+        <MOT4>Hache</MOT4>
+        <MOT5>Rasoir</MOT5>
+        <MOT6>Guillotine</MOT6>
+        <MOT7>Opinel</MOT7>
+        <MOT8>Machette</MOT8>
+        <MOT9>Cutter</MOT9>
+        <MOT10>Tronçonneuse</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Grands Peintres</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Leonardo de Vinci</MOT1>
+        <MOT2>Pablo Picasso</MOT2>
+        <MOT3>Vincent van Gogh</MOT3>
+        <MOT4>Claude Monet</MOT4>
+        <MOT5>Michelangelo</MOT5>
+        <MOT6>Rembrandt</MOT6>
+        <MOT7>Salvador Dalí</MOT7>
+        <MOT8>Jackson Pollock</MOT8>
+        <MOT9>Frida Kahlo</MOT9>
+        <MOT10>Henri Matisse</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Les Arbres du Monde</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Chêne</MOT1>
+        <MOT2>Sapin</MOT2>
+        <MOT3>Palmier</MOT3>
+        <MOT4>Érable</MOT4>
+        <MOT5>Pins</MOT5>
+        <MOT6>Cèdre</MOT6>
+        <MOT7>Bouleau</MOT7>
+        <MOT8>Châtaignier</MOT8>
+        <MOT9>Acacia</MOT9>
+        <MOT10>Eucalyptus</MOT10>
+        <MOT11>Baobab</MOT11>
+        <MOT12>Sequoia</MOT12>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Découverte des Fleurs</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Rose</MOT1>
+        <MOT2>Tulipe</MOT2>
+        <MOT3>Marguerite</MOT3>
+        <MOT4>Lys</MOT4>
+        <MOT5>Orchidée</MOT5>
+        <MOT6>Pivoine</MOT6>
+        <MOT7>Lavande</MOT7>
+        <MOT8>Dahlia</MOT8>
+        <MOT9>Hortensia</MOT9>
+        <MOT10>Lilas</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Poissons</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Poisson-clown</MOT1>
+        <MOT2>Thon</MOT2>
+        <MOT3>Requin</MOT3>
+        <MOT4>Truite</MOT4>
+        <MOT5>Bar</MOT5>
+        <MOT6>Saumon</MOT6>
+        <MOT7>Poisson-chat</MOT7>
+        <MOT8>Carpe</MOT8>
+        <MOT9>Poisson-papillon</MOT9>
+        <MOT10>Piranha</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Singes</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Gorille</MOT1>
+        <MOT2>Chimpanzé</MOT2>
+        <MOT3>Orang-outan</MOT3>
+        <MOT4>Macaque</MOT4>
+        <MOT5>Gibbon</MOT5>
+        <MOT6>Tamarin</MOT6>
+        <MOT7>Bonobo</MOT7>
+        <MOT8>Siamang</MOT8>
+        <MOT9>Mandrill</MOT9>
+        <MOT10>Maki Catta</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Le Ciel</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Cumulus</MOT1>
+        <MOT2>Nuage</MOT2>
+        <MOT3>Orage</MOT3>
+        <MOT4>Foudre</MOT4>
+        <MOT5>Avion</MOT5>
+        <MOT6>Soleil</MOT6>
+        <MOT7>Oiseaux</MOT7>
+        <MOT8>Bleu</MOT8>
+        <MOT9>Arc-en-ciel</MOT9>
+        <MOT10>Pluie</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Régions de France</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Provence-Alpes-Côte d'Azur</MOT1>
+        <MOT2>Bretagne</MOT2>
+        <MOT3>Normandie</MOT3>
+        <MOT4>Auvergne-Rhône-Alpes</MOT4>
+        <MOT5>Ile-de-France</MOT5>
+        <MOT6>Grand Est</MOT6>
+        <MOT7>Nouvelle-Aquitaine</MOT7>
+        <MOT8>Occitanie</MOT8>
+        <MOT9>Hauts-de-France</MOT9>
+        <MOT10>Bourgogne-Franche-Comté</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Dieux de la Mythologie Grecque</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Zeus</MOT1>
+        <MOT2>Apollon</MOT2>
+        <MOT3>Athéna</MOT3>
+        <MOT4>Poséidon</MOT4>
+        <MOT5>Arès</MOT5>
+        <MOT6>Artémis</MOT6>
+        <MOT7>Héra</MOT7>
+        <MOT8>Déméter</MOT8>
+        <MOT9>Hermès</MOT9>
+        <MOT10>Dionysos</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Les Requins</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Requin Blanc</MOT1>
+        <MOT2>Requin-tigre</MOT2>
+        <MOT3>Requin-marteau</MOT3>
+        <MOT4>Requin-scie</MOT4>
+        <MOT5>Dent de requin</MOT5>
+        <MOT6>Dents de la mer</MOT6>
+        <MOT7>Harpon</MOT7>
+        <MOT8>Nageoire dorsale</MOT8>
+        <MOT9>Squale</MOT9>
+        <MOT10>Catalepsie ou l'immobilité tonique</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Les Oiseaux</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Moineau</MOT1>
+        <MOT2>Aigle</MOT2>
+        <MOT3>Pigeon</MOT3>
+        <MOT4>Hirondelle</MOT4>
+        <MOT5>Pic-vert</MOT5>
+        <MOT6>Colibri</MOT6>
+        <MOT7>Corbeau</MOT7>
+        <MOT8>Canard</MOT8>
+        <MOT9>Faucon</MOT9>
+        <MOT10>Albatros</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Navigateurs Célèbres</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Christophe Colomb</MOT1>
+        <MOT2>Ferdinand Magellan</MOT2>
+        <MOT3>Captain James Cook</MOT3>
+        <MOT4>Vasco de Gama</MOT4>
+        <MOT5>Marco Polo</MOT5>
+        <MOT6>John Cabot</MOT6>
+        <MOT7>Amerigo Vespucci</MOT7>
+        <MOT8>Hernán Cortés</MOT8>
+        <MOT9>Florence Arthaud</MOT9>
+        <MOT10>Michel Desjoyeaux</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Physiciens Célèbres</NOM>
+        <DIFFICULTE>3</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Albert Einstein</MOT1>
+        <MOT2>Isaac Newton</MOT2>
+        <MOT3>Marie Curie</MOT3>
+        <MOT4>Galilée</MOT4>
+        <MOT5>Enrico Fermi</MOT5>
+        <MOT6>Richard Feynman</MOT6>
+        <MOT7>Stephen Hawking</MOT7>
+        <MOT8>Werner Heisenberg</MOT8>
+        <MOT9>Erwin Schrödinger</MOT9>
+        <MOT10>Max Planck</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+    <GAME>
+        <NOM>Découverte du Sang</NOM>
+        <DIFFICULTE>2</DIFFICULTE>
+        <LANGUE>fr_FR</LANGUE>
+        <MODE>1</MODE>
+        <MOT1>Hémoglobine</MOT1>
+        <MOT2>Plaquettes</MOT2>
+        <MOT3>Plasma</MOT3>
+        <MOT4>Transfusion</MOT4>
+        <MOT5>Leucocytes</MOT5>
+        <MOT6>Prise</MOT6>
+        <MOT7>Coagulation</MOT7>
+        <MOT8>Rhésus</MOT8>
+        <MOT9>Artère</MOT9>
+        <MOT10>Anémie</MOT10>
+        <PERSONS></PERSONS>
+    </GAME>
+
+</CARTES>
