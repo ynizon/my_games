@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\Card;
+use App\Models\Game;
 use Illuminate\Support\ServiceProvider;
 
 abstract class Helper extends ServiceProvider
@@ -231,5 +232,40 @@ abstract class Helper extends ServiceProvider
     public static function countCards($lang)
     {
         return Card::where("status", "=", 1)->where("lang", "=", $lang)->count();
+    }
+
+    /**
+     * Version des cartes d'une langue : change quand une carte est ajoutee, modifiee,
+     * validee ou supprimee (le navigateur recharge alors ses cartes).
+     */
+    public static function cardsVersion($lang)
+    {
+        $cards = Card::where("lang", "=", $lang);
+        // Les noms des jeux en font partie : ils donnent les adresses et le stockage des cartes
+        $games = Game::orderBy("id")->pluck("name")->implode("|");
+
+        return $cards->count()."-".strtotime((string) $cards->max("updated_at"))."-".hash("crc32b", $games);
+    }
+
+    /** Icone de chaque jeu (accueil, informations, administration) */
+    public const GAME_ICONS = [
+        'lestroismanches' => '⏳',
+        'checklist' => '💡',
+        'motsinterdits' => '🤫',
+        'croquisexpress' => '🎨',
+        'lesloupsduvillage' => '🐺',
+    ];
+
+    /**
+     * Nom du jeu dans les URL et dans le stockage du navigateur (ex : "Time's up" -> "timesup")
+     */
+    public static function gameIcon($name)
+    {
+        return self::GAME_ICONS[self::gameSlug($name)] ?? '🎮';
+    }
+
+    public static function gameSlug($name)
+    {
+        return strtolower(str_replace(" ", "", str_replace("'", "", $name)));
     }
 }

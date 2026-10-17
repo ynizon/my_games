@@ -1,0 +1,70 @@
+name: Tests et déploiement
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo_sqlite, dom, xml, intl
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Tests
+        run: |
+          composer install --no-interaction --prefer-dist --no-progress
+          cp .env.example .env
+          php artisan key:generate
+          php artisan test tests/Feature/Api
+
+      - name: Build (dépendances de production + assets Vite)
+        run: |
+          rm .env
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-progress
+          npm ci
+          npm run build
+
+      - name: Envoi FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          protocol: ftps
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .env
+            .env.*
+            node_modules/**
+            tests/**
+            android/**
+            docs/**
+            storage/**
+            public/storage
+            public/hot
+            public/phpliteadmin.php
+            database/database.sqlite
+            .phpunit.cache/**
+
+      - name: Migrations et caches
+        run: |
+          curl --fail-with-body -sS -X POST -H "X-Deploy-Token: ${{ secrets.DEPLOY_TOKEN }}" \
+            https://games.gameandme.fr/api/deploy

@@ -11,39 +11,51 @@
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">
-                                        Loups Garous de Thiercelieux
+                                        {{ $gameName }}
                                     </h4>
                                 </div>
                             </div>
 
                             <div class="card-body">
                                 <div id="intro" class="intro">
-                                    {{ __("messages.There is") . " ". $nbwolfs." ". __("messages.Wolfs")}}.<br/>
+                                    {{ __("messages.There is") . " ". $nbWolvesTotal." ". __("messages.Wolfs")}}.<br/>
+                                    @if ($hasThief)
+                                        {{ __("messages.ThiefNote") }}<br/>
+                                    @endif
                                     {{ __("messages.CardSelect")}}:<br/>
                                     <ul id="list" class="list-group">
 
                                     </ul>
                                     <br/>
-                                    <input onclick="nextCard()" type="button" value="Découvrir les rôles" class="btnstep btn btn-primary" />
+                                    <input onclick="nextCard()" type="button" value="{{ __("messages.DiscoverRoles") }}" class="btnstep btn btn-primary" />
                                 </div>
 
                                 <div id="game" class="brainstorm inv">
                                     <div style="margin:10px;">
                                         <h3>{{ __("messages.Player")}} <span class="step">X</span></h3>
-                                        <p>{{ __("messages.You play this role")}}
-                                            <span id="cardname">-</span>.<br/>
-                                            <img id="cardpic" src="" /><br/><br/>
-                                            <span id="carddesc">-</span><br/>
-                                        </p>
+                                        <p id="passphone"></p>
+                                        <!-- Carte de role : dos mysterieux, retournee quand le joueur la touche -->
+                                        <div id="rolecard" class="fun-flip" onclick="revealCard()">
+                                            <div class="fun-flip-inner">
+                                                <div class="fun-flip-face fun-flip-back">
+                                                    <span class="fun-moon-small">🌕</span>
+                                                    <span class="fun-wolf">🐺</span>
+                                                    <span>{{ __("messages.TapToReveal") }}</span>
+                                                </div>
+                                                <div class="fun-flip-face fun-flip-front">
+                                                    <img id="cardpic" src="" alt="" />
+                                                    <span id="cardname" class="fun-role">-</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p id="carddesc" class="inv"></p>
                                     </div>
-                                    <br/>
-                                    <div style="margin:auto;width:100px;">
-                                        <i class="fa fa-check pointer btnplay arrondivalidate" id="validate" onclick="endCard()"></i>
-                                    </div>
+                                    <input id="btnrole" onclick="roleButton()" type="button" value="" class="btnstep btn btn-primary" />
                                 </div>
 
                                 <div id="endinggame" class="inv brainstorm">
                                     <div>
+                                        <span class="fun-howl" aria-hidden="true">🐺</span>
                                         <h3>{{ __("messages.This is the night")}}</h3>
 
                                         <p>
@@ -54,7 +66,7 @@
                                         </p>
                                     </div>
 
-                                    <input onclick="window.location.reload();" type="button" value="Rejouer" class="btnstep btn btn-primary" />
+                                    <input onclick="window.location.reload();" type="button" value="{{ __("messages.PlayAgain") }}" class="btnstep btn btn-primary" />
                                     &nbsp;&nbsp;&nbsp;<a class='btn btn-primary' href='/'>{{ __("messages.Home")}}</a>
                                 </div>
                             </div>
@@ -69,257 +81,105 @@
     </main>
 
     <script>
-        var step = 0;
-        var iCard = 0;
-        var bClickOk = true;
+        // Paquet construit par le serveur (roles choisis + loups + villageois), deja valide
+        var arrCardsForThisMatch = @json($deck);
         var arrCardsForThisGame = [];
-        var arrCardsForThisMatch = [];
-        var arrCardsForThisMatchId = [];
-        var translations = [];
+        var oCurrentCard = null;
+        var step = 0;
+        var bRevealed = false;
+        var T = {
+            passPhone: @json(__("messages.PassPhone")),
+            youPlay: @json(__("messages.You play this role")),
+            tapToReveal: @json(__("messages.TapToReveal")),
+            hideMyRole: @json(__("messages.HideMyRole")),
+            endDeal: @json(__("messages.EndDeal"))
+        };
 
-        //Translations
-        @foreach ($cards as $card)
-        var oItem = {id:{{ $card->id}},name:"{{ $card->name}}",description:"{{ __("messages.Loup ".$card->name)}}"};
-        translations.push(oItem);
-        @endforeach
+        Fun.ambiance("loupgarou");
 
-        // This works on all devices/browsers, and uses IndexedDBShim as a final fallback
-        var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
-
-        //Get cards for country in indexedDB
-        var arrAllCards = [];
-
-        // Open (or create) the database
-        var open = indexedDB.open("MyGames", 1);
-
-        var i=0;
-        open.onsuccess = function() {
-            // Start a new transaction
-            var db = open.result;
-            var tx = db.transaction("loupgaroudethiercelieux");
-            var store = tx.objectStore("loupgaroudethiercelieux");
-
-            //Get the cards for this game
-            store.openCursor().onsuccess = function(event) {
-                var cursor = event.target.result;
-                if (cursor) {
-                    arrAllCards.push(cursor.value);
-                    cursor.continue();
-                }else{
-                    if (arrAllCards.length == 0) {
-                        alert("{{ __("messages.ErrorGetCard")}}.");
-                    }else{
-                        getCards();
-                    }
-                }
-            };
-
-
-            // Close the db when the transaction is done
-            tx.oncomplete = function() {
-                db.close();
-            };
-
-        }
-
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                    tmp = item.split("=");
-                    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
-        }
-
-        //Get cards for this game
-        function getCards(){
-            arrCardsForThisMatch = [];
-            arrCardsForThisMatchId = [];
-
-            var nbPlayers = {{$nbplayers}};
-            var oCardWolf = null;
-            var oCardPeople = null;
-            var oCardBrotherOrSister = null;
-            var cardsId = {!! json_encode($cardsid)!!};
-            if (cardsId.length > nbPlayers) {
-                alert("{{ __("messages.TooSpecialCards")}}.");
-                window.location.href=window.history.back();
-            }
-            var k = 0;
-            var iSpecialCards = 0;
-            while (k < cardsId.length){
-                for (z =0; z<arrAllCards.length; z++){
-                    var item = arrAllCards[z];
-                    if (cardsId[k] == item.id){
-                        switch (item.name ){
-                            case "Villageois":
-                                oCardPeople = item;
-                                break;
-                            case "Loup Garou":
-                                oCardWolf = item;
-                                break;
-                            case "Loup Frères et Soeurs":
-                                oCardBrotherOrSister = item;
-                                break;
-                            default:
-                                iSpecialCards++;
-                                arrCardsForThisMatch.push(item);
-                                arrCardsForThisMatchId.push(item.id);
-                                break;
-                        }
-                    }
-                }
-
-                k++;
-            }
-
-            //Adding brothers and sisters
-            if (oCardBrotherOrSister != null){
-                for (k=0;k< 5;k++){
-                    var item = oCardBrotherOrSister;
-                    arrCardsForThisMatch.push(item);
-                    arrCardsForThisMatchId.push(item.id);
-                }
-            }
-
-            //Adding wolf
-            var nbwolfs = {{ $nbwolfs}};
-            for (k=0;k< nbwolfs;k++){
-                var item = oCardWolf;
-                arrCardsForThisMatch.push(item);
-                arrCardsForThisMatchId.push(item.id);
-            }
-
-            //Adding people
-            var nbpeople = {{ $nbplayers-$nbwolfs}}-iSpecialCards;
-            for (k=0;k<nbpeople;k++){
-                var item = oCardPeople;
-                arrCardsForThisMatch.push(item);
-                arrCardsForThisMatchId.push(item.id);
-            }
-
-            var item = Math.floor(Math.random()*arrCardsForThisMatch.length)+1;
-            $("#master").html("{{ __("messages.The captain is")}} "+item);
-            sList = "";
-            arrCardsForThisMatch.forEach (function(item){
-                var re = / /gi;
-                var re2 = /è/gi;
-                var sBase = item.name.toLowerCase().replace(re,"-").replace(re2,"e");
-                sList = sList+ '<li class="list-group-item"><img src="/images/wolf_'+sBase+'.png" />&nbsp;'+item.name+'</li>';
+        $(document).ready(function () {
+            var sList = $("#list");
+            arrCardsForThisMatch.forEach(function (item) {
+                sList.append(
+                    $('<li class="list-group-item"></li>')
+                        .append($('<img />').attr("src", item.image))
+                        .append(document.createTextNode(" " + item.name))
+                );
             });
-            $("#list").html(sList);
+
+            var iCaptain = Math.floor(Math.random() * arrCardsForThisMatch.length) + 1;
+            $("#master").text(@json(__("messages.The captain is")) + " " + iCaptain);
             startGame();
-        }
+        });
 
-        /**
-         * Shuffles array in place. ES6 version
-         * @param {Array} a items An array containing the items.
-         */
-        function shuffle(a) {
-            for (let i = a.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [a[i], a[j]] = [a[j], a[i]];
+        // Bouton "Decouvrir les roles" : premier joueur
+        function nextCard() {
+            if (arrCardsForThisGame.length == 0) {
+                return;
             }
+            $("#intro").slideUp();
+            $("#game").show();
+            playSound('/sounds/ok.mp3');
+            showCard();
         }
 
-        function shuffleCards(){
-            shuffle(arrCardsForThisMatch);
+        // Joueur suivant : carte face cachee
+        function showCard() {
+            oCurrentCard = arrCardsForThisGame.shift();
+            step++;
+            bRevealed = false;
+            $(".step").text(step);
+            $("#passphone").text(T.passPhone.replace(":player", step));
+            $("#carddesc").addClass("inv").text(oCurrentCard.help || "");
+            $("#btnrole").val(T.tapToReveal);
+
+            // La carte revient sur le dos sans animation : le role suivant ne doit jamais apparaitre
+            var oCard = $("#rolecard");
+            oCard.find(".fun-flip-inner").css("transition", "none");
+            oCard.removeClass("revealed");
+            $("#cardname").text(oCurrentCard.name);
+            $("#cardpic").attr("src", oCurrentCard.image);
+            void oCard[0].getBoundingClientRect();
+            oCard.find(".fun-flip-inner").css("transition", "");
         }
 
-        function nextCard(){
-            if (bClickOk){
-                $("#intro").slideUp();
-                $("#game").show();
-                bClickOk = false;
+        function revealCard() {
+            if (bRevealed || oCurrentCard === null) {
+                return;
+            }
+            bRevealed = true;
+            Fun.sound("flip");
+            $("#rolecard").addClass("revealed");
+            $("#passphone").text(T.youPlay.trim());
+            setTimeout(function () {
+                $("#carddesc").removeClass("inv").hide().fadeIn("slow");
+            }, 500);
+            $("#btnrole").val(arrCardsForThisGame.length > 0 ? T.hideMyRole : T.endDeal);
+        }
 
-                $("#cardname").fadeOut("fast", function() {
-                    $("#cardname").html("");
-                    $("#carddesc").html("");
-                    $("#cardpic").hide();
-                    $("#cardwords").html();
-                });
-
-                var audio = new Audio('/sounds/ok.mp3');
-                audio.play();
-                iCard++;
-                step++;
-
+        function roleButton() {
+            if (!bRevealed) {
+                revealCard();
+            } else if (arrCardsForThisGame.length > 0) {
+                playSound('/sounds/ok.mp3');
                 showCard();
-
-            }
-        }
-
-        function showCard(){
-            if (arrCardsForThisGame.length>0){
-                $("#cardname").fadeIn("fast", function() {
-                    var re = / /gi;
-                    var re2 = /è/gi;
-                    var sBase = arrCardsForThisGame[0].name.toLowerCase().replace(re,"-").replace(re2,"e");
-                    $("#cardname").html(arrCardsForThisGame[0].name);
-                    var z = 0;
-                    while (z<translations.length){
-                        if (translations[z].id == arrCardsForThisGame[0].id){
-                            $("#carddesc").html(translations[z].description);
-                        }
-                        z++;
-                    }
-
-                    $("#cardpic").attr("src","/images/wolf_"+sBase+".png");
-                    $("#cardpic").show();
-
-                    bClickOk = true;
-                    arrCardsForThisGame.shift();
-                });
-            }
-        }
-
-        function endCard(){
-            $("#game").hide();
-
-            if (arrCardsForThisGame.length > 0){
-                $("#intro").show();
-                $(".step").html(step);
-            }else{
+            } else {
                 endSet();
             }
-
         }
 
-        function endSet(){
-            iCard = 0;
-            $("#game" ).slideUp( "slow" );
+        function endSet() {
+            oCurrentCard = null;
+            $("#game").slideUp("slow");
             $("#endinggame").show();
-
-            var audio = new Audio('/sounds/finish.mp3');
-            audio.play();
+            Fun.sound("howl");
         }
 
-        function nextPlayer(){
-            initSet();
+        function startGame() {
+            step = 0;
             $("#intro").show();
-            $("#endingset").hide();
-
-        }
-
-        function startGame(){
-            step=1;
-            iCard = 0;
-            $("#intro").show();
-            $(".step").html(step);
-            shuffleCards();
             arrCardsForThisGame = arrCardsForThisMatch.slice();
-        }
-
-        function endGame(){
-            $("#game" ).slideUp( "slow" );
-            $("#endinggame").show();
-
-            var audio = new Audio('/sounds/beep.mp3');
-            audio.play();
+            shuffle(arrCardsForThisGame);
         }
     </script>
 @endsection

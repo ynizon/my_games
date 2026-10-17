@@ -1,8 +1,8 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="games"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="users"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Games"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Users')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -64,7 +64,7 @@
                                     <label for="role" class="col-md-4 control-label">Rôle du compte</label>
 
                                     <div class="col-md-6">
-                                        {!! Form::select('role', $users_roles,"user" , ['class' => 'form-control']) !!}
+                                        {!! Form::select('role', $users_roles,"User" , ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </div>

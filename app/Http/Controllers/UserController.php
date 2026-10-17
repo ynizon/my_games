@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\UserRequest;
 use App\Repositories\UserRepository;
-use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mail;
-use DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
         $this->userRepository = $userRepository;
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $this->checkPermission();
 
@@ -39,7 +40,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        return redirect('/user/'.$id."/edit");
+        return redirect('/users/'.$id."/edit");
     }
 
     public function edit($id)
@@ -48,39 +49,54 @@ class UserController extends Controller
 
         $users = $this->userRepository->get();
         $user = $this->userRepository->getById($id);
-        $role = "";
-        $json= json_decode($user->roles->first());
-        if ($json != null) {
-            $role = $json->name;
-        }
-        $files = array();
+        $role = optional($user->roles->first())->name ?? "";
+        $roles = config('app.users_roles');
 
-        return view('user/edit', compact('users', 'user', 'role'));
+        return view('user/edit', compact('users', 'user', 'role', 'roles'));
     }
 
-
-    public function profile(Request $request)
+    public function profile()
     {
         $user = Auth::user();
-        if (isset($request["password"])) {
-            //Modification du mot de passe
-            $this->userRepository->update($user->id, $request->all());
 
-            return redirect('/')->withOk("Le mot de passe de " . $user->name . " a été mis à jour.");
-        } else {
-            return view('user/profile', compact('user'));
-        }
+        return view('user/profile', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    /**
+     * Mise a jour de son propre profil : seuls les champs du profil sont pris en compte
+     * (jamais le role ni le statut).
+     */
+    public function updateProfile(ProfileRequest $request)
     {
-        $this->userRepository->update($id, $request->all());
-        $user = $this->userRepository->getById($id);
-        if (!Auth::user()->can("user-edit")) {
-            return redirect('/')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
-        } else {
-            return redirect('/users')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
+        $user = Auth::user();
+        $this->userRepository->update($user->id, $request->validated());
+
+        return redirect()->route('profile')->withOk("Le profil de " . $user->name . " a été mis à jour.");
+    }
+
+    /**
+     * Suppression definitive de son propre compte, confirmee par le mot de passe.
+     */
+    public function destroyProfile(Request $request)
+    {
+        $user = Auth::user();
+        if (!Hash::check((string) $request->input('delete_password'), $user->password)) {
+            return redirect()->route('profile')->withErrors(['delete_password' => 'Mot de passe incorrect.']);
         }
+
+        Auth::logout();
+        $this->userRepository->destroy($user->id);
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/suppression-compte')->with('deleted', true);
+    }
+
+    public function update(UserRequest $request, $id)
+    {
+        $this->userRepository->update($id, $request->validated());
+
+        return redirect('/users')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
     }
 
     public function destroy($id)
@@ -91,18 +107,16 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $this->checkPermission();
         try {
-            $user = $this->userRepository->store($request->all());
-            $user->save();
+            $this->userRepository->store($request->validated());
 
             return redirect('/users')->withOk("L'utilisateur " . $request->input('name') . " a été créé.");
-        } catch(\Exception $e) {
-            return redirect('/users')->withError("L'utilisateur " . $request->input('name') . " n'a pas été créé pour la raison suivante: ".$e->getMessage());
+        } catch (\Exception $e) {
+            Log::error($e);
+            return redirect('/users')->withError("L'utilisateur " . $request->input('name') . " n'a pas pu être créé.");
         }
-
     }
 
     private function checkPermission()

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
         $attributes['password'] = Hash::make($attributes['password']);
         $user = User::create($attributes);
-        $user->attachRole(3);//Role USER
+        $user->attachRole(Role::where('name', 'User')->firstOrFail());
 
         auth()->login($user);
 

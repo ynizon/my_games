@@ -1,8 +1,8 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="games"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="users"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Games"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Users')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -22,7 +22,7 @@
                                     <label for="name" class="col-md-4 control-label">Nom</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{!! $user->name !!}" required autofocus />
+                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{{ $user->name }}" required autofocus />
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -36,7 +36,7 @@
                                     <label for="email" class="col-md-4 control-label">E-Mail (=login de connexion)</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control border border-2 p-2" name="email" value="{!! $user->email !!}" required />
+                                        <input id="email" type="email" class="form-control border border-2 p-2" name="email" value="{{ $user->email }}" required />
 
                                         @if ($errors->has('email'))
                                             <span class="help-block">

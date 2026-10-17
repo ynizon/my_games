@@ -48,8 +48,9 @@ class Card extends Migration
                                     $name = "";
                                     $difficulty = 1;
                                     $language = "fr";
-                                    $description = array();
                                     foreach ($lNodes as $oNode) {
+                                        // Remis a zero pour chaque carte : sinon une balise absente garde la valeur de la carte precedente
+                                        $description = array();
                                         foreach ($oNode->childNodes as $oNodeKeywords) {
                                             if ($oNodeKeywords->nodeType == XML_ELEMENT_NODE) {
                                                 switch ($oNodeKeywords->nodeName) {

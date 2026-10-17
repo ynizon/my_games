@@ -3,7 +3,7 @@
     <x-navbars.sidebar activePage="profile"></x-navbars.sidebar>
     <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage='User Profile'></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Profile')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid px-2 px-md-4">
             <div class="page-header min-height-300 border-radius-xl mt-4 bgprofile">
@@ -34,10 +34,10 @@
                         </div>
                     </div>
                     <div class="card-body p-3">
-                        @if (session('status'))
+                        @if (session('ok'))
                             <div class="row">
                                 <div class="alert alert-success alert-dismissible text-white" role="alert">
-                                    <span class="text-sm">{{ Session::get('status') }}</span>
+                                    <span class="text-sm">{{ session('ok') }}</span>
                                     <button type="button" class="btn-close text-lg py-3 opacity-10"
                                             data-bs-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -46,7 +46,7 @@
                             </div>
                         @endif
 
-                        {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
+                        {!! Form::model($user, ['route' => 'profile.update', 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
                             @csrf
                             <div class="row">
 
@@ -76,7 +76,7 @@
 
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Password</label>
-                                    <input type="text" name="password" class="form-control border border-2 p-2" value=''>
+                                    <input type="password" name="password" autocomplete="new-password" class="form-control border border-2 p-2" value=''>
                                     @error('password')
                                     <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
@@ -85,14 +85,37 @@
                                 <div class="mb-3 col-md-6">
                                     <label for="lang" class="col-md-4 control-label">Langue</label>
 
-                                    {!! Form::select('lang', config("app.langs"),"fr" , ['id'=>"lang", 'class' => 'form-control']) !!}
+                                    {!! Form::select('lang', config("app.langs"), $user->lang , ['id'=>"lang", 'class' => 'form-control']) !!}
 
-                                    @error('password')
+                                    @error('lang')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
                                 </div>
                             </div>
                             <button type="submit" class="btn bg-gradient-dark">{{__("messages.Submit")}}</button>
+                        </form>
+
+                        <hr class="horizontal dark my-4">
+                        <h6 class="text-danger">Supprimer mon compte</h6>
+                        <p class="text-sm">
+                            La suppression est définitive : votre compte et vos cartes en attente de validation sont effacés,
+                            vos cartes déjà validées restent dans les jeux sans votre nom.
+                            <a href="/confidentialite">Règles de confidentialité</a>
+                        </p>
+                        <form method="POST" action="{{ route('profile.destroy') }}"
+                              onsubmit="return confirm('Supprimer définitivement votre compte ?');">
+                            @csrf
+                            @method('DELETE')
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label">Mot de passe</label>
+                                    <input type="password" name="delete_password" autocomplete="current-password" required class="form-control border border-2 p-2">
+                                    @error('delete_password')
+                                    <p class='text-danger inputerror'>{{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
                         </form>
 
                     </div>

@@ -1,0 +1,386 @@
+/* Palette du site : remplace le rose et l'orange du theme Material Dashboard.
+ * Chaque jeu a sa couleur, choisie par la classe "theme-<url>" du body (voir layouts/app.blade.php). */
+
+:root {
+    --accent: #6366f1;
+    --accent-2: #8b5cf6;
+    --accent-soft: rgba(99, 102, 241, .12);
+    --bg-1: #1e1b4b;
+    --bg-2: #0f172a;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --surface-2: #f8fafc;
+    --ok: #10b981;
+    --ok-soft: #dcfce7;
+    --ko: #f43f5e;
+    --ko-soft: #ffe4e6;
+}
+
+.theme-lestroismanches { --accent: #ca8a04; --accent-2: #a16207; --accent-soft: rgba(202, 138, 4, .14); --bg-1: #422006; }
+.theme-checklist { --accent: #3b82f6; --accent-2: #6366f1; --accent-soft: rgba(59, 130, 246, .12); --bg-1: #1e3a8a; }
+.theme-motsinterdits { --accent: #8b5cf6; --accent-2: #6d28d9; --accent-soft: rgba(139, 92, 246, .12); --bg-1: #4c1d95; }
+.theme-croquisexpress { --accent: #10b981; --accent-2: #0d9488; --accent-soft: rgba(16, 185, 129, .12); --bg-1: #064e3b; }
+.theme-lesloupsduvillage { --accent: #6366f1; --accent-2: #312e81; --accent-soft: rgba(99, 102, 241, .12); --bg-1: #0b1230; --bg-2: #241338; }
+
+/* ---------- Fond des pages de jeu (accueil : on garde l'image de l'espace) */
+.theme-lestroismanches .bgcustom,
+.theme-checklist .bgcustom,
+.theme-motsinterdits .bgcustom,
+.theme-croquisexpress .bgcustom,
+.theme-lesloupsduvillage .bgcustom {
+    background-image: radial-gradient(circle at 20% 0%, var(--accent-2) 0%, transparent 55%),
+                      linear-gradient(170deg, var(--bg-1), var(--bg-2));
+}
+.theme-lestroismanches .page-header > .mask,
+.theme-checklist .page-header > .mask,
+.theme-motsinterdits .page-header > .mask,
+.theme-croquisexpress .page-header > .mask { opacity: .15 !important; }
+.theme-lesloupsduvillage .page-header > .mask { opacity: 0 !important; }
+.theme-lesloupsduvillage .bgcustom { background-image: linear-gradient(180deg, var(--bg-1), var(--bg-2)); }
+
+/* ---------- Cartes, bandeaux et boutons */
+.page-header .card {
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -25px rgba(2, 6, 23, .7);
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+}
+.shadow-primary {
+    box-shadow: 0 10px 25px -8px var(--accent) !important;
+}
+
+.btn-primary,
+.btn.bg-gradient-primary {
+    color: #fff !important;
+    background-color: var(--accent) !important;
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+    border: 0 !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px -8px var(--accent) !important;
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px -8px var(--accent) !important;
+}
+.btn-primary:active { transform: translateY(1px); }
+
+.page-header .card-body a:not(.btn) { color: var(--accent); font-weight: 500; }
+.page-header .card-body h3,
+.page-header .card-body h4 { color: var(--ink); }
+
+/* Barre "Retour a la page d'accueil" : discrete au lieu du bandeau rose */
+#footer {
+    background: var(--surface-2) !important;
+    color: var(--muted) !important;
+    border-top: 1px solid var(--line);
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+#footer a {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+/* Champs et cases a cocher */
+.form-control:focus,
+.input-group.input-group-outline.is-focused .form-control,
+.input-group.input-group-outline.is-filled .form-control:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+.form-check-input:checked {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+.form-check-input:focus { box-shadow: 0 0 0 3px var(--accent-soft) !important; }
+
+/* Listes de fin de tour : vert doux / rose doux au lieu du rouge plein */
+.list-group-item-success {
+    background-color: var(--ok-soft) !important;
+    color: #15803d !important;
+    border-color: transparent !important;
+}
+.list-group-item-warning {
+    background-color: var(--ko-soft) !important;
+    color: #be123c !important;
+    border-color: transparent !important;
+}
+.list-group-item { border-radius: 10px !important; margin-bottom: 6px; }
+
+/* ---------- Carte de jeu (clash-card) */
+.clash-card {
+    border-radius: 22px;
+    box-shadow: 0 24px 48px -24px rgba(2, 6, 23, .55);
+    overflow: hidden;
+}
+
+/* Zone du chrono : degrade du jeu au lieu de l'image marron */
+.clash-card__image--barbarian {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+.timer .dots { border-color: rgba(255, 255, 255, .9); }
+.timer .dots .time {
+    background-image: linear-gradient(rgba(255, 255, 255, .85), rgba(255, 255, 255, .85) 16%, transparent 16%,
+        transparent 84%, rgba(255, 255, 255, .85) 84%, rgba(255, 255, 255, .85));
+}
+.timer .rotate #timeloader { fill: rgba(255, 255, 255, .3); }
+.timer .rotate #timeloader.hurryup { fill: var(--ko); }
+
+div#chrono,
+div#chrono2 {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.clash-card__level--barbarian { color: var(--accent); letter-spacing: .04em; }
+.clash-card__level--barbarian .pointer { color: var(--muted); }
+.clash-card__unit-name { color: var(--ink); }
+
+/* Barre d'actions : claire, avec des boutons ronds colores */
+.clash-card__unit-stats--barbarian {
+    background: var(--surface-2);
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+.clash-card__unit-stats--barbarian .one-third { border-right: 1px solid var(--line); }
+.clash-card__unit-stats--barbarian .one-third.no-border { border-right: none; }
+.clash-card__unit-stats .stat-value { color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+
+#cancel, #validate, #btn_pause, #button3rd {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px !important;
+    transition: transform .12s ease, filter .12s ease;
+}
+#cancel { color: var(--ko) !important; background: var(--ko-soft) !important; }
+#validate { color: var(--ok) !important; background: var(--ok-soft) !important; }
+#btn_pause { color: #475569 !important; background: #e2e8f0 !important; }
+#button3rd { color: var(--accent) !important; background: var(--accent-soft) !important; }
+#cancel:hover, #validate:hover, #btn_pause:hover { filter: brightness(.96); transform: scale(1.06); }
+#cancel:active, #validate:active, #btn_pause:active { transform: scale(.94); }
+#nbcheck { color: var(--accent) !important; font-weight: 700; }
+
+/* Coche dessinee en SVG : l'icone de police du theme ne s'affiche pas (police FontAwesome 4 absente) */
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]::after { content: none !important; }
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M5 10.5l3.5 3.5L15 7'/%3e%3c/svg%3e") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ---------- Page d'accueil */
+.theme-home .bgcustom,
+.theme-info .bgcustom {
+    background-image: radial-gradient(circle at 15% 0%, rgba(139, 92, 246, .55) 0%, transparent 50%),
+                      radial-gradient(circle at 100% 100%, rgba(20, 184, 166, .35) 0%, transparent 45%),
+                      linear-gradient(170deg, #1e1b4b, #0f172a);
+}
+.theme-home .page-header > .mask,
+.theme-info .page-header > .mask { opacity: 0 !important; }
+.home { padding-top: 24px; padding-bottom: 130px; }
+
+.home-top { display: flex; justify-content: flex-end; }
+.home-lang {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 6px 30px 6px 14px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 14px;
+    background: rgba(255, 255, 255, .08) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-width='2' d='M4 6l4 4 4-4'/%3e%3c/svg%3e") no-repeat right 10px center / 12px;
+    cursor: pointer;
+}
+.home-lang option { color: #1e293b; }
+
+.home-hero { text-align: center; color: #fff; margin: 18px 0 28px; }
+.home-logo {
+    font-size: 64px;
+    line-height: 1;
+    display: inline-block;
+    animation: home-roll 3.5s ease-in-out infinite;
+}
+@keyframes home-roll {
+    0%, 70%, 100% { transform: rotate(0); }
+    80% { transform: rotate(-14deg) scale(1.08); }
+    90% { transform: rotate(10deg); }
+}
+.home-hero h1 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -.02em;
+    margin: 8px 0 4px;
+    background: linear-gradient(90deg, #fff, #c7d2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home-hero p { color: rgba(226, 232, 240, .85); font-size: 17px; margin: 0; }
+
+.home-loader { display: flex; align-items: center; justify-content: center; gap: 10px; color: #e2e8f0; padding: 30px 0; }
+.home-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, .25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: home-spin .8s linear infinite;
+}
+@keyframes home-spin { to { transform: rotate(360deg); } }
+
+.home-games h2 {
+    color: rgba(226, 232, 240, .7);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin: 0 4px 12px;
+}
+
+.game-tile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 16px 16px 14px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    color: #fff !important;
+    text-decoration: none;
+    box-shadow: 0 14px 28px -16px rgba(0, 0, 0, .8), inset 0 1px 0 rgba(255, 255, 255, .18);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.game-tile:hover, .game-tile:focus {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 18px 32px -16px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+.game-tile:active { transform: scale(.98); }
+.game-tile__icon {
+    flex: 0 0 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .18);
+}
+.game-tile__body { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.game-tile__name { font-size: 19px; font-weight: 800; line-height: 1.2; }
+.game-tile__desc { font-size: 13.5px; line-height: 1.35; opacity: .88; margin-top: 2px; }
+.game-tile__arrow { font-size: 30px; line-height: 1; opacity: .7; transition: transform .15s ease; }
+.game-tile:hover .game-tile__arrow { transform: translateX(3px); }
+
+.tile-lestroismanches { background: linear-gradient(135deg, #eab308, #a16207); }
+.tile-lestroismanches .game-tile__name, .tile-lestroismanches .game-tile__desc { text-shadow: 0 1px 2px rgba(66, 32, 6, .35); }
+.tile-checklist { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+.tile-motsinterdits { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.tile-croquisexpress { background: linear-gradient(135deg, #10b981, #0d9488); }
+.tile-lesloupsduvillage {
+    background: linear-gradient(135deg, #312e81, #0b1230 70%, #241338);
+    border: 1px solid rgba(165, 180, 252, .25);
+}
+
+.home-help { color: rgba(226, 232, 240, .65); font-size: 13.5px; text-align: center; margin-top: 18px; }
+.home-help a { color: #c7d2fe; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+    .home-logo { animation: none; }
+}
+
+/* Pied de page : le theme le pousse sous l'ecran sur mobile (bottom: -3%) */
+.bottom-footer { bottom: 14px !important; z-index: 3 !important; }
+.bottom-footer .copyright, .bottom-footer .copyright a { color: rgba(226, 232, 240, .8) !important; }
+
+/* ---------- Page Informations (meme fond que l'accueil) */
+.home-top--start { justify-content: flex-start; }
+.home-back {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 999px;
+    color: #fff !important;
+    font-size: 14px;
+    background: rgba(255, 255, 255, .08);
+    transition: background .15s ease;
+}
+.home-back:hover { background: rgba(255, 255, 255, .16); }
+.home-logo--still { animation: none; }
+
+.info-card {
+    background: rgba(255, 255, 255, .96);
+    border-radius: 20px;
+    padding: 20px 20px 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 24px 48px -28px rgba(2, 6, 23, .8);
+    color: var(--muted);
+}
+.info-card h2 {
+    color: var(--ink);
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+.info-card p { font-size: 15px; line-height: 1.6; }
+.info-card a:not(.info-game) { color: var(--accent); font-weight: 600; }
+
+.info-game {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px 10px;
+    margin: 0 -10px 4px;
+    border-radius: 14px;
+    color: var(--muted) !important;
+    transition: background .15s ease;
+}
+.info-game:hover { background: var(--surface-2); }
+.info-game strong { display: block; color: var(--ink); font-size: 16px; }
+.info-game__desc { display: block; font-size: 14px; line-height: 1.5; }
+.info-game__icon {
+    flex: 0 0 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+
+/* ---------- Les Loups du Village : vignettes des roles (images 256 px) */
+.theme-lesloupsduvillage .card-body img[src*="wolf_"] {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.theme-lesloupsduvillage #endinggame img[src*="wolf_"] { width: 120px; height: 120px; border-radius: 22px; }
+.theme-lesloupsduvillage .fun-flip-front img#cardpic { width: 160px; height: 160px; border-radius: 26px; }
+
+/* ---------- Checklist : verification des reponses en fin de tour */
+.review h3 { margin-bottom: 4px; }
+.review-hint { color: var(--muted); font-size: 15px; }
+.review-theme {
+    color: var(--accent) !important;
+    font-weight: 800;
+    margin: 12px 0 8px;
+}
+.review-words {
+    list-style: none;
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto 18px;
+    padding: 0;
+}
+.review-words li { padding: 4px 8px; border-radius: 8px; }
+.review-words label { cursor: pointer; width: 100%; }

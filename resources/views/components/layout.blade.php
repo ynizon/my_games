@@ -38,8 +38,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('assets') }}/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+    <link href="{{ asset('css/theme.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
 </head>
-<body class="{{ $bodyClass }}">
+<body class="{{ $bodyClass }} {{ str_contains($bodyClass, 'g-sidenav-show') ? 'admin-area' : 'auth-area' }}">
 
 {{ $slot }}
 
@@ -63,8 +65,6 @@
     }
 
 </script>
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{ asset('assets') }}/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>

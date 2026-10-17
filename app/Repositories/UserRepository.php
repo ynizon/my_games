@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App;
+use App\Models\Card;
 use App\Models\User;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class UserRepository implements ResourceRepositoryInterface
 {
@@ -29,6 +28,10 @@ class UserRepository implements ResourceRepositoryInterface
 
 		if (isset($inputs['email'])){
 			$user->email = $inputs['email'];
+		}
+
+		if (isset($inputs['lang'])){
+			$user->lang = $inputs['lang'];
 		}
 
 		if (isset($inputs['status'])){
@@ -66,7 +69,6 @@ class UserRepository implements ResourceRepositoryInterface
 
 	public function getPaginate($n)
 	{
-		$user = Auth::user();
 		return $this->model->paginate($n);
 	}
 
@@ -97,9 +99,22 @@ class UserRepository implements ResourceRepositoryInterface
 		$this->save($this->getById($id), $inputs);
 	}
 
+	/**
+	 * Suppression definitive du compte : jetons, roles, cartes en attente de validation.
+	 * Les cartes deja validees restent dans les jeux, mais ne sont plus rattachees a l'auteur.
+	 */
 	public function destroy($id)
 	{
-		$this->getById($id)->delete();
+		$user = $this->getById($id);
+
+		DB::transaction(function () use ($user) {
+			$user->tokens()->delete();
+			$user->roles()->detach();
+			Card::where('user_id', $user->id)->where('status', '!=', 1)->delete();
+			Card::where('user_id', $user->id)->update(['user_id' => null, 'created_by' => '', 'updated_by' => '']);
+			DB::table('password_reset_tokens')->where('email', $user->email)->delete();
+			$user->delete();
+		});
 	}
 
 	public function get()

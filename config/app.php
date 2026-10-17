@@ -16,6 +16,9 @@ return [
 
     'google_analytics'=>'UA-63792649-1',
 
+    // Jeton du point d'entree /api/deploy appele par la CI (vide = desactive)
+    'deploy_token' => env('DEPLOY_TOKEN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

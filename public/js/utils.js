@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     //Toutes les dates de cette classe ont un date picker
-    $(".jqdate").datepicker({"helper":"datePickerup","jQueryParams":{"dateFormat":"yyyy-mm-dd"},"options":[]});
+    if ($.fn.datepicker) $(".jqdate").datepicker({"helper":"datePickerup","jQueryParams":{"dateFormat":"yyyy-mm-dd"},"options":[]});
 
 
     //Detection de la touche entree
@@ -76,106 +76,65 @@ function shuffle(a)
 
 ////////////////////////////////////////////////////////
 //Edition des cartes
+
+/* Nombre de mots saisis par jeu (2 = Brainstorm, 3 = Taboo, 4 = Loup Garou : extension) */
+var CARD_WORDS_BY_GAME = {"2": 10, "3": 5, "4": 1};
+
+/* Description actuelle de la carte, sous forme d'objet (vide si absente ou invalide) */
+function getDescriptionObject()
+{
+    try {
+        var oItem = JSON.parse($("#description").val());
+        if (oItem !== null && typeof oItem === "object" && !Array.isArray(oItem)) {
+            return oItem;
+        }
+    } catch (e) {
+    }
+    return {};
+}
+
 function setDescription()
 {
-    switch ($("#game_id").val()) {
-        case "1"://Timesup
-            $("#description").val("[]");
-            break;
+    var sGame = $("#game_id").val();
+    var iNbWords = CARD_WORDS_BY_GAME[sGame] || 0;
 
-        case "2"://Brainstorm
-            if ($("#description").html().trim() != "" && $("#description").html().trim() != "[]") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k = 1; k <= 10; k++) {
-                    oItem["word" + k] = $("#description" + k).val();
-                }
-            } else {
-                var oItem = JSON.parse("{}");
-                for (var k = 1; k <= 10; k++) {
-                    oItem["word" + k] = $("#description" + k).val();
-                }
-            }
-            $("#description").html(JSON.stringify(oItem));
-            break;
-
-        case "3"://Taboo
-            if ($("#description").html().trim() != "" && $("#description").html().trim() != "[]") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k=1; k<=5; k++) {
-                    oItem["word"+k] = $("#description"+k).val();
-                }
-            } else {
-                var oItem = JSON.parse("{}");
-                for (var k = 1; k <= 5; k++) {
-                    oItem["word" + k] = $("#description" + k).val();
-                }
-            }
-            $("#description").html(JSON.stringify(oItem));
-            break;
-
-        case "4"://Loup Garou
-            if ($("#description").html().trim() != "" && $("#description").html().trim() != "[]") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k = 1; k <= 1; k++) {
-                    oItem["word" + k] = "Standard";
-                }
-            } else {
-                $("#description").html('{"word1":"Standard","description":"","persons":""}');
-            }
-            $("#description").html(JSON.stringify(oItem));
-            break;
+    if (sGame == "4") {//Loup Garou
+        var oItem = getDescriptionObject();
+        oItem["word1"] = $("#description1").val() || oItem["word1"] || "Standard";
+        if (oItem["description"] === undefined) {
+            oItem["description"] = "";
+        }
+        if (oItem["persons"] === undefined) {
+            oItem["persons"] = "";
+        }
+        $("#description").val(JSON.stringify(oItem));
+    } else if (iNbWords > 0) {
+        var oItem = getDescriptionObject();
+        for (var k = 1; k <= iNbWords; k++) {
+            oItem["word" + k] = $("#description" + k).val();
+        }
+        $("#description").val(JSON.stringify(oItem));
+    } else {//Timesup, Pictionary... : pas de mots
+        $("#description").val("[]");
     }
+    return true;
 }
 
 function refreshDescription()
 {
-    switch ($("#game_id").val()) {
-        case "1"://Timesup
-            $("#blocdescription").hide();
-            break;
+    var sGame = $("#game_id").val();
+    var iNbWords = CARD_WORDS_BY_GAME[sGame] || 0;
 
-        case "2"://Brainstorm
-            $("#blocdescription").show();
-            $(".myword").hide();
-            if ($("#description").html() != "") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k=1; k<=10; k++) {
-                    $("#description"+k).val(oItem["word"+k]);
-                }
-            }
-            for (var k=1; k<=10; k++) {
-                $("#description"+k).show();
-            }
-            break;
+    if (iNbWords == 0) {
+        $("#blocdescription").hide();
+        return;
+    }
 
-        case "3"://Taboo
-            $("#blocdescription").show();
-            $(".myword").hide();
-            if ($("#description").html() != "") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k=1; k<=5; k++) {
-                    $("#description"+k).val(oItem["word"+k]);
-                }
-            }
-
-            for (var k=1; k<=5; k++) {
-                $("#description"+k).show();
-            }
-            break;
-
-        case "4"://Loupgarou
-            $("#blocdescription").show();
-            $(".myword").hide();
-            if ($("#description").html() != "") {
-                var oItem = JSON.parse($("#description").html());
-                for (var k=1; k<=1; k++) {
-                    $("#description"+k).val(oItem["word"+k]);
-                }
-            }
-            for (var k=1; k<=1; k++) {
-                $("#description"+k).show();
-            }
-            break;
+    $("#blocdescription").show();
+    $(".myword").hide();
+    var oItem = getDescriptionObject();
+    for (var k = 1; k <= iNbWords; k++) {
+        $("#description" + k).val(oItem["word" + k] || "").show();
     }
 }
 
@@ -214,5 +173,144 @@ function getCookie(name)
 }
 function eraseCookie(name)
 {
-    document.cookie = name+'=; Max-Age=-99999999;';
+    document.cookie = name+'=; Max-Age=-99999999; path=/';
+}
+
+////////////////////////////////////////////////////////
+//Outils communs aux jeux
+
+/* Echappe un texte pour l'inserer dans du HTML */
+function escapeHtml(sText)
+{
+    return String(sText == null ? "" : sText)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/* Mots d'une carte (word1..wordN) ; une description vide ou invalide donne une liste vide */
+function getCardWords(sDescription, iMax)
+{
+    var oItem = null;
+    try {
+        oItem = JSON.parse(sDescription);
+    } catch (e) {
+        oItem = null;
+    }
+    var arrWords = [];
+    if (oItem !== null && typeof oItem === "object" && !Array.isArray(oItem)) {
+        for (var k = 1; k <= iMax; k++) {
+            var sWord = oItem["word" + k];
+            if (typeof sWord === "string" && sWord.trim() !== "") {
+                arrWords.push(sWord);
+            }
+        }
+    }
+    return arrWords;
+}
+
+/* Joue un son sans erreur si le navigateur bloque la lecture automatique */
+function playSound(sUrl)
+{
+    try {
+        var promise = new Audio(sUrl).play();
+        if (promise !== undefined) {
+            promise.catch(function () {});
+        }
+    } catch (e) {
+    }
+}
+
+/* Lit toutes les cartes d'un jeu dans IndexedDB (remplie par la page d'accueil).
+ * Si elles n'y sont pas (acces direct, stockage efface), retour a l'accueil pour les charger. */
+function loadGameCards(sStore, sErrorMessage, fnOnCards)
+{
+    var oIndexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+    var fnBackHome = function () {
+        eraseCookie("getcard");
+        alert(sErrorMessage);
+        window.location.href = "/";
+    };
+
+    var open = oIndexedDB.open("MyGames", 1);
+    open.onerror = fnBackHome;
+    open.onsuccess = function () {
+        var db = open.result;
+        if (!db.objectStoreNames.contains(sStore)) {
+            db.close();
+            fnBackHome();
+            return;
+        }
+
+        var arrCards = [];
+        var tx = db.transaction(sStore);
+        tx.objectStore(sStore).openCursor().onsuccess = function (event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                arrCards.push(cursor.value);
+                cursor.continue();
+            } else if (arrCards.length == 0) {
+                fnBackHome();
+            } else {
+                fnOnCards(arrCards);
+            }
+        };
+        tx.oncomplete = function () {
+            db.close();
+        };
+    };
+}
+
+/* Historique des cartes jouees sur ce navigateur : id => date (ms) de leur derniere partie.
+ * Garde dans localStorage, a part des cartes : il survit a leur mise a jour depuis le site. */
+var PLAYED_CARDS_KEY = "playedCards";
+
+function getPlayedCards()
+{
+    try {
+        var oPlayed = JSON.parse(localStorage.getItem(PLAYED_CARDS_KEY));
+        return oPlayed !== null && typeof oPlayed === "object" ? oPlayed : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function markCardsPlayed(arrIds)
+{
+    var oPlayed = getPlayedCards();
+    var iNow = Date.now();
+    arrIds.forEach(function (iId) {
+        oPlayed[iId] = iNow;
+    });
+    try {
+        localStorage.setItem(PLAYED_CARDS_KEY, JSON.stringify(oPlayed));
+    } catch (e) {
+    }
+}
+
+/* Copie melangee des cartes : d'abord celles jamais jouees, puis de la plus anciennement jouee a la plus recente */
+function leastPlayedFirst(arrCards)
+{
+    var oPlayed = getPlayedCards();
+    var arrSorted = arrCards.slice();
+    shuffle(arrSorted);
+    // Tri stable : le melange est garde entre cartes jouees au meme moment
+    return arrSorted.sort(function (a, b) {
+        return (oPlayed[a.id] || 0) - (oPlayed[b.id] || 0);
+    });
+}
+
+/* Numeros (1..n) des equipes ayant le meilleur score, parmi les equipes en jeu seulement */
+function getWinners(arrScores)
+{
+    var iMax = Math.max.apply(null, arrScores);
+    var arrWinners = [];
+    arrScores.forEach(function (iScore, i) {
+        if (iScore == iMax) {
+            arrWinners.push(i + 1);
+        }
+    });
+    return arrWinners;
 }

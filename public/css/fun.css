@@ -1,0 +1,170 @@
+/* Effets ludiques des jeux (voir js/fun.js) */
+
+/* ---------- Ambiance de fond par jeu (couleurs : voir theme.css) */
+.fun .page-header > .container { position: relative; z-index: 2; }
+
+.fun-ambiance {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fun-floater {
+    position: absolute;
+    bottom: -70px;
+    opacity: .28;
+    animation: fun-float linear infinite;
+}
+
+@keyframes fun-float {
+    0% { transform: translate(0, 0) rotate(-12deg); }
+    25% { transform: translate(22px, -32vh) rotate(0deg); }
+    50% { transform: translate(-18px, -64vh) rotate(12deg); }
+    75% { transform: translate(20px, -96vh) rotate(0deg); }
+    100% { transform: translate(0, -130vh) rotate(-12deg); }
+}
+
+.fun-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fff;
+    animation: fun-twinkle ease-in-out infinite alternate;
+}
+
+@keyframes fun-twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+.fun-moon {
+    position: absolute;
+    top: 9%;
+    right: 12%;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fffdf3, #fff3c4 60%, #f3dfa0);
+    box-shadow: 0 0 40px 18px rgba(255, 248, 225, .25), 0 0 120px 50px rgba(255, 248, 225, .12);
+}
+
+/* ---------- Feux d'artifice / confettis */
+.fun-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ---------- Petites animations */
+.fun-pulse { animation: fun-pulse .45s ease-out; }
+
+@keyframes fun-pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.18); color: #f44335; }
+    100% { transform: scale(1); }
+}
+
+.fun-card-in { display: inline-block; animation: fun-card-in .5s cubic-bezier(.34, 1.56, .64, 1); }
+
+@keyframes fun-card-in {
+    from { opacity: 0; transform: translateX(60px) scale(.6); }
+    to { opacity: 1; transform: none; }
+}
+
+.fun-trophy {
+    font-size: 72px;
+    line-height: 1.2;
+    text-align: center;
+    animation: fun-trophy 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes fun-trophy {
+    from { transform: scale(.9) rotate(-8deg); }
+    to { transform: scale(1.15) rotate(8deg); }
+}
+
+/* Brainstorm : mot coche */
+.fun li.fun-checked {
+    background: rgba(76, 175, 80, .2);
+    border-radius: 8px;
+    animation: fun-bump .3s ease-out;
+}
+
+.fun li.fun-checked label::after { content: " ✨"; }
+
+@keyframes fun-bump {
+    50% { transform: scale(1.04); }
+}
+
+/* ---------- Loup-Garou : carte de role qui se retourne */
+.fun-flip {
+    width: 230px;
+    height: 310px;
+    margin: 10px auto;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.fun-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .7s cubic-bezier(.4, 0, .2, 1);
+    transform-style: preserve-3d;
+}
+
+.fun-flip.revealed { cursor: default; }
+.fun-flip.revealed .fun-flip-inner { transform: rotateY(180deg); }
+
+.fun-flip-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 16px;
+    border: 3px solid #e0b354;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.fun-flip-back {
+    background: linear-gradient(180deg, #2b1f4f, #0e1530);
+    color: #e0b354;
+    font-weight: bold;
+}
+
+.fun-flip-back .fun-moon-small { font-size: 40px; }
+.fun-flip-back .fun-wolf { font-size: 96px; line-height: 1; }
+
+.fun-flip-front {
+    background: #fff8e1;
+    color: #241338;
+    transform: rotateY(180deg);
+}
+
+.fun-flip-front img { width: 160px; height: auto; max-height: 180px; object-fit: contain; }
+.fun-flip-front .fun-role { font-size: 26px; font-weight: bold; text-align: center; }
+
+.fun-howl {
+    display: inline-block;
+    font-size: 72px;
+    animation: fun-howl 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes fun-howl {
+    from { transform: none; }
+    to { transform: translateY(-12px) rotate(-15deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fun-floater, .fun-star, .fun-trophy, .fun-howl { animation: none; }
+}

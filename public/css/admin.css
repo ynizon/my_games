@@ -1,0 +1,212 @@
+/* Pages de connexion et d'administration (gabarit components/layout.blade.php).
+ * Couleurs : variables de theme.css (indigo / violet par defaut). */
+
+/* ---------- Icone d'un jeu (composant x-game-icon) */
+.game-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 19px;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
+    flex: 0 0 auto;
+}
+/* Gris pour les jeux sans couleur ; :where() laisse passer les couleurs .tile-<jeu> de theme.css */
+:where(.game-icon) { background: linear-gradient(135deg, #94a3b8, #64748b); }
+
+/* ---------- Connexion, inscription, mot de passe oublie */
+.auth-area { background: #0f172a; }
+.auth-area .bgcustom {
+    background-image: radial-gradient(circle at 15% 0%, rgba(139, 92, 246, .55) 0%, transparent 50%),
+                      radial-gradient(circle at 100% 100%, rgba(20, 184, 166, .35) 0%, transparent 45%),
+                      linear-gradient(170deg, #1e1b4b, #0f172a);
+}
+.auth-area .page-header > .mask { opacity: 0 !important; }
+.auth-area .page-header .card-header h4::before {
+    content: "🎲";
+    display: block;
+    font-size: 34px;
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+.auth-area .card-body a:not(.btn),
+.auth-area .text-primary { color: var(--accent) !important; }
+.auth-area .text-gradient.text-primary {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.auth-area .form-switch .form-check-input:checked {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+.auth-area .form-switch .form-check-input:checked::after { border-color: var(--accent) !important; }
+.auth-area .bottom-footer .copyright,
+.auth-area .bottom-footer .copyright a { color: rgba(226, 232, 240, .8) !important; }
+
+/* ---------- Administration */
+.admin-area { background: #f1f5f9 !important; color: var(--muted); }
+
+/* Barre laterale : bleu nuit au lieu du noir */
+.admin-area .sidenav.bg-gradient-dark {
+    background-image: linear-gradient(180deg, #1e1b4b, #0f172a) !important;
+    box-shadow: 0 20px 40px -20px rgba(15, 23, 42, .6);
+}
+.admin-logo { font-size: 28px; line-height: 1; }
+.admin-area .sidenav hr.horizontal.light { background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent); }
+.admin-area .sidenav .nav-link { border-radius: 12px; transition: background .15s ease; }
+.admin-area .sidenav .nav-link:not(.active):hover { background: rgba(255, 255, 255, .08); }
+.admin-area .sidenav .nav-link.active { box-shadow: 0 8px 18px -8px var(--accent) !important; }
+
+/* Barre du haut */
+.admin-topbar .breadcrumb-item a { color: var(--muted) !important; }
+.admin-topbar h6 { color: var(--ink); font-size: 18px; }
+.admin-user { color: var(--muted); font-size: 14px; font-weight: 600; }
+.admin-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink) !important;
+    background: #fff !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 10px;
+    box-shadow: none !important;
+    text-transform: none;
+    font-weight: 600;
+}
+.admin-logout:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+
+/* Cartes et tableaux */
+.admin-area .card {
+    border-radius: 18px;
+    box-shadow: 0 18px 36px -24px rgba(15, 23, 42, .35);
+    border: 1px solid rgba(226, 232, 240, .8);
+}
+.admin-area .card .card-header .bg-gradient-primary h6,
+.admin-area .card .card-header .bg-gradient-primary { color: #fff; }
+.admin-area .table thead th { color: var(--muted) !important; letter-spacing: .06em; }
+.admin-area .table tbody tr { transition: background .12s ease; }
+.admin-area .table tbody tr:hover { background: var(--surface-2); }
+.admin-area .table h6 a, .admin-area .table a h6 { color: var(--ink); }
+.admin-area .table h6 a:hover { color: var(--accent); }
+
+/* Pastilles de statistiques du tableau de bord */
+.admin-area .icon-shape.bg-gradient-dark {
+    background-image: linear-gradient(135deg, #334155, #0f172a) !important;
+}
+.admin-area .bg-gradient-success,
+.admin-area .progress-bar.bg-gradient-success {
+    background-image: linear-gradient(135deg, #34d399, #059669) !important;
+}
+.admin-area .bg-gradient-info,
+.admin-area .progress-bar.bg-gradient-info {
+    background-image: linear-gradient(135deg, #38bdf8, #2563eb) !important;
+}
+.admin-area .shadow-dark { box-shadow: 0 10px 22px -10px rgba(15, 23, 42, .7) !important; }
+.admin-area .shadow-success { box-shadow: 0 10px 22px -10px #059669 !important; }
+.admin-area .shadow-info { box-shadow: 0 10px 22px -10px #2563eb !important; }
+.admin-area .bg-gradient-secondary { background-image: linear-gradient(135deg, #94a3b8, #64748b) !important; }
+
+/* Boutons : "Ajouter" et "Enregistrer" aux couleurs du site, actions plus douces */
+.admin-area .btn.bg-gradient-dark {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+    box-shadow: 0 8px 18px -8px var(--accent) !important;
+    border-radius: 12px;
+}
+.admin-area .btn.btn-success.btn-link,
+.admin-area .btn.btn-danger.btn-link {
+    border-radius: 10px;
+    box-shadow: none !important;
+    padding: 8px 14px;
+    margin: 2px;
+}
+.admin-area .btn.btn-success.btn-link { background: var(--ok-soft) !important; color: #047857 !important; }
+.admin-area .btn.btn-danger.btn-link { background: var(--ko-soft) !important; color: #be123c !important; }
+.admin-area .btn.btn-success.btn-link:hover { background: #bbf7d0 !important; }
+.admin-area .btn.btn-danger.btn-link:hover { background: #fecdd3 !important; }
+
+/* Recherche et pagination des listes (DataTables) */
+.admin-area .dataTables_wrapper .dataTables_filter input,
+.admin-area .dataTables_wrapper .dataTables_length select {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 12px;
+    margin-left: 8px;
+    outline: none;
+}
+.admin-area .dataTables_wrapper .dataTables_filter input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.admin-area .dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 8px !important;
+    border: 0 !important;
+}
+.admin-area .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.admin-area .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+/* Profil : degrade a la place de la photo de demonstration */
+.admin-area .page-header.bgprofile {
+    background-image: radial-gradient(circle at 20% 0%, rgba(139, 92, 246, .7) 0%, transparent 55%),
+                      radial-gradient(circle at 100% 100%, rgba(20, 184, 166, .45) 0%, transparent 50%),
+                      linear-gradient(135deg, #312e81, #0f172a) !important;
+    min-height: 220px !important;
+}
+.admin-area .page-header.bgprofile > .mask { display: none; }
+
+/* Champs de formulaire */
+.admin-area .input-group.input-group-outline .form-control { border-radius: 10px !important; }
+
+/* ---------- Liste des cartes : filtre par jeu */
+.card-filter__label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+}
+.card-filter__label .material-icons { font-size: 18px; color: var(--accent); }
+.card-filter__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink) !important;
+    font-size: 14px;
+    font-weight: 600;
+    transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.filter-chip:first-child { padding-left: 14px; }
+.filter-chip:hover { border-color: var(--accent); background: var(--accent-soft); }
+.filter-chip.active {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff !important;
+    box-shadow: 0 8px 18px -8px var(--accent);
+}
+.filter-chip__icon { width: 26px; height: 26px; border-radius: 8px; font-size: 14px; }
+.filter-chip__count {
+    min-width: 26px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+.filter-chip.active .filter-chip__count { background: rgba(255, 255, 255, .25); color: #fff; }

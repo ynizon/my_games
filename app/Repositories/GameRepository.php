@@ -3,21 +3,15 @@
 namespace App\Repositories;
 
 use App\Models\Game;
-use Mail;
-use App;
-use Auth;
-use DB;
 
 class GameRepository implements ResourceRepositoryInterface
 {
 
     protected $model;
-    protected $userRepository;
 
-    public function __construct(Game $Game, UserRepository $userRepository)
+    public function __construct(Game $Game)
     {
         $this->model = $Game;
-        $this->userRepository = $userRepository;
     }
 
     private function save(Game $Game, array $inputs)

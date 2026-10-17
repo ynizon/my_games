@@ -2,7 +2,7 @@
     <x-navbars.sidebar activePage="games"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Games"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Games')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -22,7 +22,7 @@
                                     <label for="name" class="col-md-4 control-label">Nom</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{!! $game->name !!}" required autofocus />
+                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{{ $game->name }}" required autofocus />
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -36,7 +36,7 @@
                                     <label for="description" class="col-md-4 control-label">Description</label>
 
                                     <div class="col-md-6">
-                                        <textarea id="description" type="text" class="form-control border border-2 p-2" name="description" style="height:100px" >{!! $game->description !!}</textarea>
+                                        <textarea id="description" type="text" class="form-control border border-2 p-2" name="description" style="height:100px" >{{ $game->description }}</textarea>
 
                                         @if ($errors->has('description'))
                                             <span class="help-block">

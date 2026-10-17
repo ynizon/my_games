@@ -11,7 +11,7 @@
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">
-                                        Pictionary
+                                        {{ $gameName }}
                                     </h4>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                                     <p>{!! __("messages.goal_pictionary") !!}.
                                     </p>
                                     <br/>
-                                    <input onclick="startSet()" type="button" value="{{ __("messages.Team 1 Start")}}" class="btnstep btn btn-primary" />
+                                    <input onclick="startSet()" type="button" value="{{ __("messages.Team 1 Start")}}" class="btnstep btnstart btn btn-primary" />
                                 </div>
 
                                 <div id="game" class="pictionary inv">
@@ -59,7 +59,7 @@
 
                                                 <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
                                                     <div class="one-third">
-                                                        <i class="fa fa-close pointer btnplay arrondicancel" id="cancel" onclick="nextCard(false,true)"></i>
+                                                        <i class="fa fa-close pointer btnplay arrondicancel" id="cancel" onclick="nextCard(false)"></i>
 
                                                         <div class="stat-value">{{ __("messages.MISSED")}} (-1)</div>
                                                     </div>
@@ -71,7 +71,7 @@
                                                     </div>
 
                                                     <div class="one-third no-border">
-                                                        <i class="fa fa-check pointer btnplay arrondivalidate" id="validate" onclick="nextCard(true,true)"></i>
+                                                        <i class="fa fa-check pointer btnplay arrondivalidate" id="validate" onclick="nextCard(true)"></i>
 
                                                         <div class="stat-value">{{ __("messages.OK")}} (+1)</div>
                                                     </div>
@@ -95,7 +95,7 @@
 
                                     </div>
 
-                                    <input onclick="initGame()" type="button" value="Equipe suivante" class="btnstep btnstepend btn btn-primary" />
+                                    <input onclick="initGame()" type="button" value="{{ __("messages.NextTeam") }}" class="btnstepend btn btn-primary" />
                                 </div>
 
                                 <div id="endingset" class="inv pictionary">
@@ -131,427 +131,320 @@
                                 </div>
 
                                 <script>
-                                    var arrCardsTeam = [];
-                                    var step = 0;
-                                    var nbTeam = {{ $nbteams}};
-                                    var nbSets = {{ $nbsets}};
-                                    var iTeam= 1;
-                                    var iSet = 0;
-                                    $(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
-                                    var score1 = 0;
-                                    var score2 = 0;
-                                    var score3 = 0;
-                                    var score4 = 0;
-                                    var bClickOk = true;
-                                    var arrCardsForThisSet = [];
-                                    var arrCardsForThisGame = [];
-                                    var arrCardsForThisMatch = [];
-                                    var arrCardsForThisMatchId = [];
-                                    var iScore = 0;
-
+                                    var nbTeam = {{ $nbteams }};
+                                    var nbSets = {{ $nbsets }};
                                     var iTimeLimit = 30;
-                                    var bPause = false;
-                                    function progress() {
-                                        var val = 1;
-                                        if (bPause){
-                                            val = 0;
-                                        }
-                                        var ava = document.getElementById("progress");
 
-                                        if ($('#progress').val()<=iTimeLimit && $('#progress').val()>=1) {
-                                            $('#progress').val($('#progress').val()-val);
-                                            $("#chrono").html($('#progress').val());
-                                            setTimeout(function(){ progress(); }, 1000);
-                                        }else{
-                                            if ($('#progress').val()!=-99){
-                                                nextCard(false,false);
-                                                endGame();
-                                            }
+                                    var TXT_TEAM_GO = @json(__("messages.TeamGo"));
+                                    var TXT_ENDSET = @json(__("messages.Endset"));
+                                    var TXT_DRAW_GAME = @json(__("messages.Draw game"));
+                                    var TXT_CONGRATULATIONS = @json(__("messages.Congratulations Team"));
+                                    var TXT_PLAY_AGAIN = @json(__("messages.Play again"));
+                                    var TXT_HOME = @json(__("messages.Home"));
+
+                                    // Etat de la partie : loading, intro, turn, turnEnd, setEnd, finished
+                                    var sPhase = "loading";
+                                    var step = 0;
+                                    var iTeam = 1;
+                                    var iSet = 0;
+                                    var arrScores = [];
+                                    var arrCardsForThisMatch = [];  //Toutes les cartes
+                                    var arrCardsForThisSet = [];    //Pioche (cartes pas encore jouees)
+                                    var arrMissedCards = [];        //Cartes ratees, remises dans la pioche quand elle est vide
+                                    var arrCardsTeam = [];          //Cartes jouees pendant le tour : {card, find, delta, missDelta, team}
+                                    var oCurrentCard = null;
+                                    var bClickOk = false;
+                                    var bPause = false;
+                                    var iTimeLeft = 0;
+                                    var progressTimeout = null;
+
+                                    function teamGoLabel(iNum){
+                                        return TXT_TEAM_GO.replace(":team", iNum);
+                                    }
+
+                                    Fun.ambiance("pictionary");
+
+                                    function progress() {
+                                        progressTimeout = null;
+                                        if (sPhase != "turn") {
+                                            return;
                                         }
+                                        if (!bPause) {
+                                            iTimeLeft--;
+                                            Fun.tick(iTimeLeft);
+                                        }
+                                        $("#progress").val(iTimeLeft);
+                                        $("#chrono").text(iTimeLeft);
+                                        if (iTimeLeft <= 0) {
+                                            timeUp();
+                                        } else {
+                                            progressTimeout = setTimeout(progress, 1000);
+                                        }
+                                    }
+
+                                    function stopTimer(){
+                                        if (progressTimeout !== null) {
+                                            clearTimeout(progressTimeout);
+                                            progressTimeout = null;
+                                        }
+                                    }
+
+                                    function setPause(bValue){
+                                        bPause = bValue;
+                                        $("#btn_pause").toggleClass("fa-play", bPause).toggleClass("fa-pause", !bPause);
                                     }
 
                                     function pause(){
-                                        $("#btn_pause").toggleClass("fa-play");
-                                        $("#btn_pause").toggleClass("fa-pause");
-                                        if (bPause){
-                                            bPause = false;
-                                        }else{
-                                            bPause = true;
+                                        if (sPhase != "turn") {
+                                            return;
                                         }
-                                        var audio = new Audio('/sounds/pause.mp3');
-                                        audio.play();
+                                        setPause(!bPause);
+                                        playSound('/sounds/pause.mp3');
                                     }
 
-                                    // This works on all devices/browsers, and uses IndexedDBShim as a final fallback
-                                    var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+                                    loadGameCards(@json($gameSlug), @json(__("messages.NoCardsLoaded")), function (arrAllCards) {
+                                        arrCardsForThisMatch = arrAllCards.slice();
+                                        startMatch();
+                                    });
 
-                                    //Get cards for country in indexedDB
-                                    var arrAllCards = [];
-
-                                    // Open (or create) the database
-                                    var open = indexedDB.open("MyGames", 1);
-
-                                    var i=0;
-                                    open.onsuccess = function() {
-                                        // Start a new transaction
-                                        var db = open.result;
-                                        var tx = db.transaction("pictionary");
-                                        var store = tx.objectStore("pictionary");
-
-                                        //Get the cards for this game
-                                        store.openCursor().onsuccess = function(event) {
-                                            var cursor = event.target.result;
-                                            if (cursor) {
-                                                arrAllCards.push(cursor.value);
-                                                cursor.continue();
-                                            }else{
-                                                if (arrAllCards.length == 0) {
-                                                    alert("{{ __("messages.ErrorGetCard")}}.");
-                                                    window.location.href="/?error=getcard";
-                                                }else{
-                                                    getCards();
-                                                }
+                                    //Pioche une carte ; si la pioche est vide, on y remet les cartes ratees (ou toutes les cartes)
+                                    function drawCard(){
+                                        if (arrCardsForThisSet.length == 0) {
+                                            if (arrMissedCards.length > 0) {
+                                                arrCardsForThisSet = arrMissedCards;
+                                                shuffle(arrCardsForThisSet);
+                                            } else {
+                                                arrCardsForThisSet = leastPlayedFirst(arrCardsForThisMatch);
                                             }
-                                        };
-
-
-                                        // Close the db when the transaction is done
-                                        tx.oncomplete = function() {
-                                            db.close();
-                                        };
+                                            arrMissedCards = [];
+                                        }
+                                        var oCard = arrCardsForThisSet.shift();
+                                        markCardsPlayed([oCard.id]);
+                                        return oCard;
                                     }
 
-
-                                    function updateCard(oItem){
-                                        var db = open.result;
-                                        var objectStore = db.transaction(["pictionary"], "readwrite").objectStore("pictionary");
-                                        var request = objectStore.get(oItem.id);
-                                        request.onerror = function(event) {
-                                            // Gestion des erreurs!
-                                        };
-                                        request.onsuccess = function(event) {
-                                            // On récupère l'ancienne valeur que nous souhaitons mettre à jour
-                                            var data = request.result;
-
-                                            // On met à jour ce(s) valeur(s) dans l'objet
-                                            data.created = sToday;
-
-                                            // Et on remet cet objet à jour dans la base
-                                            var requestUpdate = objectStore.put(data);
-                                            requestUpdate.onerror = function(event) {
-                                                // Faire quelque chose avec l’erreur
-                                            };
-                                            requestUpdate.onsuccess = function(event) {
-                                                // Succès - la donnée est mise à jour !
-                                            };
-                                        };
-                                    }
-
-                                    //Get cards for this game
-                                    function getCards(){
-                                        arrCardsForThisMatch = [];
-                                        arrCardsForThisMatchId = [];
-                                        var iTry = 0;
-                                        var k=0;
-                                        if (arrAllCards.length < 1){
-                                            alert("{{ __("messages.ErrorGetCard")}}.");
-                                        }else{
-                                            while (arrCardsForThisMatch.length<arrAllCards.length){
-                                                var item = arrAllCards[k];
-                                                if (!arrCardsForThisMatchId.includes(item.id)){
-                                                    arrCardsForThisMatch.push(item);
-                                                    arrCardsForThisMatchId.push(item.id);
-                                                }
-                                                k++;
-                                            }
-
-                                            startMatch();
+                                    function removeById(arrCards, iId){
+                                        var index = arrCards.findIndex(function (oCard) { return oCard.id == iId; });
+                                        if (index > -1) {
+                                            arrCards.splice(index, 1);
                                         }
                                     }
 
-                                    function shuffleCards(){
-                                        shuffle(arrCardsForThisMatch);
+                                    function addScore(iNumTeam, iDelta){
+                                        arrScores[iNumTeam - 1] += iDelta;
+                                        $("#total-" + iNumTeam).text(arrScores[iNumTeam - 1]);
                                     }
 
-                                    //bScore is false when the time is done
-                                    function nextCard(bValidate,bScore){
-                                        if (bClickOk){
-                                            bClickOk = false;
-
-                                            $("#cardname").fadeOut("fast", function() {
-                                                $("#cardname").html("");
-                                            });
-                                            arrCardsForThisGame.shift();
-
-                                            arrCardsTeam.push({name:$("#cardname").html(),find:bValidate});
-
-                                            iCard++;
-                                            if (bValidate){
-                                                var audio = new Audio('/sounds/ok.mp3');
-                                                audio.play();
-                                                iScore++;
-                                                $("#total-"+iTeam).html(parseInt($("#total-"+iTeam).html())+1);
-                                            }else{
-                                                if (bScore){
-                                                    iScore--;
-                                                    var audio = new Audio('/sounds/error.mp3');
-                                                    audio.play();
-                                                    $("#total-"+iTeam).html(parseInt($("#total-"+iTeam).html())-1);
-                                                }
-                                            }
-
-
-                                            var indexCard = -1;
-                                            var k = 0;
-                                            while (indexCard == -1 && k < arrCardsForThisSet.length){
-                                                var oCard = arrCardsForThisSet[k];
-                                                if (oCard.name == $("#cardname").html()){
-                                                    indexCard = k;
-                                                }
-                                                k=k+1;
-                                            }
-                                            arrCardsForThisSet.splice(indexCard, 1);
-
-                                            showCard();
-                                            $(".btnplay").show();
-
-                                            if (arrCardsForThisGame.length==0){
-                                                endGame();
-                                            }
+                                    //Enregistre la carte jouee ; delta : +1 trouvee, -1 ratee, 0 temps ecoule
+                                    function recordCard(oCard, bFind, iDelta){
+                                        arrCardsTeam.push({card: oCard, find: bFind, delta: iDelta, missDelta: bFind ? -1 : iDelta, team: iTeam});
+                                        addScore(iTeam, iDelta);
+                                        if (!bFind) {
+                                            arrMissedCards.push(oCard);
                                         }
+                                    }
+
+                                    function nextCard(bValidate){
+                                        if (sPhase != "turn" || !bClickOk || bPause || oCurrentCard === null) {
+                                            return;
+                                        }
+                                        bClickOk = false;
+                                        recordCard(oCurrentCard, bValidate, bValidate ? 1 : -1);
+                                        playSound(bValidate ? '/sounds/ok.mp3' : '/sounds/error.mp3');
+                                        showCard();
                                     }
 
                                     function showCard(){
-                                        if (arrCardsForThisGame.length>0){
-                                            $("#cardname").fadeIn("fast", function() {
-                                                $("#cardname").html(arrCardsForThisGame[0].name);
-                                                var item = JSON.parse(arrCardsForThisGame[0].description);
-
+                                        oCurrentCard = drawCard();
+                                        var sName = oCurrentCard.name;
+                                        $("#cardname").stop(true, true).fadeOut("fast", function() {
+                                            $("#cardname").text(sName).fadeIn("fast", function() {
                                                 bClickOk = true;
                                             });
-                                        }
+                                            Fun.cardIn("#cardname");
+                                        });
                                     }
 
+                                    function timeUp(){
+                                        if (sPhase != "turn") {
+                                            return;
+                                        }
+                                        //La carte en cours compte comme ratee, sans penalite
+                                        if (oCurrentCard !== null) {
+                                            recordCard(oCurrentCard, false, 0);
+                                            oCurrentCard = null;
+                                        }
+                                        endGame();
+                                    }
 
                                     function startSet(){
-                                        nextSet();
-                                        initGame();
+                                        if (sPhase != "intro") {
+                                            return;
+                                        }
+                                        nextGame();
                                     }
 
                                     function initSet(){
-                                        $(".step").html(step);
+                                        $(".step").text(step);
                                     }
 
                                     function endSet(){
-                                        iCard = 0;
+                                        sPhase = "setEnd";
                                         $("#spanpause").hide();
-                                        $("#endinggame" ).slideUp( "slow" );
+                                        $("#endinggame").slideUp("slow");
                                         $("#endingset").show();
 
                                         step++;
-                                        if ((step-1)==nbSets){
-                                            //Who has win ?
-                                            score1 = parseInt($("#total-1").html());
-                                            score2 = parseInt($("#total-2").html());
-                                            score3 = parseInt($("#total-3").html());
-                                            score4 = parseInt($("#total-4").html());
-                                            var score = score1;
-                                            if (score2>score){
-                                                score=score2;
-                                            }
-                                            if (score3>score){
-                                                score=score3;
-                                            }
-                                            if (score4>score){
-                                                score=score4;
-                                            }
-
-                                            var bDraw = false;
-                                            var sWin = "";
-                                            if (score == score1){
-                                                sWin = sWin + "1";
-                                            }
-                                            if (score == score2){
-                                                if (sWin != ""){
-                                                    sWin = sWin + ",";
-                                                    bDraw = true;
-                                                }
-                                                sWin = sWin + "2";
-                                            }
-                                            if (score == score3 && nbTeam>2){
-                                                if (sWin != ""){
-                                                    sWin = sWin + ",";
-                                                    bDraw = true;
-                                                }
-                                                sWin = sWin + "3";
-                                            }
-                                            if (score == score4 && nbTeam>3){
-                                                if (sWin != ""){
-                                                    sWin = sWin + ",";
-                                                    bDraw = true;
-                                                }
-                                                sWin = sWin + "4";
-                                            }
-
-                                            if (bDraw){
-                                                sWin = "{{ __("messages.Draw game")}} "+sWin;
-                                            }else{
-                                                sWin = "{{ __("messages.Congratulations Team")}} "+sWin;
-                                            }
-                                            $("#finishset").html(sWin);
-                                            $("#finish").html("<a class='btn btn-primary' href='#' onclick='window.location.reload();'>{{ __("messages.Play again")}}</a>&nbsp;&nbsp;&nbsp;<a class='btn btn-primary' href='/'>{{ __("messages.Home")}}</a>");
-                                            var audio = new Audio('/sounds/finish.mp3');
-                                            audio.play();
+                                        if ((step-1) == nbSets){
+                                            sPhase = "finished";
+                                            var arrWinners = getWinners(arrScores);
+                                            var sWin = (arrWinners.length > 1 ? TXT_DRAW_GAME : TXT_CONGRATULATIONS) + " " + arrWinners.join(",");
+                                            $("#finishset").text(sWin);
+                                            $("#finish").empty()
+                                                .append($("<a class='btn btn-primary' href='#'></a>").text(TXT_PLAY_AGAIN).on("click", function (e) {
+                                                    e.preventDefault();
+                                                    window.location.reload();
+                                                }))
+                                                .append(document.createTextNode("   "))
+                                                .append($("<a class='btn btn-primary' href='/'></a>").text(TXT_HOME));
+                                            Fun.celebrate(arrWinners);
                                         }
                                     }
 
                                     function nextSet(){
+                                        if (sPhase != "setEnd") {
+                                            return;
+                                        }
+                                        sPhase = "intro";
                                         initSet();
+                                        $(".btnstart").val(teamGoLabel(iTeam));
                                         $("#intro").show();
                                         $("#endingset").hide();
-
                                     }
 
                                     function initGame(){
-                                        arrCardsForThisGame = arrCardsForThisSet.slice();
+                                        if (sPhase != "turnEnd") {
+                                            return;
+                                        }
                                         nextGame();
                                     }
 
                                     function endGame(){
+                                        if (sPhase != "turn") {
+                                            return;
+                                        }
+                                        sPhase = "turnEnd";
+                                        stopTimer();
                                         endClock();
+                                        bClickOk = false;
                                         $('#progress').val(-99);
-                                        $("#game" ).slideUp( "slow" );
+                                        $("#game").slideUp("slow");
 
-                                        sList = "";
-                                        arrCardsTeam.forEach (function(item){
-                                            sInfo = "warning";
-                                            if (item.find){
-                                                sInfo = "success";
-                                            }
-                                            sList = sList+ '<li class="pointer list-group-item list-group-item-'+sInfo+'"><span onclick="changeThis(this)">'+item.name+'</span></li>';
+                                        var oList = $("#list").empty();
+                                        arrCardsTeam.forEach(function (item, index) {
+                                            oList.append(
+                                                $('<li class="pointer list-group-item"></li>')
+                                                    .addClass(item.find ? "list-group-item-success" : "list-group-item-warning")
+                                                    .append($("<span></span>").text(item.card.name).on("click", function () {
+                                                        changeThis(index, this);
+                                                    }))
+                                            );
                                         });
-                                        $("#list").html(sList);
-                                        $("#score").html($(".list-group-item-success").length+"/"+arrCardsTeam.length +" ");
+                                        refreshTeamScore();
                                         $("#spanpause").hide();
                                         $("#endinggame").show();
 
-                                        var audio = new Audio('/sounds/beep.mp3');
-                                        audio.play();
+                                        playSound('/sounds/beep.mp3');
+                                        if (arrCardsTeam.some(function (item) { return item.find; })) {
+                                            Fun.confetti();
+                                        }
 
                                         iTeam++;
-
-                                        $(".btnstep").val("{{ __("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
-                                        if (iTeam > {{ $nbteams}}){
+                                        if (iTeam > nbTeam){
                                             iTeam = 1;
                                             iSet++;
-                                            $(".btnstep").val("{{ __("messages.Team") }} "+iTeam+", {{ __("messages.go")}} !");
-                                            $(".btnstepend").val("{{ __("messages.Endset")}}");
+                                            $(".btnstepend").val(TXT_ENDSET);
+                                        } else {
+                                            $(".btnstepend").val(teamGoLabel(iTeam));
                                         }
-
+                                        $(".btnstart").val(teamGoLabel(iTeam));
                                     }
 
-                                    function changeThis(oItem){
-                                        var iTeamtmp = iTeam-1;
-                                        if (iTeamtmp==0){
-                                            iTeamtmp = nbTeam;
+                                    function refreshTeamScore(){
+                                        var iFound = arrCardsTeam.filter(function (item) { return item.find; }).length;
+                                        $("#score").text(iFound + "/" + arrCardsTeam.length + " ");
+                                    }
+
+                                    //Correction en fin de tour : la carte etait finalement trouvee / ratee
+                                    function changeThis(index, oSpan){
+                                        if (sPhase != "turnEnd") {
+                                            return;
                                         }
-                                        var audio = new Audio('/sounds/pass.mp3');
-                                        audio.play();
-                                        if ($(oItem).parent().hasClass('list-group-item-warning')){
-                                            //Card was finally found
-                                            var oCard = null;
-                                            var indexCard = -1;
-                                            var k = 0;
-                                            while (indexCard == -1 && k < arrCardsForThisGame.length){
-                                                var oCard = arrCardsForThisGame[k];
-                                                if (oCard.name == $(oItem).html()){
-                                                    indexCard = k;
-                                                }
-                                                k=k+1;
-                                            }
-                                            arrCardsForThisGame.splice(indexCard, 1);
-                                            var indexCard = -1;
-                                            var k = 0;
-                                            while (indexCard == -1 && k < arrCardsForThisSet.length){
-                                                var oCard = arrCardsForThisSet[k];
-                                                if (oCard.name == $(oItem).html()){
-                                                    indexCard = k;
-                                                }
-                                                k=k+1;
-                                            }
-                                            arrCardsForThisSet.splice(indexCard, 1);
+                                        var item = arrCardsTeam[index];
+                                        var iOldDelta = item.delta;
+                                        item.find = !item.find;
+                                        item.delta = item.find ? 1 : item.missDelta;
+                                        addScore(item.team, item.delta - iOldDelta);
 
-                                            iScore++;
-                                            $("#total-"+iTeamtmp).html(parseInt($("#total-"+iTeamtmp).html())+1);
-
-                                        }else{
-                                            //Card was finally not found
-                                            var oCard = null;
-                                            var indexCard = -1;
-                                            var k = 0;
-                                            while (indexCard == -1 && k < arrCardsForThisMatch.length){
-                                                var oCard = arrCardsForThisMatch[k];
-                                                if (oCard.name == $(oItem).html()){
-                                                    indexCard = k;
-                                                }
-                                                k=k+1;
-                                            }
-                                            iScore--;
-                                            $("#total-"+iTeamtmp).html(parseInt($("#total-"+iTeamtmp).html())-1);
-                                            arrCardsForThisGame.push(oCard);
-                                            arrCardsForThisSet.push(oCard);
+                                        if (item.find) {
+                                            //Plus besoin de la rejouer
+                                            removeById(arrMissedCards, item.card.id);
+                                            removeById(arrCardsForThisSet, item.card.id);
+                                        } else {
+                                            arrMissedCards.push(item.card);
                                         }
-                                        $(oItem).parent().toggleClass('list-group-item-warning');
-                                        $(oItem).parent().toggleClass('list-group-item-success');
 
-                                        $("#score").html($(".list-group-item-success").length+"/"+arrCardsTeam.length +" ");
+                                        playSound('/sounds/pass.mp3');
+                                        $(oSpan).parent().toggleClass('list-group-item-warning', !item.find).toggleClass('list-group-item-success', item.find);
+                                        refreshTeamScore();
                                     }
 
                                     function nextGame(){
-                                        shuffle(arrCardsForThisSet);
-                                        arrCardsOK = [];
                                         arrCardsTeam = [];
-                                        iScore = 0;
 
-                                        $( ".intro" ).slideUp( "slow" );
+                                        $(".intro").slideUp("slow");
                                         $("#endingset").hide();
                                         $("#endinggame").hide();
 
-                                        if (iSet==step){
+                                        if (iSet == step){
                                             endSet();
                                         }else{
-                                            $("#progress").val(iTimeLimit);
+                                            sPhase = "turn";
+                                            setPause(false);
+                                            stopTimer();
+                                            iTimeLeft = iTimeLimit;
+                                            $("#progress").val(iTimeLeft);
+                                            $("#chrono").text(iTimeLeft);
                                             $("#game").show();
                                             $("#spanpause").show();
                                             initClock(iTimeLimit);
                                             showCard();
-                                            progress();
+                                            progressTimeout = setTimeout(progress, 1000);
                                         }
                                     }
 
                                     function startMatch(){
-                                        if ({{$nbteams}}<3){
+                                        if (nbTeam < 3){
                                             $(".player3").hide();
                                         }
-                                        if ({{$nbteams}} <4){
+                                        if (nbTeam < 4){
                                             $(".player4").hide();
                                         }
 
-                                        step=1;
-                                        iTeam= 1;
-                                        $(".btnstep").val("{{__("messages.Team")}} "+iTeam+", {{ __("messages.go")}} !");
-                                        score1 = 0;
-                                        score2 = 0;
-                                        score3 = 0;
-                                        score4 = 0;
-                                        iCard = 0;
+                                        step = 1;
+                                        iTeam = 1;
                                         iSet = 0;
-                                        for (var k=1;k<=4;k++){
-                                            $("#total-"+k).html(0);
+                                        arrScores = [];
+                                        for (var k = 1; k <= nbTeam; k++){
+                                            arrScores.push(0);
+                                            $("#total-" + k).text(0);
                                         }
-                                        shuffleCards();
-                                        arrCardsForThisSet = arrCardsForThisMatch.slice();
+                                        $(".btnstart").val(teamGoLabel(iTeam));
+                                        arrMissedCards = [];
+                                        // Cartes jamais jouees d'abord, puis les plus anciennement jouees
+                                        arrCardsForThisSet = leastPlayedFirst(arrCardsForThisMatch);
                                         initSet();
+                                        sPhase = "intro";
                                     }
                                 </script>
                             </div>

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-Use Str;
-Use Hash;
+use Illuminate\Support\Str;
 use Illuminate\Auth\Events\PasswordReset;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Password;
 
@@ -29,6 +26,18 @@ class SessionsController extends Controller
                 'email' => 'Your provided credentials could not be verified.'
             ]);
         }
+
+        $user = auth()->user();
+        if ($user->status != 1) {
+            auth()->logout();
+            throw ValidationException::withMessages([
+                'email' => "Votre compte a été suspendu."
+            ]);
+        }
+
+        //On memorise sa date de connexion
+        $user->logged_date = date("Y-m-d");
+        $user->save();
 
         session()->regenerate();
 
@@ -80,6 +89,8 @@ class SessionsController extends Controller
     public function destroy()
     {
         auth()->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
 
         return redirect('/sign-in');
     }

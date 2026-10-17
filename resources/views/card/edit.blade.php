@@ -1,8 +1,8 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="games"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="cards"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Games"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Cards')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -37,7 +37,7 @@
                                     <label for="name" class="col-md-4 control-label">Nom</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{!! $card->name !!}" required autofocus />
+                                        <input id="name" type="text" class="form-control border border-2 p-2" name="name" value="{{ $card->name }}" required autofocus />
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -51,7 +51,7 @@
                                     <label for="description" class="col-md-4 control-label">Description</label>
 
                                     <div class="col-md-6">
-                                        <textarea id="description" class="form-control border border-2 p-2 inv" name="description"  >{!! $card->description !!}</textarea>
+                                        <textarea id="description" class="form-control border border-2 p-2 inv" name="description"  >{{ $card->description }}</textarea>
 
                                         @for ($k=1;$k<=12;$k++)
                                             <div style="padding-left:10px;padding-bottom:5px;">
@@ -110,6 +110,7 @@
                                     </div>
                                 </div>
 
+                                @if (Auth::user()->can("card-edit"))
                                 <div class="mb-3 col-md-6 form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                                     <label for="country" class="col-md-4 control-label">{{__("messages.Status")}}</label>
 
@@ -117,6 +118,7 @@
                                         {!! Form::select('status', array("1"=>"Actif","0"=>"Inactif"),$card->status , ['id'=>"status", 'class' => 'form-control']) !!}
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <button type="submit" class="btn bg-gradient-dark">

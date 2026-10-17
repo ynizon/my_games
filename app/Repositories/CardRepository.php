@@ -3,47 +3,27 @@
 namespace App\Repositories;
 
 use App\Models\Card;
-use Mail;
-use App;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\Auth;
 
 class CardRepository implements ResourceRepositoryInterface
 {
 
     protected $model;
-    protected $userRepository;
 
-    public function __construct(Card $Card, UserRepository $userRepository)
+    public function __construct(Card $Card)
     {
         $this->model = $Card;
-        $this->userRepository = $userRepository;
     }
 
     private function save(Card $Card, array $inputs)
     {
-        if (isset($inputs['name'])) {
-            $Card->name = $inputs['name'];
-        }
-
-        if (isset($inputs['country'])) {
-            $Card->country = $inputs['country'];
-        }
-
-        if (isset($inputs['lang'])) {
-            $Card->lang = $inputs['lang'];
-        }
-
-        if (isset($inputs['description'])) {
-            $Card->description = $inputs['description'];
-        }
-
-        if (isset($inputs['game_id'])) {
-            $Card->game_id = $inputs['game_id'];
+        foreach (['name', 'country', 'lang', 'description', 'game_id', 'difficulty', 'status'] as $field) {
+            if (isset($inputs[$field])) {
+                $Card->$field = $inputs[$field];
+            }
         }
 
         $Card->save();
-
     }
 
     public function getPaginate($n)
@@ -54,6 +34,7 @@ class CardRepository implements ResourceRepositoryInterface
     public function store(array $inputs)
     {
         $Card = new $this->model;
+        $Card->description = "";
 
         $this->save($Card, $inputs);
 
@@ -83,12 +64,11 @@ class CardRepository implements ResourceRepositoryInterface
     public function getMyCards()
     {
         $user = Auth::user();
-        if ($user->can("card-edit")) {
-            $cards = $this->model->orderBy("name", "desc")->get();
-        } else {
-            $cards = $this->model->orderBy("name", "desc")->where("created_by", "=", $user->name)->get();
+        $query = $this->model->with('game')->orderBy("name", "desc");
+        if (!$user->can("card-edit")) {
+            $query->where("user_id", "=", $user->id);
         }
-        return $cards;
+        return $query->get();
     }
 
     public function getByGameId($id)
@@ -115,7 +95,9 @@ class CardRepository implements ResourceRepositoryInterface
 
     public function checkDouble($lang, $game_id, $name)
     {
+        $search = addcslashes((string) $name, '\%_');
+
         return $this->model->where("lang", "=", $lang)->where("game_id", "=", $game_id)
-            ->where('name', 'like', '%'.$name.'%')->orderBy("name", "desc")->get();
+            ->where('name', 'like', '%'.$search.'%')->orderBy("name", "desc")->get();
     }
 }

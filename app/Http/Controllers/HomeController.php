@@ -1,100 +1,82 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+
 use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
 use App\Repositories\GameRepository;
 use Illuminate\Support\Facades\App;
-use Session;
 use Illuminate\Support\Facades\Auth;
-use Mail;
+
 class HomeController extends Controller
 {
 
-	protected UserRepository $usersRepository;
-	protected GameRepository $gamesRepository;
+    protected GameRepository $gameRepository;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct( UserRepository $userRepository, GameRepository $gameRepository)
+    public function __construct(GameRepository $gameRepository)
     {
-		$this->userRepository = $userRepository;
-		$this->gameRepository = $gameRepository;
-        //$this->middleware('auth');
+        $this->gameRepository = $gameRepository;
     }
 
-	/**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function info(Request $request)
+    public function info()
     {
-		$games = $this->gameRepository->get();
-		return view('info',compact('games'));
-	}
+        $games = $this->gameRepository->get();
+        return view('info', compact('games'));
+    }
 
-	/**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         if ($request->input("error") == "getcard" && isset($_COOKIE["getcard"])) {
             unset($_COOKIE["getcard"]);
         }
 
-		//Auth
-		$user = Auth::user();
+        $langs = config("app.langs");
+        $user = Auth::user();
         $lang = config("app.locale");
-		if ($user){
-			if ($user->status != 1){
-				Auth::logout();
-				return redirect('/login')->withError("Votre compte a été suspendu." );
-			}else{
-				//On memorise sa date de connexion
-				setcookie('locale', $user->lang);
-				$user->logged_date = date("Y-m-d");
-				$user->save();
-			}
-            $lang = $user->lang;
-		}
+        if ($user) {
+            //On memorise sa date de connexion
+            $user->logged_date = date("Y-m-d");
+            $user->save();
+            if (array_key_exists((string) $user->lang, $langs)) {
+                setcookie('locale', $user->lang);
+                $lang = $user->lang;
+            }
+        }
 
-		//Change lang
-		if ($request->input("lang") != ""){
-            $lang = $request->input("lang");
-			$_COOKIE["locale"]=$request->input("lang");
-			setcookie('locale',$request->input("lang"));
-			if ($user){
-				$user->lang = $request->input("lang");
-				$user->save();
-			}
-			return redirect("/");
-		}
+        //Change lang (seulement vers une langue proposee)
+        $newLang = (string) $request->input("lang");
+        if ($newLang != "" && array_key_exists($newLang, $langs)) {
+            $_COOKIE["locale"] = $newLang;
+            setcookie('locale', $newLang);
+            if ($user) {
+                $user->lang = $newLang;
+                $user->save();
+            }
+            return redirect("/");
+        }
 
-		//Check locale
-		if (!isset($_COOKIE["locale"])){
-			$_COOKIE["locale"]=config("app.locale");
-			setcookie('locale', config("app.locale"));
-			return redirect("/");
-		}else{
-			$lang = $_COOKIE["locale"];
-		}
+        //Check locale
+        if (!isset($_COOKIE["locale"]) || !array_key_exists((string) $_COOKIE["locale"], $langs)) {
+            $_COOKIE["locale"] = config("app.locale");
+            setcookie('locale', config("app.locale"));
+            return redirect("/");
+        } else {
+            $lang = $_COOKIE["locale"];
+        }
 
-		//Redirection
-		if ($request->get("redirect") != null){
-			return redirect($request->get("redirect"));
-		}
+        //Redirection (uniquement vers une page du site)
+        $redirect = (string) $request->get("redirect");
+        if ($this->isLocalPath($redirect)) {
+            return redirect($redirect);
+        }
 
-		$games = $this->gameRepository->get();
+        $games = $this->gameRepository->get();
         App::setLocale($lang);
 
-		return view('index',compact('games','lang'));
-	}
+        return view('index', compact('games', 'lang'));
+    }
 
+    private function isLocalPath(string $path): bool
+    {
+        return str_starts_with($path, '/') && !str_starts_with($path, '//') && !str_contains($path, '\\');
+    }
 }

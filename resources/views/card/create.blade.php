@@ -1,8 +1,8 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="games"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="cards"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Games"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Cards')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -112,6 +112,7 @@
                                     </div>
                                 </div>
 
+                                @if (Auth::user()->can("card-edit"))
                                 <div class="mb-3 col-md-6 form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                                     <label for="country" class="col-md-4 control-label">{{__("messages.Status")}}</label>
 
@@ -119,6 +120,7 @@
                                         {!! Form::select('status', array("1"=>"Actif","0"=>"Inactif"),1, ['id'=>"status", 'class' => 'form-control']) !!}
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <button type="submit" class="btn bg-gradient-dark">

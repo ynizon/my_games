@@ -2,7 +2,7 @@
     <x-navbars.sidebar activePage="users"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Users"></x-navbars.navs.auth>
+        <x-navbars.navs.auth :titlePage="__('messages.Users')"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -18,7 +18,7 @@
                             <div class="container">
                                 <br/>
                                 <div class="alert alert-success alert-dismissible text-white" role="alert">
-                                    <span class="text-sm">{!! session('ok') !!}</span>
+                                    <span class="text-sm">{{ session('ok') }}</span>
                                     <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -30,7 +30,7 @@
                             <div class="container">
                                 <br/>
                                 <div class="alert alert-primary alert-dismissible text-white" role="alert">
-                                    <span class="text-sm">{!! session('error') !!}</span>
+                                    <span class="text-sm">{{ session('error') }}</span>
                                     <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -91,7 +91,7 @@
 
                                             <td class="align-middle">
                                                 <a rel="tooltip" class="btn btn-success btn-link" data-original-title="" title=""
-                                                   href='/users/{!! $user->id !!}/edit'>
+                                                   href='/users/{{ $user->id }}/edit'>
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>

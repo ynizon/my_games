@@ -51,6 +51,8 @@
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fun.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css') }}">
 
     <!-- Appel de jQuery, bootstrap, et vue -->
@@ -66,6 +68,7 @@
     <script src="{{ asset('js/jquery.ui.datepicker-fr.js') }}" ></script>
     <script src="{{ asset('js/jquery.dataTables.min.js') }}" ></script>
     <script src="{{ asset('js/utils.js') }}" ></script>
+    <script src="{{ asset('js/fun.js') }}" ></script>
     <script src="{{ asset('js/prefixfree.min.js') }}" ></script>
 
 
@@ -84,8 +87,8 @@
 
 
 
-    <link rel="alternate" href="/?lang=fr_FR" hreflang="fr"/>
-    <link rel="alternate" href="/?lang=en_EN" hreflang="en"/>
+    <link rel="alternate" href="/?lang=fr" hreflang="fr"/>
+    <link rel="alternate" href="/?lang=en" hreflang="en"/>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo config("app.url");?>">
@@ -104,7 +107,7 @@
     <meta name="twitter:creator" content="@enpix">
     <meta name="twitter:url" content="<?php echo config("app.url");?>">
     <meta name="twitter:title" content="My Games">
-    <meta name="twitter:description" content="Jouer à Time's up, Brainstorm, Loups Garous... sur votre mobile">
+    <meta name="twitter:description" content="{{ __("messages.AppDescription") }}">
     <meta name="twitter:image" content="<?php echo config("app.url");?>/images/screenshot.png">
 
     <link rel="manifest" href="/manifest.json">
@@ -148,11 +151,11 @@
 
 
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200 theme-{{ request()->segment(1) ?: 'home' }}">
 
     <div class="container">
         @if(session()->has('ok'))
-            <div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
+            <div class="alert alert-success alert-dismissible">{{ session('ok') }}</div>
         @endif
 
         @if(session()->has('error'))

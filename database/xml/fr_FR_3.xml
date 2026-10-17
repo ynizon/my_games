@@ -169,7 +169,7 @@
 	</GAME>
 						
 	<GAME>
-		<NOM>Saint Tropez</NOM>
+		<NOM>Saint-Tropez</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>3</MODE>
@@ -211,7 +211,7 @@
 	</GAME>
 						
 	<GAME>
-		<NOM>Banc Public</NOM>
+		<NOM>Banc public</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>3</MODE>
@@ -358,7 +358,7 @@
 	</GAME>
 						
 	<GAME>
-		<NOM>Pedigrée</NOM>
+		<NOM>Pedigree</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>3</MODE>
@@ -589,7 +589,7 @@
 	</GAME>
 						
 	<GAME>
-		<NOM>Chute du Niagara</NOM>
+		<NOM>Chutes du Niagara</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>3</MODE>
@@ -736,7 +736,7 @@
 	</GAME>
 						
 	<GAME>
-		<NOM>Mille-pates</NOM>
+		<NOM>Mille-pattes</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>3</MODE>
@@ -1039,27 +1039,6 @@
 		<MOT3>Nuage</MOT3>
 		<MOT4>Voyage</MOT4>
 		<MOT5>Train</MOT5>
-		<MOT6></MOT6>
-		<MOT7></MOT7>
-		<MOT8></MOT8>
-		<MOT9></MOT9>
-		<MOT10></MOT10>
-		<MOT11></MOT11>
-		<MOT12></MOT12>
-		<DESCRIPTION></DESCRIPTION>
-		<PERSONS></PERSONS>
-	</GAME>
-						
-	<GAME>
-		<NOM>Jenn</NOM>
-		<DIFFICULTE>2</DIFFICULTE>
-		<LANGUE>fr_FR</LANGUE>
-		<MODE>3</MODE>
-		<MOT1>Bonjour</MOT1>
-		<MOT2></MOT2>
-		<MOT3></MOT3>
-		<MOT4></MOT4>
-		<MOT5></MOT5>
 		<MOT6></MOT6>
 		<MOT7></MOT7>
 		<MOT8></MOT8>

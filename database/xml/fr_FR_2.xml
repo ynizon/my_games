@@ -5,15 +5,15 @@
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
-		<MOT1>Tintin au tibet</MOT1>
-		<MOT2>Chien mouillé</MOT2>
-		<MOT3>Le crabe au pinces d'or</MOT3>
-		<MOT4>Le trésor de Rackham le rouge</MOT4>
-		<MOT5>Les cigares du pharaon</MOT5>
-		<MOT6>L'oreille cassé</MOT6>
-		<MOT7>Tintin et les oranges bleues</MOT7>
-		<MOT8>Le sceptre d'Ottokar</MOT8>
-		<MOT9>Tintin et les picaros</MOT9>
+		<MOT1>Tintin au Tibet</MOT1>
+		<MOT2>On a marché sur la Lune</MOT2>
+		<MOT3>Le Crabe aux pinces d'or</MOT3>
+		<MOT4>Le Trésor de Rackham le Rouge</MOT4>
+		<MOT5>Les Cigares du pharaon</MOT5>
+		<MOT6>L'Oreille cassée</MOT6>
+		<MOT7>Le Lotus bleu</MOT7>
+		<MOT8>Le Sceptre d'Ottokar</MOT8>
+		<MOT9>Tintin et les Picaros</MOT9>
 		<MOT10>Coke en stock</MOT10>
 		<MOT11></MOT11>
 		<MOT12></MOT12>
@@ -106,7 +106,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Les grand lieux religieux</NOM>
+		<NOM>Les grands lieux religieux</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -190,7 +190,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Langues étrangeres</NOM>
+		<NOM>Langues étrangères</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -274,7 +274,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Spécialités francaises</NOM>
+		<NOM>Spécialités françaises</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -358,7 +358,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>La où l'on met son argent</NOM>
+		<NOM>Là où l'on met son argent</NOM>
 		<DIFFICULTE>3</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -369,8 +369,8 @@
 		<MOT5>Banque</MOT5>
 		<MOT6>Coffre-fort</MOT6>
 		<MOT7>Porte-monnaie</MOT7>
-		<MOT8>Porte-feuille</MOT8>
-		<MOT9>Poche</MOT9>
+		<MOT8>Portefeuille</MOT8>
+		<MOT9>Compte épargne</MOT9>
 		<MOT10>Banane</MOT10>
 		<MOT11></MOT11>
 		<MOT12></MOT12>
@@ -392,7 +392,7 @@
 		<MOT7>Bozo</MOT7>
 		<MOT8>Blanc</MOT8>
 		<MOT9>Gag</MOT9>
-		<MOT10>Gros nez</MOT10>
+		<MOT10>Perruque</MOT10>
 		<MOT11></MOT11>
 		<MOT12></MOT12>
 		<DESCRIPTION></DESCRIPTION>
@@ -468,7 +468,7 @@
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
 		<MOT1>Acteur</MOT1>
-		<MOT2>Canteur</MOT2>
+		<MOT2>Chanteur</MOT2>
 		<MOT3>Footballeur</MOT3>
 		<MOT4>Avocat</MOT4>
 		<MOT5>Banquier</MOT5>
@@ -1009,7 +1009,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Echecs</NOM>
+		<NOM>Échecs</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1177,7 +1177,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Chaines de montagne</NOM>
+		<NOM>Chaînes de montagnes</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1198,7 +1198,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Grand évenements sportifs</NOM>
+		<NOM>Grands événements sportifs</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1366,7 +1366,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Patisserie française</NOM>
+		<NOM>Pâtisserie française</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1387,7 +1387,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Chef d'état français</NOM>
+		<NOM>Chefs d'État français</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1534,7 +1534,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Sport collectifs</NOM>
+		<NOM>Sports collectifs</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1660,7 +1660,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Ecrivains français</NOM>
+		<NOM>Écrivains français</NOM>
 		<DIFFICULTE>1</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>
@@ -1737,27 +1737,6 @@
 		<MOT8>Epinard</MOT8>
 		<MOT9>Poireau</MOT9>
 		<MOT10>Haricot vert</MOT10>
-		<MOT11></MOT11>
-		<MOT12></MOT12>
-		<DESCRIPTION></DESCRIPTION>
-		<PERSONS></PERSONS>
-	</GAME>
-
-	<GAME>
-		<NOM>Légumes verts</NOM>
-		<DIFFICULTE>1</DIFFICULTE>
-		<LANGUE>fr_FR</LANGUE>
-		<MODE>2</MODE>
-		<MOT1>Haricots verts</MOT1>
-		<MOT2>Epinard</MOT2>
-		<MOT3>Chou-fleur</MOT3>
-		<MOT4>Concombre</MOT4>
-		<MOT5>Courgette</MOT5>
-		<MOT6>Artichaut</MOT6>
-		<MOT7>Céleri</MOT7>
-		<MOT8>Cerfeuil</MOT8>
-		<MOT9>Laitue</MOT9>
-		<MOT10>Endive</MOT10>
 		<MOT11></MOT11>
 		<MOT12></MOT12>
 		<DESCRIPTION></DESCRIPTION>
@@ -2017,7 +1996,7 @@
 	</GAME>
 
 	<GAME>
-		<NOM>Liste des états des Etats-Unis</NOM>
+		<NOM>États des États-Unis</NOM>
 		<DIFFICULTE>2</DIFFICULTE>
 		<LANGUE>fr_FR</LANGUE>
 		<MODE>2</MODE>

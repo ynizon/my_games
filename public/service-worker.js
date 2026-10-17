@@ -113,6 +113,9 @@ self.addEventListener('install', function(evt) {
 	  '/js/jquery.ui.datepicker-fr.js',
 	  '/js/jquery.dataTables.min.js',
 	  '/js/utils.js',
+	  '/js/fun.js',
+	  '/css/fun.css',
+	  '/css/theme.css',
 	  '/js/sw.js',
 	  '/js/highcharts/highcharts.js'
     ]);

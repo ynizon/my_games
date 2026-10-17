@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GameRequest;
 use App\Repositories\GameRepository;
-use Session;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Mail;
-use DB;
+use Illuminate\Support\Facades\Log;
 
 class GameController extends Controller
 {
@@ -19,23 +16,13 @@ class GameController extends Controller
         $this->gameRepository = $gameRepository;
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $this->checkPermission();
 
         $games = $this->gameRepository->get();
 
         return view('game/index', compact('games'));
-    }
-
-
-    public function getall(Request $request)
-    {
-        $lang = $request->get("lang");
-        $game_id = (int) $request->get("game_id");
-        $games = $this->gameRepository->get();
-
-        return Response::json($games);
     }
 
     public function create()
@@ -47,7 +34,7 @@ class GameController extends Controller
 
     public function show($id)
     {
-        return redirect('/game/'.$id."/edit");
+        return redirect('/games/'.$id."/edit");
     }
 
     public function edit($id)
@@ -59,10 +46,9 @@ class GameController extends Controller
         return view('game/edit', compact('game'));
     }
 
-    public function update(Request $request, $id)
+    public function update(GameRequest $request, $id)
     {
-        $this->checkPermission();
-        $this->gameRepository->update($id, $request->all());
+        $this->gameRepository->update($id, $request->validated());
 
         return redirect('/games')->withOk("Le jeu " . $request->input('name') . " a été modifié.");
     }
@@ -75,16 +61,15 @@ class GameController extends Controller
         return redirect()->back();
     }
 
-    public function store(Request $request)
+    public function store(GameRequest $request)
     {
-        $this->checkPermission();
         try {
-            $game = $this->gameRepository->store($request->all());
-            $game->save();
+            $this->gameRepository->store($request->validated());
 
             return redirect('/games')->withOk("Le jeu " . $request->input('name') . " a été créé.");
-        } catch(\Exception $e) {
-            return redirect('/games')->withError("Le jeu " . $request->input('name') . " n'a pas été créé pour la raison suivante: ".$e->getMessage());
+        } catch (\Exception $e) {
+            Log::error($e);
+            return redirect('/games')->withError("Le jeu " . $request->input('name') . " n'a pas pu être créé.");
         }
     }
 

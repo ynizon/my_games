@@ -10,11 +10,14 @@
                         <div class="card z-index-0 fadeIn3 fadeInBottom">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                                    <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Loup Garou</h4>
+                                    <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">{{ $gameName }}</h4>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form id="formgame" method="get" action="/loupgaroudethiercelieux">
+                                @if (session()->has('error'))
+                                    <div class="alert alert-danger text-white">{{ session('error') }}</div>
+                                @endif
+                                <form id="formgame" method="get" action="/{{ $gameSlug }}">
                                     <div class="my-3">
                                         <label class="form-label">{{ __("messages.Players")}}</label>
                                     </div>
@@ -42,52 +45,26 @@
                                     <div class="my-3">
                                         <table class="table table-striped tablewolf">
                                             <tbody>
-                                            <?php
-                                            $k=0;
-                                            $extensions = array();
-                                            foreach ($cards as $card) {
-                                                $ext = json_decode($card->description, true)["word1"];
-                                                $extensions[$ext] = $ext;
-                                            }
-
-                                            foreach ($extensions as $ext) {
-                                                ?>
-                                            <tr>
-                                                <th  colspan="2"style="text-align:center">
-                                                    {{$ext}}
-                                                </th>
-                                            </tr>
-                                                <?php
-                                                foreach ($cards as $card) {
-                                                    $extcard = json_decode($card->description, true)["word1"];
-                                                    if ($extcard == $ext) {
-                                                        $k++;
-                                                        $name = $card->name;
-                                                        ?>
+                                            @foreach ($cards->groupBy('extension') as $extension => $extensionCards)
+                                                <tr>
+                                                    <th colspan="2" style="text-align:center">{{ $extension }}</th>
+                                                </tr>
+                                                @foreach ($extensionCards as $card)
                                                     <tr>
                                                         <td>
-                                                            <label for="card{{$k}}"><img src="/images/wolf_{{Helper::slugify($name)}}.png">
-                                                            </label>
+                                                            <label for="card{{ $card->id }}"><img src="{{ $card->image }}" alt=""></label>
                                                         </td>
                                                         <td style="text-align:left">
-                                                            <div onclick="$('#desccard{{$card->id}}').toggleClass('inv');">
-                                                                @if ($name == "Villageois" || $name=="Loup Garou")
-                                                                    <input class="inv" checked id="card{{$k}}" name="cards[]" type="checkbox" value="{{$card->id}}" />
-                                                                @else
-                                                                    <input id="card{{$k}}" name="cards[]" type="checkbox" value="{{$card->id}}" />
-                                                                @endif
-                                                                <label onclick="$('#desccard{{$card->id}}').toggleClass('inv');" style="font-weight:unset" for="card{{$k}}">{{$card->name}}</label>
-                                                            </div>
-                                                            <div class="inv" id="desccard{{$card->id}}">
-                                                                {{__("messages.Loup ".$card->name)}}
-                                                            </div>
+                                                            <input id="card{{ $card->id }}" name="cards[]" type="checkbox" value="{{ $card->id }}" />
+                                                            <label style="font-weight:unset" for="card{{ $card->id }}">{{ $card->name }}</label>
+                                                            @if ($card->help != "")
+                                                                <i class="fa fa-info-circle pointer" onclick="$('#desccard{{ $card->id }}').toggleClass('inv');"></i>
+                                                                <div class="inv" id="desccard{{ $card->id }}">{{ $card->help }}</div>
+                                                            @endif
                                                         </td>
                                                     </tr>
-                                                        <?php
-                                                    }
-                                                }
-                                            }
-                                            ?>
+                                                @endforeach
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
