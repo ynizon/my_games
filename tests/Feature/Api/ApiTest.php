@@ -240,6 +240,7 @@ class ApiTest extends TestCase
 
     public function test_web_profile_deletion_and_public_legal_pages(): void
     {
+        $this->withoutVite();
         $user = $this->user();
 
         $this->actingAs($user)->get('/profile')->assertOk()->assertSee('Supprimer mon compte');
