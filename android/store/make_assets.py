@@ -46,16 +46,46 @@ def font(size, bold=True):
 # 1. Icone 512x512 (le Play Store arrondit lui-meme les coins)
 hourglass(512).convert("RGB").save(os.path.join(OUT, "icon-512.png"))
 
-# 2. Captures 1080x2160 (ratio max 2:1) : on retire barre d'etat et barre de navigation
+# 2. Captures 1080x1920 (9:16 exige par le Play Store) : capture sans barres systeme,
+#    reduite et posee sur un fond aux couleurs de l'appli, avec une legende
+CAPTIONS = [
+    "5 jeux d'ambiance,\nun seul téléphone",
+    "Les Loups du Village :\nchoisissez les rôles",
+    "Mots Interdits :\nchrono et scores",
+    "Chaque joueur découvre\nson rôle en secret",
+]
+
+def gradient(w, h):
+    g = Image.new("RGB", (w, h))
+    d = ImageDraw.Draw(g)
+    for y in range(h):
+        t = y / (h - 1)
+        d.line([(0, y), (w - 1, y)], fill=(int(233 - 120 * t), int(30 + 10 * t), int(99 + 80 * t)))
+    return g
+
 raw = sys.argv[1] if len(sys.argv) > 1 else None
 shots = []
 if raw:
     for i, name in enumerate(sorted(f for f in os.listdir(raw) if f.startswith("s") and f.endswith(".png")), 1):
         im = Image.open(os.path.join(raw, name)).convert("RGB")
-        im = im.crop((0, 108, 1080, 108 + 2160))
-        p = os.path.join(OUT, f"screenshot-{i}.png")
-        im.save(p)
+        im = im.crop((0, 108, 1080, 108 + 2160))  # sans barre d'etat ni barre de navigation
         shots.append(im)
+        canvas = gradient(1080, 1920)
+        d = ImageDraw.Draw(canvas)
+        cap = CAPTIONS[i - 1] if i <= len(CAPTIONS) else ""
+        d.multiline_text((540, 60), cap, font=font(64), fill="white", anchor="ma", align="center", spacing=12)
+        h = 1640
+        w = int(h * im.width / im.height)
+        th = im.resize((w, h), Image.LANCZOS)
+        x, y = (1080 - w) // 2, 250
+        sh = Image.new("RGBA", (w + 80, h + 80), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rounded_rectangle([40, 50, w + 40, h + 50], radius=48, fill=(0, 0, 0, 110))
+        sh = sh.filter(ImageFilter.GaussianBlur(18))
+        canvas.paste(sh, (x - 40, y - 40), sh)
+        mask = Image.new("L", (w, h), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], radius=48, fill=255)
+        canvas.paste(th, (x, y), mask)
+        canvas.save(os.path.join(OUT, f"screenshot-{i}.png"))
 
 # 3. Image de presentation 1024x500
 fg = Image.new("RGB", (1024, 500), PINK)
