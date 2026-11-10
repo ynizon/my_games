@@ -52,6 +52,12 @@ POINTS FORTS
 Les cartes sont mises à jour régulièrement depuis le site games.gameandme.fr.
 ```
 
+## Prix et distribution
+
+- Application payante : 0,99 € TTC en France (0,83 € HT saisi ; Google arrondit les prix en ,X9 donc 1,00 € pile est impossible). Les autres pays ont un prix converti mais ne sont pas ciblés.
+- Production : France uniquement (et ses 11 territoires).
+- Une appli publiée gratuite ne peut plus devenir payante : le choix payant a été fait avant la première publication.
+
 ## Paramètres de la fiche
 
 - Catégorie : **Jeux > Jeux de société** (ou « Jeux de mots » / « Party »)
