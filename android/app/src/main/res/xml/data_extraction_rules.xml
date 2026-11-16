@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+ : le jeton de connexion (session.xml) ne part ni dans le cloud ni vers un autre appareil -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="session.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="session.xml" />
+    </device-transfer>
+</data-extraction-rules>

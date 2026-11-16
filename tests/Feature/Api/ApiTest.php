@@ -207,7 +207,22 @@ class ApiTest extends TestCase
         Sanctum::actingAs($this->user());
 
         $this->putJson('/api/v1/me', ['name' => 'Bob', 'email' => 'bob@test.fr', 'role' => 'Admin'])
+            ->assertStatus(422)->assertJsonValidationErrors('current_password');
+
+        $this->putJson('/api/v1/me', ['name' => 'Bob', 'email' => 'bob@test.fr', 'role' => 'Admin', 'current_password' => 'secret'])
             ->assertOk()->assertJsonPath('data.name', 'Bob')->assertJsonPath('data.roles', ['User']);
+    }
+
+    public function test_profile_password_change_requires_the_current_password(): void
+    {
+        $user = $this->user();
+        Sanctum::actingAs($user);
+
+        $this->putJson('/api/v1/me', ['name' => 'Bob', 'email' => $user->email, 'password' => 'newpass', 'current_password' => 'wrong'])
+            ->assertStatus(422)->assertJsonValidationErrors('current_password');
+        $this->putJson('/api/v1/me', ['name' => 'Bob', 'email' => $user->email])->assertOk();
+        $this->putJson('/api/v1/me', ['name' => 'Bob', 'email' => $user->email, 'password' => 'newpass', 'current_password' => 'secret'])
+            ->assertOk();
     }
     public function test_delete_account_requires_the_password(): void
     {

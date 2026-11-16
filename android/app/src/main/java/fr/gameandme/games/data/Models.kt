@@ -98,6 +98,7 @@ data class ProfileRequest(
     val email: String,
     val nickname: String? = null,
     val password: String? = null,
+    @SerialName("current_password") val currentPassword: String? = null,
 )
 
 @Serializable

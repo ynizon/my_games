@@ -80,9 +80,12 @@ class AccountViewModel(private val app: GamesApplication) : ViewModel() {
         info = "Si cette adresse est connue, un lien de réinitialisation vient d'être envoyé."
     }
 
-    fun updateProfile(name: String, nickname: String, email: String, password: String) = run {
+    fun updateProfile(name: String, nickname: String, email: String, password: String, currentPassword: String) = run {
         val user = app.api.updateProfile(
-            ProfileRequest(name.trim(), email.trim(), nickname.trim().ifEmpty { null }, password.ifEmpty { null })
+            ProfileRequest(
+                name.trim(), email.trim(), nickname.trim().ifEmpty { null }, password.ifEmpty { null },
+                currentPassword.ifEmpty { null },
+            )
         ).data
         session.saveUser(user)
         info = "Profil mis à jour."
@@ -204,6 +207,9 @@ private fun ProfileForm(vm: AccountViewModel) {
     var nickname by rememberSaveable(user.id) { mutableStateOf(user.nickname.orEmpty()) }
     var email by rememberSaveable(user.id) { mutableStateOf(user.email) }
     var password by rememberSaveable { mutableStateOf("") }
+    var currentPassword by rememberSaveable { mutableStateOf("") }
+    // Le serveur exige le mot de passe actuel pour changer d'e-mail ou de mot de passe
+    val sensitive = password.isNotEmpty() || !email.trim().equals(user.email, ignoreCase = true)
 
     Panel {
         Text("Mon profil", style = MaterialTheme.typography.titleMedium)
@@ -217,8 +223,18 @@ private fun ProfileForm(vm: AccountViewModel) {
             password, { password = it }, label = { Text("Nouveau mot de passe (facultatif)") }, singleLine = true,
             modifier = Modifier.fillMaxWidth(), visualTransformation = PasswordVisualTransformation(),
         )
+        if (sensitive) {
+            OutlinedTextField(
+                currentPassword, { currentPassword = it }, label = { Text("Mot de passe actuel") }, singleLine = true,
+                modifier = Modifier.fillMaxWidth(), visualTransformation = PasswordVisualTransformation(),
+            )
+        }
         Messages(vm)
-        BigButton("Enregistrer", { vm.updateProfile(name, nickname, email, password); password = "" }, enabled = !vm.loading)
+        BigButton(
+            "Enregistrer",
+            { vm.updateProfile(name, nickname, email, password, if (sensitive) currentPassword else ""); password = ""; currentPassword = "" },
+            enabled = !vm.loading && (!sensitive || currentPassword.isNotEmpty()),
+        )
     }
 }
 

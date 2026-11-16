@@ -33,7 +33,7 @@ Les cartes peuvent être téléchargées une fois puis le jeu fonctionne hors co
 | Méthode | URL | Corps / paramètres |
 |---|---|---|
 | GET | `me` | Utilisateur : `roles[]`, `permissions.card_edit`, `permissions.card_propose` |
-| PUT | `me` | `name`, `email`, `nickname`, `password`, `lang` |
+| PUT | `me` | `name`, `email`, `nickname`, `password`, `lang` ; `current_password` obligatoire si l'e-mail ou le mot de passe change |
 | GET | `my/cards` | `game_id` (optionnel). Toutes les cartes pour `card-edit`, sinon les siennes |
 | GET | `my/cards/check-double` | `name`, `game_id`, `lang` : cartes au nom proche |
 | POST | `my/cards` | `name`, `game_id`, `lang`, `country`, `difficulty` (1-3), `status`, `words[]` → `201` |
